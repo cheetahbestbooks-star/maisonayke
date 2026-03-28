@@ -184,17 +184,34 @@ nav.scrolled {
   box-shadow: 0 1px 28px rgba(26,22,20,0.1);
 }
 .nav-logo {
-  font-family: var(--font-serif);
-  font-size: 1.6rem;
-  font-weight: 300;
-  color: var(--white);
-  letter-spacing: 0.05em;
   text-decoration: none;
-  transition: color 0.4s ease;
   position: relative;
   z-index: 1001;
+  display: flex;
+  align-items: center;
+  height: 44px;
+  transition: opacity 0.3s ease;
 }
-nav.scrolled .nav-logo { color: var(--dark); }
+.nav-logo:hover { opacity: 0.85; }
+.nav-logo-img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+  transition: opacity 0.4s ease;
+  position: absolute;
+  left: 0;
+}
+.nav-logo-light { opacity: 1; }
+.nav-logo-dark  { opacity: 0; }
+nav.scrolled .nav-logo-light { opacity: 0; }
+nav.scrolled .nav-logo-dark  { opacity: 1; }
+/* Placeholder width so nav doesn't collapse */
+.nav-logo::after {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
 .nav-links {
   display: flex;
   gap: 2.5rem;
@@ -358,11 +375,15 @@ nav.scrolled .burger-line { background: var(--dark); }
 }
 .nav-overlay-brand {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
   font-family: var(--font-serif);
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.2);
-  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -1120,9 +1141,21 @@ footer {
   margin-bottom: 2rem;
 }
 .footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+.footer-logo {
+  width: 48px; height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.footer-brand-text {
   font-family: var(--font-serif);
-  font-size: 2rem; font-weight: 300;
-  letter-spacing: 0.05em; margin-bottom: 1rem;
+  font-size: 1.8rem; font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--white);
 }
 .footer-tagline {
   font-size: 0.84rem; color: rgba(255,255,255,0.42);
@@ -1284,7 +1317,10 @@ footer {
 
 <!-- ═══ NAVIGATION ═══ -->
 <nav id="navbar">
-  <a href="#" class="nav-logo">Maison Ayke</a>
+  <a href="#" class="nav-logo">
+    <img src="logo_clair.png" alt="Maison Ayke" class="nav-logo-img nav-logo-light">
+    <img src="logo_terracota.png" alt="Maison Ayke" class="nav-logo-img nav-logo-dark">
+  </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#studio">Le Studio</a></li>
     <li><a href="#avis">Avis</a></li>
@@ -1312,7 +1348,10 @@ footer {
     <li><a href="#faq" onclick="closeNav()">FAQ</a></li>
     <li><a href="#contact" class="nav-overlay-cta" onclick="closeNav()">Réserver — Meilleur prix</a></li>
   </ul>
-  <span class="nav-overlay-brand">Maison Ayke · Villeneuve-Loubet</span>
+  <div class="nav-overlay-brand">
+  <img src="logo_terracota.png" alt="Maison Ayke" style="width:48px;height:48px;object-fit:contain;opacity:0.6;margin-bottom:0.5rem;">
+  <span>Villeneuve-Loubet · Côte d'Azur</span>
+</div>
 </div>
 
 <!-- ═══ HERO ═══ -->
@@ -1955,7 +1994,10 @@ footer {
 <footer>
   <div class="footer-top">
     <div>
-      <div class="footer-brand">Maison Ayke</div>
+      <div class="footer-brand">
+  <img src="logo_terracota.png" alt="Maison Ayke" class="footer-logo">
+  <span class="footer-brand-text">Maison Ayke</span>
+</div>
       <p class="footer-tagline">Studio vue mer sur la Côte d'Azur, entre Nice et Cannes. Une terrasse, la mer, et rien d'autre à penser.</p>
       <div class="footer-social">
         <a href="https://instagram.com/maisonayke" target="_blank" aria-label="Instagram">📸</a>
