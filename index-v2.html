@@ -1590,7 +1590,165 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 /* ═══════════════════════════════════
-   SECTION 11: FOOTER (placeholder)
+   SECTION 11: CONTACT
+═══════════════════════════════════ */
+#contact {
+  background: var(--white);
+  padding: 7rem 3rem;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  #contact { padding: 5rem 1.5rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+}
+#contact .section-eyebrow { color: var(--coral); }
+#contact h2 em { font-style: italic; color: var(--wood); }
+.contact-text {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.8;
+  margin-top: 0.5rem;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.contact-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.contact-item-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+.contact-item-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--coral);
+  margin-bottom: 0.15rem;
+}
+.contact-item-value {
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.6;
+}
+.contact-item-value a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--stone);
+  transition: border-color 0.3s;
+}
+.contact-item-value a:hover { border-color: var(--coral); }
+.trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.trust-badge {
+  background: var(--off-white);
+  border: 1px solid var(--stone);
+  padding: 0.5rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  font-family: var(--font-body);
+  color: var(--gray);
+  white-space: nowrap;
+}
+/* Form styles */
+.contact-form-col .section-eyebrow { color: var(--coral); }
+.contact-form-col h3 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.contact-form-col h3 em { font-style: italic; color: var(--wood); }
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+#contactForm label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+  margin-bottom: 0.4rem;
+}
+#contactForm input,
+#contactForm select,
+#contactForm textarea {
+  width: 100%;
+  background: var(--off-white);
+  border: 1px solid var(--stone);
+  border-radius: 4px;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--ink);
+  transition: border-color 0.3s, background 0.3s;
+  box-sizing: border-box;
+}
+#contactForm input:focus,
+#contactForm select:focus,
+#contactForm textarea:focus {
+  outline: none;
+  border-color: var(--coral);
+  background: var(--white);
+}
+#contactForm textarea { min-height: 100px; resize: vertical; }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 480px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+#formSuccess {
+  display: none;
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+#tarifEstime {
+  display: none;
+  background: var(--off-white);
+  border-left: 3px solid var(--coral);
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+/* ═══════════════════════════════════
+   SECTION 12: FOOTER (placeholder)
 ═══════════════════════════════════ */
 
 </style>
@@ -2142,7 +2300,143 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   </div>
 </section>
 
-<!-- ═══ 11. FOOTER ═══ -->
+<!-- ═══ 11. CONTACT ═══ -->
+<section id="contact" aria-label="Contact et formulaire de réservation">
+  <div class="contact-grid">
+
+    <!-- Colonne gauche : Infos et trust -->
+    <div class="contact-info-col">
+      <span class="section-eyebrow" data-i18n="contact.eyebrow">Contact</span>
+      <h2 data-i18n="contact.title">Une question ?<br><em>Écrivez-nous</em></h2>
+      <p class="contact-text" data-i18n="contact.text">Une question, une demande de disponibilité, un devis personnalisé ? Nous répondons sous 1h, 7j/7, en 6 langues : français, anglais, allemand, espagnol, italien et croate.</p>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-item-icon" aria-hidden="true">💬</span>
+          <div>
+            <div class="contact-item-label" data-i18n="contact.whatsapp.label">WhatsApp</div>
+            <div class="contact-item-value"><a href="https://wa.me/41787777978" target="_blank" rel="noopener" data-i18n="contact.whatsapp.value">+41 78 777 79 78</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-icon" aria-hidden="true">✉️</span>
+          <div>
+            <div class="contact-item-label" data-i18n="contact.email.label">Email</div>
+            <div class="contact-item-value"><a href="mailto:contact@maisonayke.com" data-i18n="contact.email.value">contact@maisonayke.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-icon" aria-hidden="true">📍</span>
+          <div>
+            <div class="contact-item-label" data-i18n="contact.adresse.label">Adresse</div>
+            <div class="contact-item-value" data-i18n="contact.adresse.value">7 Avenue du Clos<br>06270 Villeneuve-Loubet</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-icon" aria-hidden="true">📋</span>
+          <div>
+            <div class="contact-item-label" data-i18n="contact.licence.label">Licence touristique</div>
+            <div class="contact-item-value" style="font-size:0.82rem;" data-i18n="contact.licence.value">N° 0082481464443</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trust-badges">
+        <span class="trust-badge">🔒 Paiement sécurisé</span>
+        <span class="trust-badge">✅ Licence officielle</span>
+        <span class="trust-badge">⭐ 4.9/5 · 47 avis</span>
+        <span class="trust-badge">⚡ Réponse &lt; 1h</span>
+      </div>
+    </div>
+
+    <!-- Colonne droite : Formulaire -->
+    <div class="contact-form-col">
+      <span class="section-eyebrow" data-i18n="contact.form.eyebrow">Formulaire</span>
+      <h3 data-i18n="contact.form.title">Demande de<br><em>réservation</em></h3>
+
+      <form id="contactForm" autocomplete="on">
+        <input type="hidden" name="access_key" value="f4d209cd-3dff-4105-bb4c-d3abfb22b721">
+        <input type="hidden" name="subject" value="Demande de réservation — Maison Ayke V2">
+        <input type="hidden" name="from_name" value="Maison Ayke Website V2">
+
+        <div id="formSuccess">✅ Votre demande a bien été envoyée ! Nous vous répondons sous 1h.</div>
+
+        <div class="form-row">
+          <div>
+            <label for="prenom" data-i18n="contact.form.prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" required placeholder="Marie" autocomplete="given-name">
+          </div>
+          <div>
+            <label for="nom" data-i18n="contact.form.nom">Nom</label>
+            <input type="text" id="nom" name="nom" required placeholder="Dupont" autocomplete="family-name">
+          </div>
+        </div>
+
+        <div>
+          <label for="email" data-i18n="contact.form.email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="marie@email.com" autocomplete="email">
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="arrivee" data-i18n="contact.form.arrivee">Date d'arrivée</label>
+            <input type="date" id="arrivee" name="arrivee" required>
+          </div>
+          <div>
+            <label for="depart" data-i18n="contact.form.depart">Date de départ</label>
+            <input type="date" id="depart" name="depart" required>
+          </div>
+        </div>
+
+        <div id="tarifEstime"></div>
+
+        <div>
+          <label for="voyageurs" data-i18n="contact.form.voyageurs">Voyageurs</label>
+          <select id="voyageurs" name="voyageurs">
+            <option value="1" data-i18n="contact.form.voyageurs.1">1 personne</option>
+            <option value="2" selected data-i18n="contact.form.voyageurs.2">2 personnes</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="langue" data-i18n="contact.form.langue">Langue préférée pour la réponse</label>
+          <select id="langue" name="langue">
+            <option value="Français" selected>Français</option>
+            <option value="English">English</option>
+            <option value="Deutsch">Deutsch</option>
+            <option value="Español">Español</option>
+            <option value="Italiano">Italiano</option>
+            <option value="Hrvatski">Hrvatski</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="source" data-i18n="contact.form.source">Comment nous avez-vous trouvés ?</label>
+          <select id="source" name="source">
+            <option value="" data-i18n="contact.form.source.default">— Sélectionnez —</option>
+            <option value="Google">Google</option>
+            <option value="Airbnb">Airbnb</option>
+            <option value="Booking.com">Booking.com</option>
+            <option value="Abritel">Abritel</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Bouche à oreille" data-i18n="contact.form.source.bouche">Bouche à oreille</option>
+            <option value="Autre" data-i18n="contact.form.source.autre">Autre</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message" data-i18n="contact.form.message">Message</label>
+          <textarea id="message" name="message" placeholder="Questions, demandes spéciales, date d'arrivée tardive…"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" id="submitBtn" data-i18n="contact.form.submit">Envoyer la demande →</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ 12. FOOTER ═══ -->
 <footer id="footer">
   <!-- TODO: remplir footer -->
 </footer>
@@ -2414,6 +2708,95 @@ function toggleFaq(btn) {
   // Ouvrir celui cliqué (sauf si déjà ouvert = toggle)
   if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
 }
+
+/* ══ Contact Form ══ */
+(function() {
+  // Date min = aujourd'hui
+  var today = new Date().toISOString().split('T')[0];
+  var arrInput = document.getElementById('arrivee');
+  var depInput = document.getElementById('depart');
+  if (arrInput) arrInput.min = today;
+  if (depInput) depInput.min = today;
+
+  // Quand la date d'arrivée change, la date de départ doit être après
+  if (arrInput) {
+    arrInput.addEventListener('change', function() {
+      depInput.min = this.value;
+      calculerTarif();
+    });
+  }
+  if (depInput) {
+    depInput.addEventListener('change', calculerTarif);
+  }
+
+  // Calcul du tarif estimé en direct
+  function calculerTarif() {
+    var arrivee = arrInput.value;
+    var depart = depInput.value;
+    var bloc = document.getElementById('tarifEstime');
+    if (!arrivee || !depart) { bloc.style.display = 'none'; return; }
+
+    var dateArrivee = new Date(arrivee);
+    var dateDepart = new Date(depart);
+    var nuits = Math.round((dateDepart - dateArrivee) / (1000 * 60 * 60 * 24));
+
+    if (nuits <= 0) { bloc.style.display = 'none'; return; }
+
+    // Tarif basé sur le mois d'arrivée
+    var mois = dateArrivee.getMonth() + 1;
+    var tarifNuit;
+    if (mois >= 7 && mois <= 8) tarifNuit = 121;
+    else if (mois === 5 || mois === 6 || mois === 9) tarifNuit = 94;
+    else tarifNuit = 76;
+
+    var total = (nuits * tarifNuit) + 40;
+
+    bloc.innerHTML =
+      '<div style="font-size:0.85rem;color:var(--gray);margin-bottom:0.3rem;">' + nuits + ' nuit' + (nuits > 1 ? 's' : '') + '</div>' +
+      '<div style="font-family:var(--font-serif);font-size:1.4rem;color:var(--coral);">À partir de ' + total + '€ TTC en direct</div>' +
+      '<div style="font-style:italic;font-size:0.75rem;color:var(--gray);margin-top:0.3rem;">Tarif indicatif (incl. 40€ ménage), devis final par retour</div>';
+    bloc.style.display = 'block';
+  }
+
+  // Soumission Web3Forms
+  var contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('submitBtn');
+      btn.textContent = 'Envoi en cours...';
+      btn.disabled = true;
+
+      var formData = new FormData(contactForm);
+      var data = {};
+      formData.forEach(function(value, key) { data[key] = value; });
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(function(response) { return response.json(); })
+      .then(function(result) {
+        if (result.success) {
+          document.getElementById('formSuccess').style.display = 'block';
+          contactForm.reset();
+          document.getElementById('tarifEstime').style.display = 'none';
+          btn.textContent = '✅ Envoyé !';
+        } else {
+          btn.textContent = 'Envoyer la demande →';
+          btn.disabled = false;
+          alert('Erreur lors de l\'envoi. Veuillez nous contacter directement par WhatsApp.');
+        }
+      })
+      .catch(function() {
+        btn.textContent = 'Envoyer la demande →';
+        btn.disabled = false;
+        alert('Erreur réseau. Contactez-nous par WhatsApp : +41 78 777 79 78');
+      });
+    });
+  }
+})();
 </script>
 </body>
 </html>
