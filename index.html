@@ -11,6 +11,7 @@
 <meta name="author" content="Sonia Catic — Maison Ayke">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://maisonayke.com/">
+<link rel="alternate" hreflang="fr-FR" href="https://maisonayke.com/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -1231,6 +1232,230 @@ footer {
 .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
 
 /* ═══════════════════════════════════
+   ESTIMATION TARIF DYNAMIQUE
+═══════════════════════════════════ */
+.tarif-estimate {
+  display: none;
+  background: var(--cream);
+  border-left: 3px solid var(--coral);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  margin-top: 0.5rem;
+}
+.tarif-estimate-label {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--gray);
+  margin-bottom: 0.3rem;
+}
+.tarif-estimate-price {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--coral);
+}
+.tarif-estimate-note {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: var(--gray);
+  font-style: italic;
+  margin-top: 0.3rem;
+}
+
+/* ═══════════════════════════════════
+   COMPARATIF "POURQUOI DIRECT"
+═══════════════════════════════════ */
+#comparatif {
+  background: var(--white);
+  padding: 7rem 3rem;
+  text-align: center;
+}
+.comparatif-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1.4fr;
+  max-width: 780px;
+  margin: 3.5rem auto 0;
+  border-radius: var(--radius);
+  overflow: visible;
+}
+.comparatif-header {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1.2rem 1rem;
+  text-align: center;
+}
+.comparatif-header.label {
+  background: transparent;
+}
+.comparatif-header.platform {
+  background: var(--white);
+  color: var(--gray);
+  border: 1px solid var(--gray-light);
+  border-bottom: none;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.comparatif-header.direct {
+  background: var(--coral);
+  color: var(--white);
+  border-radius: var(--radius) var(--radius) 0 0;
+  transform: scale(1.03);
+  transform-origin: top center;
+  position: relative;
+  z-index: 2;
+}
+.comparatif-row-label {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--dark);
+  padding: 1rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-light);
+}
+.comparatif-cell {
+  font-size: 0.85rem;
+  font-weight: 400;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--gray-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+.comparatif-cell.platform-col {
+  background: var(--white);
+  border-left: 1px solid var(--gray-light);
+  border-right: 1px solid var(--gray-light);
+  color: var(--gray);
+}
+.comparatif-cell.direct-col {
+  background: rgba(232,97,74,0.06);
+  border-left: 2px solid var(--coral);
+  border-right: 2px solid var(--coral);
+  transform: scale(1.03);
+  transform-origin: top center;
+  position: relative;
+  z-index: 2;
+}
+.comparatif-cell.direct-col:last-child {
+  border-bottom: 2px solid var(--coral);
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+.comparatif-cell .check { color: var(--coral); font-size: 1rem; }
+.comparatif-cell .neutral { color: var(--gray); font-size: 0.8rem; }
+.comparatif-cta {
+  margin-top: 3rem;
+}
+
+/* ═══════════════════════════════════
+   DISPONIBILITÉS (CALENDRIER)
+═══════════════════════════════════ */
+#disponibilites {
+  background: var(--cream);
+  padding: 7rem 3rem;
+  text-align: center;
+}
+.calendrier-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 820px;
+  margin: 3rem auto 0;
+}
+.calendrier-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 820px;
+  margin: 2.5rem auto 0;
+}
+.calendrier-nav button {
+  background: var(--white);
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius);
+  padding: 0.5rem 1.2rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dark);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.calendrier-nav button:hover {
+  border-color: var(--coral);
+  color: var(--coral);
+}
+.calendrier-nav-label {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--gray);
+}
+.cal-month {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  box-shadow: 0 4px 20px rgba(26,22,20,0.05);
+}
+.cal-month-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 1.2rem;
+}
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.cal-weekday {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+  padding: 0.4rem 0;
+  text-align: center;
+}
+.cal-day {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 400;
+  padding: 0.55rem 0;
+  text-align: center;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  cursor: default;
+}
+.cal-day.empty { visibility: hidden; }
+.cal-day.past {
+  color: var(--gray-light);
+}
+.cal-day.reserved {
+  background: var(--gray);
+  color: rgba(255,255,255,0.6);
+  text-decoration: line-through;
+}
+.cal-day.free {
+  cursor: pointer;
+  color: var(--dark);
+}
+.cal-day.free:hover {
+  background: var(--coral);
+  color: var(--white);
+}
+.cal-day.today {
+  border: 1px solid var(--coral);
+}
+
+/* ═══════════════════════════════════
    REVEAL ANIMATIONS
 ═══════════════════════════════════ */
 .reveal {
@@ -1265,6 +1490,10 @@ footer {
   .galerie-item { min-height: 220px; }
   .galerie-item:nth-child(1) { grid-column: span 2; grid-row: span 1; min-height: 280px; }
   .galerie-item:nth-child(5) { grid-column: span 1; }
+  .comparatif-grid { grid-template-columns: 1.4fr 1fr; }
+  .comparatif-header.platform, .comparatif-cell.platform-col { display: none; }
+  .comparatif-row-label, .comparatif-cell { font-size: 0.8rem; padding: 0.8rem 0.7rem; }
+  .calendrier-wrap { grid-template-columns: 1fr; max-width: 400px; }
   .hero-badges { display: none; }
   .hero-content { padding: 0 1.5rem; }
   .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -1313,6 +1542,10 @@ footer {
   .reservation-card { width: 200px; }
 }
 </style>
+
+<!-- Plausible Analytics — RGPD compliant, pas de cookie.
+Commenter cette ligne pour désactiver. -->
+<script defer data-domain="maisonayke.com" src="https://plausible.io/js/script.outbound-links.js"></script>
 </head>
 <body>
 
@@ -1371,12 +1604,12 @@ footer {
     <p class="hero-eyebrow">Villeneuve-Loubet · Côte d'Azur</p>
     <h1 class="hero-title">La mer,<br>chaque <em>matin</em></h1>
     <p class="hero-subtitle">Studio dernier étage · Terrasse privée vue mer & Alpes · Piscine · Parking privé<br>À 400m des plages · Nice 15 min · Cannes 30 min · Aéroport 7 km</p>
-    <div class="hero-direct-pill">✦ Tarif direct garanti · économisez jusqu'à 20%</div>
+    <div class="hero-direct-pill">✦ Tarif direct −10% garanti · jusqu'à −20% selon votre séjour</div>
     <div class="hero-actions">
       <a href="https://wa.me/41787777978?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20le%20studio%20Maison%20Ayke." class="btn-primary" target="_blank">
         Obtenir le meilleur tarif
       </a>
-      <a href="#studio" class="btn-secondary">Découvrir le studio</a>
+      <a href="#disponibilites" class="btn-secondary">Vérifier mes dates</a>
     </div>
   </div>
 
@@ -1399,6 +1632,10 @@ footer {
     <p class="section-eyebrow">Avantages réservation directe</p>
     <h2 class="section-title" style="color:white;">Réservez en direct,<br><em>économisez vraiment</em></h2>
     <p class="section-text" style="margin:0 auto;color:rgba(255,255,255,0.6);">Chaque réservation directe = moins de commission = meilleur prix pour vous. Contactez-nous par WhatsApp ou email et recevez votre tarif personnalisé sous 1h.</p>
+  </div>
+
+  <div class="reveal" style="max-width:760px;margin:2.5rem auto 0;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);padding:1.2rem 1.8rem;text-align:left;">
+    <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);line-height:1.7;margin:0;">Tous nos visiteurs bénéficient du <strong style="color:var(--white);">tarif direct −10%</strong>. Deux bonus supplémentaires peuvent s'ajouter selon votre profil :</p>
   </div>
 
   <div class="offres-grid reveal">
@@ -1434,6 +1671,63 @@ footer {
       💬 Obtenir mon tarif préférentiel
     </a>
     <p class="offres-note">En contactant directement, vous êtes sûr d'avoir le meilleur prix disponible. Réponse garantie sous 1h.</p>
+  </div>
+</section>
+
+<!-- ═══ COMPARATIF POURQUOI DIRECT ═══ -->
+<section id="comparatif">
+  <div class="reveal">
+    <p class="section-eyebrow">Pourquoi réserver en direct</p>
+    <h2 class="section-title">Comparez <em>objectivement</em></h2>
+    <p class="section-text" style="margin:0 auto;">Même studio, même hôte, même qualité — seul le prix et le service changent selon le canal de réservation.</p>
+  </div>
+
+  <div class="comparatif-grid reveal">
+    <!-- Header row -->
+    <div class="comparatif-header label"></div>
+    <div class="comparatif-header platform">Airbnb / Booking</div>
+    <div class="comparatif-header direct">Direct Maison Ayke ★</div>
+
+    <!-- Row 1: Tarif haute saison -->
+    <div class="comparatif-row-label">Tarif haute saison</div>
+    <div class="comparatif-cell platform-col">134 €/nuit</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> <strong>121 €/nuit</strong> (−10%)</div>
+
+    <!-- Row 2: Frais de service -->
+    <div class="comparatif-row-label">Frais de service</div>
+    <div class="comparatif-cell platform-col">+14 à 18%</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> 0 €</div>
+
+    <!-- Row 3: Contact avec l'hôte -->
+    <div class="comparatif-row-label">Contact avec l'hôte</div>
+    <div class="comparatif-cell platform-col">Via plateforme</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> WhatsApp direct</div>
+
+    <!-- Row 4: Réponse moyenne -->
+    <div class="comparatif-row-label">Réponse moyenne</div>
+    <div class="comparatif-cell platform-col">2 à 4 h</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> Moins d'1 h</div>
+
+    <!-- Row 5: Conseils locaux perso -->
+    <div class="comparatif-row-label">Conseils locaux perso</div>
+    <div class="comparatif-cell platform-col">Non</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> Oui, en 6 langues</div>
+
+    <!-- Row 6: Flexibilité annulation -->
+    <div class="comparatif-row-label">Flexibilité annulation</div>
+    <div class="comparatif-cell platform-col">Standard rigide</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> Arrangeable</div>
+
+    <!-- Row 7: Bonus early bird / long séjour -->
+    <div class="comparatif-row-label">Bonus early bird / long séjour</div>
+    <div class="comparatif-cell platform-col">Non</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> Jusqu'à −20%</div>
+  </div>
+
+  <div class="comparatif-cta reveal">
+    <a href="https://wa.me/41787777978?text=Bonjour%2C%20je%20souhaite%20obtenir%20mon%20tarif%20direct%20Maison%20Ayke." class="btn-primary" target="_blank">
+      Obtenir mon tarif direct →
+    </a>
   </div>
 </section>
 
@@ -1562,6 +1856,21 @@ footer {
   </div>
 </section>
 
+<!-- ═══ DISPONIBILITÉS ═══ -->
+<section id="disponibilites">
+  <div class="reveal">
+    <p class="section-eyebrow">Disponibilités</p>
+    <h2 class="section-title">Quand venir <em>nous voir</em></h2>
+    <p class="section-text" style="margin:0 auto;">Les dates en rouge sont déjà réservées. Cliquez sur une date libre pour pré-remplir le formulaire de demande.</p>
+  </div>
+  <div class="calendrier-nav reveal">
+    <button id="calPrev">← Précédent</button>
+    <span class="calendrier-nav-label" id="calRange"></span>
+    <button id="calNext">Suivant →</button>
+  </div>
+  <div class="calendrier-wrap reveal" id="calendrierWrap"></div>
+</section>
+
 <!-- ═══ AVIS CLIENTS ═══ -->
 <section id="avis">
   <div class="reveal">
@@ -1658,7 +1967,8 @@ footer {
 
   <div class="map-container reveal">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.5!2d7.1167!3d43.6583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdd0c8b0000001%3A0x1!2s7+Avenue+du+Clos%2C+06270+Villeneuve-Loubet!5e0!3m2!1sfr!2sfr!4v1234567890"
+      src="https://maps.google.com/maps?q=7%20Avenue%20du%20Clos%2C%2006270%20Villeneuve-Loubet&t=&z=14&ie=UTF8&iwloc=&output=embed"
+      width="100%" height="100%" style="border:0;"
       allowfullscreen="" loading="lazy"
       referrerpolicy="no-referrer-when-downgrade">
     </iframe>
@@ -1671,7 +1981,7 @@ footer {
     <div class="tarifs-note-top">✓ Meilleur prix garanti en direct</div>
     <p class="section-eyebrow">Tarifs 2026</p>
     <h2 class="section-title">Des prix <em>transparents</em></h2>
-    <p class="section-text" style="margin:0 auto;">Les tarifs affichés sont les tarifs plateformes. En réservant directement, vous économisez jusqu'à 20%. Frais de ménage 40€ inclus dans votre devis personnalisé.</p>
+    <p class="section-text" style="margin:0 auto;">Les tarifs affichés sont les tarifs plateformes. En réservant directement, vous économisez au moins 10% (jusqu'à −20% selon votre séjour). Frais de ménage 40€ inclus dans votre devis personnalisé.</p>
   </div>
 
   <div class="tarifs-grid reveal">
@@ -1971,6 +2281,11 @@ footer {
           <input type="date" id="depart" name="depart" required>
         </div>
       </div>
+      <div class="tarif-estimate" id="tarifEstimate">
+        <div class="tarif-estimate-label" id="tarifEstimateNuits"></div>
+        <div class="tarif-estimate-price" id="tarifEstimatePrice"></div>
+        <div class="tarif-estimate-note">(tarif indicatif, devis final par retour)</div>
+      </div>
       <div class="form-group">
         <label for="voyageurs">Nombre de voyageurs</label>
         <select id="voyageurs" name="voyageurs">
@@ -1989,6 +2304,17 @@ footer {
           <option value="instagram">Instagram</option>
           <option value="bouche">Bouche à oreille</option>
           <option value="autre">Autre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="langue">Langue préférée pour la réponse</label>
+        <select id="langue" name="langue">
+          <option value="francais" selected>Français</option>
+          <option value="english">English</option>
+          <option value="deutsch">Deutsch</option>
+          <option value="espanol">Español</option>
+          <option value="italiano">Italiano</option>
+          <option value="hrvatski">Hrvatski</option>
         </select>
       </div>
       <div class="form-group">
@@ -2155,7 +2481,36 @@ document.getElementById('arrivee').min = today;
 document.getElementById('depart').min = today;
 document.getElementById('arrivee').addEventListener('change', function() {
   document.getElementById('depart').min = this.value;
+  updateTarifEstimate();
 });
+document.getElementById('depart').addEventListener('change', updateTarifEstimate);
+
+function updateTarifEstimate() {
+  const arrivee = document.getElementById('arrivee').value;
+  const depart = document.getElementById('depart').value;
+  const box = document.getElementById('tarifEstimate');
+  if (!arrivee || !depart) { box.style.display = 'none'; return; }
+  const d1 = new Date(arrivee);
+  const d2 = new Date(depart);
+  const nuits = Math.round((d2 - d1) / (1000 * 60 * 60 * 24));
+  if (nuits <= 0) { box.style.display = 'none'; return; }
+
+  /* Tarif par nuit selon le mois d'arrivée (tarif direct −10%) */
+  var total = 0;
+  var current = new Date(d1);
+  for (var i = 0; i < nuits; i++) {
+    var m = current.getMonth();
+    if (m === 6 || m === 7) { total += 121; }
+    else if (m === 4 || m === 5 || m === 8) { total += 94; }
+    else { total += 76; }
+    current.setDate(current.getDate() + 1);
+  }
+  total += 40; /* frais de ménage */
+
+  document.getElementById('tarifEstimateNuits').textContent = nuits + ' nuit' + (nuits > 1 ? 's' : '');
+  document.getElementById('tarifEstimatePrice').textContent = 'À partir de ' + total + ' €';
+  box.style.display = 'block';
+}
 
 /* ══ FAQ accordion ══ */
 function toggleFaq(btn) {
@@ -2164,6 +2519,108 @@ function toggleFaq(btn) {
   document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
   if (!isOpen) item.classList.add('open');
 }
+
+/* ══ Calendrier de disponibilités ══ */
+// TODO v2 : remplacer par sync automatique iCal Airbnb + Booking
+// Format : "YYYY-MM-DD"
+const datesReservees = [
+  "2026-04-15", "2026-04-16", "2026-04-17",
+  "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05",
+  // Ayke éditera cette liste manuellement jusqu'à la v2
+];
+
+(function() {
+  const wrap = document.getElementById('calendrierWrap');
+  const rangeLabel = document.getElementById('calRange');
+  const prevBtn = document.getElementById('calPrev');
+  const nextBtn = document.getElementById('calNext');
+
+  const reservedSet = new Set(datesReservees);
+  const todayStr = new Date().toISOString().split('T')[0];
+  const todayDate = new Date(todayStr);
+
+  let baseMonth = new Date(todayDate.getFullYear(), todayDate.getMonth(), 1);
+
+  const moisNoms = [
+    'Janvier','Février','Mars','Avril','Mai','Juin',
+    'Juillet','Août','Septembre','Octobre','Novembre','Décembre'
+  ];
+  const jours = ['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  function dateStr(y, m, d) { return y + '-' + pad(m + 1) + '-' + pad(d); }
+
+  function renderMonth(year, month) {
+    const firstDay = new Date(year, month, 1);
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    let startDay = firstDay.getDay() - 1;
+    if (startDay < 0) startDay = 6;
+
+    let html = '<div class="cal-month">';
+    html += '<div class="cal-month-title">' + moisNoms[month] + ' ' + year + '</div>';
+    html += '<div class="cal-grid">';
+    jours.forEach(j => { html += '<div class="cal-weekday">' + j + '</div>'; });
+    for (let i = 0; i < startDay; i++) {
+      html += '<div class="cal-day empty"></div>';
+    }
+    for (let d = 1; d <= daysInMonth; d++) {
+      const ds = dateStr(year, month, d);
+      const dt = new Date(year, month, d);
+      let cls = 'cal-day';
+      if (ds === todayStr) cls += ' today';
+      if (dt < todayDate) {
+        cls += ' past';
+      } else if (reservedSet.has(ds)) {
+        cls += ' reserved';
+      } else {
+        cls += ' free';
+      }
+      html += '<div class="' + cls + '" data-date="' + ds + '">' + d + '</div>';
+    }
+    html += '</div></div>';
+    return html;
+  }
+
+  function render() {
+    const m1 = baseMonth;
+    const m2 = new Date(m1.getFullYear(), m1.getMonth() + 1, 1);
+    wrap.innerHTML = renderMonth(m1.getFullYear(), m1.getMonth())
+                   + renderMonth(m2.getFullYear(), m2.getMonth());
+    rangeLabel.textContent = moisNoms[m1.getMonth()] + ' — ' + moisNoms[m2.getMonth()] + ' ' + m2.getFullYear();
+
+    wrap.querySelectorAll('.cal-day.free').forEach(el => {
+      el.addEventListener('click', function() {
+        const date = this.getAttribute('data-date');
+        const arriveeInput = document.getElementById('arrivee');
+        const departInput = document.getElementById('depart');
+        if (arriveeInput) {
+          arriveeInput.value = date;
+          departInput.min = date;
+        }
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(function() { departInput.focus(); }, 600);
+        }
+      });
+    });
+  }
+
+  prevBtn.addEventListener('click', function() {
+    const minMonth = new Date(todayDate.getFullYear(), todayDate.getMonth(), 1);
+    if (baseMonth > minMonth) {
+      baseMonth = new Date(baseMonth.getFullYear(), baseMonth.getMonth() - 1, 1);
+      render();
+    }
+  });
+
+  nextBtn.addEventListener('click', function() {
+    baseMonth = new Date(baseMonth.getFullYear(), baseMonth.getMonth() + 1, 1);
+    render();
+  });
+
+  render();
+})();
 </script>
 </body>
 </html>
