@@ -1240,11 +1240,11 @@ footer {
 }
 .comparatif-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  max-width: 900px;
+  grid-template-columns: 2fr 1.2fr 1.4fr;
+  max-width: 780px;
   margin: 3.5rem auto 0;
   border-radius: var(--radius);
-  overflow: hidden;
+  overflow: visible;
 }
 .comparatif-header {
   font-size: 0.68rem;
@@ -1255,17 +1255,23 @@ footer {
   text-align: center;
 }
 .comparatif-header.label {
-  background: var(--cream);
+  background: transparent;
+}
+.comparatif-header.platform {
+  background: var(--white);
   color: var(--gray);
-  text-align: left;
+  border: 1px solid var(--gray-light);
+  border-bottom: none;
+  border-radius: var(--radius) var(--radius) 0 0;
 }
 .comparatif-header.direct {
   background: var(--coral);
   color: var(--white);
-}
-.comparatif-header.platform {
-  background: var(--gray-light);
-  color: var(--gray);
+  border-radius: var(--radius) var(--radius) 0 0;
+  transform: scale(1.03);
+  transform-origin: top center;
+  position: relative;
+  z-index: 2;
 }
 .comparatif-row-label {
   font-size: 0.85rem;
@@ -1273,7 +1279,6 @@ footer {
   color: var(--dark);
   padding: 1rem 1.2rem;
   text-align: left;
-  background: var(--cream);
   border-bottom: 1px solid var(--gray-light);
 }
 .comparatif-cell {
@@ -1287,12 +1292,30 @@ footer {
   justify-content: center;
   gap: 0.3rem;
 }
-.comparatif-cell.direct-col {
-  background: rgba(232,97,74,0.04);
+.comparatif-cell.platform-col {
+  background: var(--white);
+  border-left: 1px solid var(--gray-light);
+  border-right: 1px solid var(--gray-light);
+  color: var(--gray);
 }
-.comparatif-cell .check { color: var(--green); font-size: 1.1rem; }
-.comparatif-cell .cross { color: var(--coral); font-size: 1.1rem; }
-.comparatif-cell .maybe { color: var(--gray); font-size: 0.8rem; }
+.comparatif-cell.direct-col {
+  background: rgba(232,97,74,0.06);
+  border-left: 2px solid var(--coral);
+  border-right: 2px solid var(--coral);
+  transform: scale(1.03);
+  transform-origin: top center;
+  position: relative;
+  z-index: 2;
+}
+.comparatif-cell.direct-col:last-child {
+  border-bottom: 2px solid var(--coral);
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+.comparatif-cell .check { color: var(--coral); font-size: 1rem; }
+.comparatif-cell .neutral { color: var(--gray); font-size: 0.8rem; }
+.comparatif-cta {
+  margin-top: 3rem;
+}
 
 /* ═══════════════════════════════════
    DISPONIBILITÉS (CALENDRIER)
@@ -1435,8 +1458,9 @@ footer {
   .galerie-item { min-height: 220px; }
   .galerie-item:nth-child(1) { grid-column: span 2; grid-row: span 1; min-height: 280px; }
   .galerie-item:nth-child(5) { grid-column: span 1; }
-  .comparatif-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; font-size: 0.75rem; }
-  .comparatif-row-label, .comparatif-cell { font-size: 0.78rem; padding: 0.8rem 0.6rem; }
+  .comparatif-grid { grid-template-columns: 1.4fr 1fr; }
+  .comparatif-header.platform, .comparatif-cell.platform-col { display: none; }
+  .comparatif-row-label, .comparatif-cell { font-size: 0.8rem; padding: 0.8rem 0.7rem; }
   .calendrier-wrap { grid-template-columns: 1fr; max-width: 400px; }
   .hero-badges { display: none; }
   .hero-content { padding: 0 1.5rem; }
@@ -1625,57 +1649,49 @@ footer {
   <div class="comparatif-grid reveal">
     <!-- Header row -->
     <div class="comparatif-header label"></div>
-    <div class="comparatif-header direct">Direct</div>
-    <div class="comparatif-header platform">Airbnb</div>
-    <div class="comparatif-header platform">Booking</div>
+    <div class="comparatif-header platform">Airbnb / Booking</div>
+    <div class="comparatif-header direct">Direct Maison Ayke ★</div>
 
-    <!-- Row: Tarif -->
-    <div class="comparatif-row-label">Tarif par nuit (haute saison)</div>
-    <div class="comparatif-cell direct-col"><strong style="color:var(--coral);">121 €</strong></div>
-    <div class="comparatif-cell">134 €</div>
-    <div class="comparatif-cell">134 €</div>
+    <!-- Row 1: Tarif haute saison -->
+    <div class="comparatif-row-label">Tarif haute saison</div>
+    <div class="comparatif-cell platform-col">134 €/nuit</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> <strong>121 €/nuit</strong> (−10%)</div>
 
-    <!-- Row: Frais service -->
-    <div class="comparatif-row-label">Frais de service plateforme</div>
+    <!-- Row 2: Frais de service -->
+    <div class="comparatif-row-label">Frais de service</div>
+    <div class="comparatif-cell platform-col">+14 à 18%</div>
     <div class="comparatif-cell direct-col"><span class="check">✓</span> 0 €</div>
-    <div class="comparatif-cell"><span class="cross">✗</span> ~14%</div>
-    <div class="comparatif-cell"><span class="cross">✗</span> ~15%</div>
 
-    <!-- Row: Réponse -->
-    <div class="comparatif-row-label">Temps de réponse</div>
-    <div class="comparatif-cell direct-col"><span class="check">✓</span> &lt; 1h</div>
-    <div class="comparatif-cell"><span class="maybe">~</span> Variable</div>
-    <div class="comparatif-cell"><span class="maybe">~</span> Variable</div>
+    <!-- Row 3: Contact avec l'hôte -->
+    <div class="comparatif-row-label">Contact avec l'hôte</div>
+    <div class="comparatif-cell platform-col">Via plateforme</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> WhatsApp direct</div>
 
-    <!-- Row: Contact direct -->
-    <div class="comparatif-row-label">Contact direct avec l'hôte</div>
-    <div class="comparatif-cell direct-col"><span class="check">✓</span> Oui</div>
-    <div class="comparatif-cell"><span class="cross">✗</span> Via app</div>
-    <div class="comparatif-cell"><span class="cross">✗</span> Via app</div>
+    <!-- Row 4: Réponse moyenne -->
+    <div class="comparatif-row-label">Réponse moyenne</div>
+    <div class="comparatif-cell platform-col">2 à 4 h</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> Moins d'1 h</div>
 
-    <!-- Row: Offre early bird -->
-    <div class="comparatif-row-label">Offre early bird (−15%)</div>
-    <div class="comparatif-cell direct-col"><span class="check">✓</span> Oui</div>
-    <div class="comparatif-cell"><span class="cross">✗</span> Non</div>
-    <div class="comparatif-cell"><span class="cross">✗</span> Non</div>
+    <!-- Row 5: Conseils locaux perso -->
+    <div class="comparatif-row-label">Conseils locaux perso</div>
+    <div class="comparatif-cell platform-col">Non</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> Oui, en 6 langues</div>
 
-    <!-- Row: Offre long séjour -->
-    <div class="comparatif-row-label">Offre long séjour (−20%)</div>
-    <div class="comparatif-cell direct-col"><span class="check">✓</span> Oui</div>
-    <div class="comparatif-cell"><span class="cross">✗</span> Non</div>
-    <div class="comparatif-cell"><span class="cross">✗</span> Non</div>
+    <!-- Row 6: Flexibilité annulation -->
+    <div class="comparatif-row-label">Flexibilité annulation</div>
+    <div class="comparatif-cell platform-col">Standard rigide</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> Arrangeable</div>
 
-    <!-- Row: Flexibilité -->
-    <div class="comparatif-row-label">Flexibilité sur les dates</div>
-    <div class="comparatif-cell direct-col"><span class="check">✓</span> Totale</div>
-    <div class="comparatif-cell"><span class="maybe">~</span> Limitée</div>
-    <div class="comparatif-cell"><span class="maybe">~</span> Limitée</div>
+    <!-- Row 7: Bonus early bird / long séjour -->
+    <div class="comparatif-row-label">Bonus early bird / long séjour</div>
+    <div class="comparatif-cell platform-col">Non</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> Jusqu'à −20%</div>
+  </div>
 
-    <!-- Row: Paiement -->
-    <div class="comparatif-row-label">Paiement sécurisé</div>
-    <div class="comparatif-cell direct-col"><span class="check">✓</span> Oui</div>
-    <div class="comparatif-cell"><span class="check">✓</span> Oui</div>
-    <div class="comparatif-cell"><span class="check">✓</span> Oui</div>
+  <div class="comparatif-cta reveal">
+    <a href="https://wa.me/41787777978?text=Bonjour%2C%20je%20souhaite%20obtenir%20mon%20tarif%20direct%20Maison%20Ayke." class="btn-primary" target="_blank">
+      Obtenir mon tarif direct →
+    </a>
   </div>
 </section>
 
