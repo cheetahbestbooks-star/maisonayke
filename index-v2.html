@@ -548,8 +548,60 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 /* ═══════════════════════════════════
-   SECTION 2: REASSURANCE (placeholder)
+   SECTION 2: ÉQUIPEMENTS
 ═══════════════════════════════════ */
+#equipements {
+  background: var(--off-white);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  #equipements { padding: 7rem 3rem; }
+}
+#equipements h2 { margin-bottom: 1rem; }
+#equipements h2 em { font-style: italic; color: var(--wood); }
+.equip-subtitle {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--gray);
+  max-width: 560px;
+  margin: 0 auto;
+}
+.equip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1.4rem;
+  margin-top: 3.5rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.equip-card {
+  background: var(--white);
+  padding: 2rem 1rem;
+  border-radius: var(--radius);
+  text-align: center;
+  transition: var(--transition);
+  border-bottom: 2px solid transparent;
+}
+.equip-card:hover {
+  transform: translateY(-4px);
+  border-bottom-color: var(--coral);
+  box-shadow: 0 12px 40px rgba(26,43,60,0.08);
+}
+.equip-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+.equip-name {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
 
 /* ═══════════════════════════════════
    SECTION 3: LE STUDIO
@@ -756,9 +808,25 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   </div>
 </section>
 
-<!-- ═══ 2. REASSURANCE ═══ -->
-<section id="reassurance" aria-label="Points forts">
-  <!-- TODO: remplir section réassurance -->
+<!-- ═══ 2. ÉQUIPEMENTS ═══ -->
+<section id="equipements" aria-label="Équipements du studio">
+  <div class="reveal">
+    <p class="section-eyebrow" data-i18n="equip.eyebrow">Équipements</p>
+    <h2 data-i18n="equip.title">Tout le <em>nécessaire</em></h2>
+    <p class="equip-subtitle" data-i18n="equip.subtitle">Chaque détail a été pensé pour que votre séjour soit aussi confortable que possible.</p>
+  </div>
+  <div class="equip-grid reveal">
+    <div class="equip-card"><span class="equip-icon" aria-hidden="true">&#9749;</span><div class="equip-name" data-i18n="equip.nespresso">Nespresso</div></div>
+    <div class="equip-card"><span class="equip-icon" aria-hidden="true">&#128250;</span><div class="equip-name" data-i18n="equip.netflix">Netflix</div></div>
+    <div class="equip-card"><span class="equip-icon" aria-hidden="true">&#10052;</span><div class="equip-name" data-i18n="equip.clim">Climatisation</div></div>
+    <div class="equip-card"><span class="equip-icon" aria-hidden="true">&#127859;</span><div class="equip-name" data-i18n="equip.induction">Induction</div></div>
+    <div class="equip-card"><span class="equip-icon" aria-hidden="true">&#129398;</span><div class="equip-name" data-i18n="equip.frigo">Réfrigérateur</div></div>
+    <div class="equip-card"><span class="equip-icon" aria-hidden="true">&#128085;</span><div class="equip-name" data-i18n="equip.lavelinge">Lave-linge</div></div>
+    <div class="equip-card"><span class="equip-icon" aria-hidden="true">&#128246;</span><div class="equip-name" data-i18n="equip.wifi">Wi-Fi HD</div></div>
+    <div class="equip-card"><span class="equip-icon" aria-hidden="true">&#128705;</span><div class="equip-name" data-i18n="equip.douche">Douche mosaïque</div></div>
+    <div class="equip-card"><span class="equip-icon" aria-hidden="true">&#129514;</span><div class="equip-name" data-i18n="equip.linge">Linge fourni</div></div>
+    <div class="equip-card"><span class="equip-icon" aria-hidden="true">&#128268;</span><div class="equip-name" data-i18n="equip.microondes">Micro-ondes</div></div>
+  </div>
 </section>
 
 <!-- ═══ 3. LE STUDIO ═══ -->
