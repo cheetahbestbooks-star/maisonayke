@@ -1231,6 +1231,70 @@ footer {
 .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
 
 /* ═══════════════════════════════════
+   COMPARATIF "POURQUOI DIRECT"
+═══════════════════════════════════ */
+#comparatif {
+  background: var(--white);
+  padding: 7rem 3rem;
+  text-align: center;
+}
+.comparatif-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  max-width: 900px;
+  margin: 3.5rem auto 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.comparatif-header {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1.2rem 1rem;
+  text-align: center;
+}
+.comparatif-header.label {
+  background: var(--cream);
+  color: var(--gray);
+  text-align: left;
+}
+.comparatif-header.direct {
+  background: var(--coral);
+  color: var(--white);
+}
+.comparatif-header.platform {
+  background: var(--gray-light);
+  color: var(--gray);
+}
+.comparatif-row-label {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--dark);
+  padding: 1rem 1.2rem;
+  text-align: left;
+  background: var(--cream);
+  border-bottom: 1px solid var(--gray-light);
+}
+.comparatif-cell {
+  font-size: 0.85rem;
+  font-weight: 400;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--gray-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+.comparatif-cell.direct-col {
+  background: rgba(232,97,74,0.04);
+}
+.comparatif-cell .check { color: var(--green); font-size: 1.1rem; }
+.comparatif-cell .cross { color: var(--coral); font-size: 1.1rem; }
+.comparatif-cell .maybe { color: var(--gray); font-size: 0.8rem; }
+
+/* ═══════════════════════════════════
    DISPONIBILITÉS (CALENDRIER)
 ═══════════════════════════════════ */
 #disponibilites {
@@ -1371,6 +1435,8 @@ footer {
   .galerie-item { min-height: 220px; }
   .galerie-item:nth-child(1) { grid-column: span 2; grid-row: span 1; min-height: 280px; }
   .galerie-item:nth-child(5) { grid-column: span 1; }
+  .comparatif-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; font-size: 0.75rem; }
+  .comparatif-row-label, .comparatif-cell { font-size: 0.78rem; padding: 0.8rem 0.6rem; }
   .calendrier-wrap { grid-template-columns: 1fr; max-width: 400px; }
   .hero-badges { display: none; }
   .hero-content { padding: 0 1.5rem; }
@@ -1545,6 +1611,71 @@ footer {
       💬 Obtenir mon tarif préférentiel
     </a>
     <p class="offres-note">En contactant directement, vous êtes sûr d'avoir le meilleur prix disponible. Réponse garantie sous 1h.</p>
+  </div>
+</section>
+
+<!-- ═══ COMPARATIF POURQUOI DIRECT ═══ -->
+<section id="comparatif">
+  <div class="reveal">
+    <p class="section-eyebrow">Pourquoi réserver en direct</p>
+    <h2 class="section-title">Comparez <em>objectivement</em></h2>
+    <p class="section-text" style="margin:0 auto;">Même studio, même hôte, même qualité — seul le prix et le service changent selon le canal de réservation.</p>
+  </div>
+
+  <div class="comparatif-grid reveal">
+    <!-- Header row -->
+    <div class="comparatif-header label"></div>
+    <div class="comparatif-header direct">Direct</div>
+    <div class="comparatif-header platform">Airbnb</div>
+    <div class="comparatif-header platform">Booking</div>
+
+    <!-- Row: Tarif -->
+    <div class="comparatif-row-label">Tarif par nuit (haute saison)</div>
+    <div class="comparatif-cell direct-col"><strong style="color:var(--coral);">121 €</strong></div>
+    <div class="comparatif-cell">134 €</div>
+    <div class="comparatif-cell">134 €</div>
+
+    <!-- Row: Frais service -->
+    <div class="comparatif-row-label">Frais de service plateforme</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> 0 €</div>
+    <div class="comparatif-cell"><span class="cross">✗</span> ~14%</div>
+    <div class="comparatif-cell"><span class="cross">✗</span> ~15%</div>
+
+    <!-- Row: Réponse -->
+    <div class="comparatif-row-label">Temps de réponse</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> &lt; 1h</div>
+    <div class="comparatif-cell"><span class="maybe">~</span> Variable</div>
+    <div class="comparatif-cell"><span class="maybe">~</span> Variable</div>
+
+    <!-- Row: Contact direct -->
+    <div class="comparatif-row-label">Contact direct avec l'hôte</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> Oui</div>
+    <div class="comparatif-cell"><span class="cross">✗</span> Via app</div>
+    <div class="comparatif-cell"><span class="cross">✗</span> Via app</div>
+
+    <!-- Row: Offre early bird -->
+    <div class="comparatif-row-label">Offre early bird (−15%)</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> Oui</div>
+    <div class="comparatif-cell"><span class="cross">✗</span> Non</div>
+    <div class="comparatif-cell"><span class="cross">✗</span> Non</div>
+
+    <!-- Row: Offre long séjour -->
+    <div class="comparatif-row-label">Offre long séjour (−20%)</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> Oui</div>
+    <div class="comparatif-cell"><span class="cross">✗</span> Non</div>
+    <div class="comparatif-cell"><span class="cross">✗</span> Non</div>
+
+    <!-- Row: Flexibilité -->
+    <div class="comparatif-row-label">Flexibilité sur les dates</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> Totale</div>
+    <div class="comparatif-cell"><span class="maybe">~</span> Limitée</div>
+    <div class="comparatif-cell"><span class="maybe">~</span> Limitée</div>
+
+    <!-- Row: Paiement -->
+    <div class="comparatif-row-label">Paiement sécurisé</div>
+    <div class="comparatif-cell direct-col"><span class="check">✓</span> Oui</div>
+    <div class="comparatif-cell"><span class="check">✓</span> Oui</div>
+    <div class="comparatif-cell"><span class="check">✓</span> Oui</div>
   </div>
 </section>
 
