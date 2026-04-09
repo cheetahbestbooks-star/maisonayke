@@ -1269,8 +1269,144 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 /* ═══════════════════════════════════
-   SECTION 8: TARIFS (placeholder)
+   SECTION 8: TARIFS
 ═══════════════════════════════════ */
+#tarifs {
+  background: var(--white);
+  padding: 7rem 1.5rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  #tarifs { padding: 7rem 3rem; }
+}
+#tarifs h2 { margin-bottom: 1rem; }
+#tarifs h2 em { font-style: italic; color: var(--wood); }
+.tarifs-badge-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(39,174,96,0.1);
+  border: 1px solid rgba(39,174,96,0.3);
+  color: #27AE60;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+}
+.tarifs-subtitle {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+.tarifs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 340px;
+  margin: 3.5rem auto 0;
+}
+@media (min-width: 768px) {
+  .tarifs-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 920px;
+  }
+}
+.tarif-card {
+  background: var(--off-white);
+  padding: 3rem 2rem;
+  border-radius: var(--radius);
+  position: relative;
+  transition: var(--transition);
+  border-top: 3px solid transparent;
+}
+.tarif-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(26,43,60,0.1);
+}
+.tarif-card.featured {
+  border-top-color: var(--coral);
+  background: #1A1614;
+  color: var(--white);
+}
+@media (min-width: 768px) {
+  .tarif-card.featured { transform: scale(1.02); }
+  .tarif-card.featured:hover { transform: scale(1.02) translateY(-6px); }
+}
+.tarif-season {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 1.5rem;
+}
+.tarif-price {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.tarif-price sup {
+  font-size: 1.2rem;
+  vertical-align: super;
+}
+.tarif-period {
+  font-size: 0.75rem;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+}
+.tarif-card.featured .tarif-period {
+  color: rgba(255,255,255,0.55);
+}
+.tarif-saving {
+  display: inline-block;
+  background: rgba(39,174,96,0.12);
+  color: #27AE60;
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  margin-bottom: 1.3rem;
+}
+.tarif-card.featured .tarif-saving {
+  background: rgba(39,174,96,0.2);
+}
+.tarif-features {
+  list-style: none;
+  text-align: left;
+}
+.tarif-features li {
+  font-size: 0.8rem;
+  color: var(--gray);
+  padding: 0.4rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.tarif-features li::before {
+  content: '—';
+  color: var(--coral);
+  font-size: 0.7rem;
+}
+.tarif-card.featured .tarif-features li {
+  color: rgba(255,255,255,0.7);
+}
+.tarif-note {
+  font-size: 0.7rem;
+  color: var(--gray);
+  margin-top: 1.5rem;
+  font-style: italic;
+}
+.tarif-card.featured .tarif-note {
+  color: rgba(255,255,255,0.55);
+}
 
 /* ═══════════════════════════════════
    SECTION 9: RESERVATION (placeholder)
@@ -1630,7 +1766,59 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 <!-- ═══ 8. TARIFS ═══ -->
 <section id="tarifs" aria-label="Tarifs et saisons">
-  <!-- TODO: remplir section tarifs -->
+  <div class="reveal">
+    <div class="tarifs-badge-top">&#10003; Meilleur prix garanti en direct</div>
+    <p class="section-eyebrow" data-i18n="tarifs.eyebrow">Tarifs 2026</p>
+    <h2 data-i18n="tarifs.title">Des prix <em>transparents</em></h2>
+    <p class="tarifs-subtitle" data-i18n="tarifs.subtitle">Les tarifs affichés sont ceux des plateformes. En réservant directement, vous économisez 10% minimum. Frais de ménage 40€ à ajouter.</p>
+  </div>
+
+  <div class="tarifs-grid reveal">
+    <!-- Basse saison -->
+    <div class="tarif-card">
+      <div class="tarif-season" data-i18n="tarifs.c1.season">Basse saison</div>
+      <div class="tarif-price"><sup>&euro;</sup>84</div>
+      <div class="tarif-period" data-i18n="tarifs.c1.period">par nuit · Oct — Avril</div>
+      <div class="tarif-saving">&#128154; Dès 76€/nuit en direct</div>
+      <ul class="tarif-features">
+        <li data-i18n="tarifs.f.terrasse">Terrasse vue mer privée</li>
+        <li data-i18n="tarifs.f.parking">Parking privatif inclus</li>
+        <li data-i18n="tarifs.f.linge">Linge et serviettes</li>
+        <li data-i18n="tarifs.f.wifi">Wi-Fi haut débit</li>
+      </ul>
+      <p class="tarif-note" data-i18n="tarifs.note">Frais de ménage : 40€</p>
+    </div>
+
+    <!-- Haute saison — FEATURED -->
+    <div class="tarif-card featured">
+      <div class="tarif-season" data-i18n="tarifs.c2.season">&#11088; Haute saison · Juillet — Août</div>
+      <div class="tarif-price"><sup>&euro;</sup>134</div>
+      <div class="tarif-period" data-i18n="tarifs.c2.period">par nuit · Juil — Août</div>
+      <div class="tarif-saving">&#128154; Dès 121€/nuit en direct</div>
+      <ul class="tarif-features">
+        <li data-i18n="tarifs.f.terrasse">Terrasse vue mer privée</li>
+        <li data-i18n="tarifs.f.piscine">Piscine ouverte</li>
+        <li data-i18n="tarifs.f.parking">Parking privatif inclus</li>
+        <li data-i18n="tarifs.f.linge">Linge et serviettes</li>
+      </ul>
+      <p class="tarif-note" data-i18n="tarifs.note">Frais de ménage : 40€</p>
+    </div>
+
+    <!-- Mi-saison -->
+    <div class="tarif-card">
+      <div class="tarif-season" data-i18n="tarifs.c3.season">Mi-saison · Printemps &amp; Automne</div>
+      <div class="tarif-price"><sup>&euro;</sup>104</div>
+      <div class="tarif-period" data-i18n="tarifs.c3.period">par nuit · Mai, Juin &amp; Septembre</div>
+      <div class="tarif-saving">&#128154; Dès 94€/nuit en direct</div>
+      <ul class="tarif-features">
+        <li data-i18n="tarifs.f.terrasse">Terrasse vue mer privée</li>
+        <li data-i18n="tarifs.f.piscine.mi">Piscine (mai–oct)</li>
+        <li data-i18n="tarifs.f.parking">Parking privatif inclus</li>
+        <li data-i18n="tarifs.f.linge">Linge et serviettes</li>
+      </ul>
+      <p class="tarif-note" data-i18n="tarifs.note">Frais de ménage : 40€</p>
+    </div>
+  </div>
 </section>
 
 <!-- ═══ 9. RESERVATION + NEWSLETTER ═══ -->
