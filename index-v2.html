@@ -1154,8 +1154,119 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 /* ═══════════════════════════════════
-   SECTION 7: TEMOIGNAGES (placeholder)
+   SECTION 7: AVIS
 ═══════════════════════════════════ */
+#avis {
+  background: var(--off-white);
+  padding: 7rem 1.5rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  #avis { padding: 7rem 3rem; }
+}
+#avis h2 { margin-bottom: 1rem; }
+#avis h2 em { font-style: italic; color: var(--wood); }
+
+.rating-global {
+  margin: 2rem auto 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.rating-number {
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--coral);
+}
+.rating-details { text-align: left; }
+.rating-stars {
+  color: #F4C542;
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+.rating-label {
+  font-size: 0.8rem;
+  color: var(--gray);
+  font-weight: 400;
+  line-height: 1.5;
+}
+@media (max-width: 767px) {
+  .rating-global { flex-direction: column; gap: 1rem; }
+  .rating-details { text-align: center; }
+}
+
+.avis-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .avis-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.avis-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  text-align: left;
+  border-left: 3px solid var(--stone);
+  transition: var(--transition);
+}
+.avis-card:hover {
+  border-left-color: var(--coral);
+  box-shadow: 0 8px 30px rgba(26,43,60,0.07);
+  transform: translateY(-2px);
+}
+.avis-stars {
+  color: #F4C542;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+.avis-text {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
+}
+.avis-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.avis-avatar {
+  width: 38px;
+  height: 38px;
+  background: var(--stone);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+.avis-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.avis-origin {
+  font-size: 0.72rem;
+  color: var(--gray);
+}
+.avis-platform {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-top: 0.1rem;
+}
 
 /* ═══════════════════════════════════
    SECTION 8: TARIFS (placeholder)
@@ -1462,9 +1573,59 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   </div>
 </section>
 
-<!-- ═══ 7. TEMOIGNAGES ═══ -->
+<!-- ═══ 7. AVIS ═══ -->
 <section id="avis" aria-label="Avis clients">
-  <!-- TODO: remplir section témoignages -->
+  <div class="reveal">
+    <p class="section-eyebrow" data-i18n="avis.eyebrow">Avis vérifiés</p>
+    <h2 data-i18n="avis.title">Ce qu'ils en <em>disent</em></h2>
+  </div>
+
+  <div class="rating-global reveal">
+    <div class="rating-number">4.9</div>
+    <div class="rating-details">
+      <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="rating-label">Basé sur 47 avis vérifiés<br>Airbnb · Booking · Abritel</div>
+    </div>
+  </div>
+
+  <div class="avis-grid reveal">
+    <div class="avis-card">
+      <div class="avis-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="avis-text">&laquo;&nbsp;Vue sur la mer absolument magique depuis la terrasse. On prenait le café chaque matin avec les Alpes en fond. Un vrai coup de c&oelig;ur, on revient l'été prochain.&nbsp;&raquo;</p>
+      <div class="avis-author">
+        <div class="avis-avatar">&#127467;&#127479;</div>
+        <div>
+          <div class="avis-name">Marie-Claire D.</div>
+          <div class="avis-origin">Paris · Juillet 2025</div>
+          <div class="avis-platform">Airbnb &#10003;</div>
+        </div>
+      </div>
+    </div>
+    <div class="avis-card">
+      <div class="avis-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="avis-text">&laquo;&nbsp;Emplacement parfait entre Nice et Cannes, parking privé très pratique. Studio propre, bien équipé. La piscine était un vrai bonheur après la plage.&nbsp;&raquo;</p>
+      <div class="avis-author">
+        <div class="avis-avatar">&#127465;&#127466;</div>
+        <div>
+          <div class="avis-name">Thomas K.</div>
+          <div class="avis-origin">Munich · Août 2025</div>
+          <div class="avis-platform">Booking.com &#10003;</div>
+        </div>
+      </div>
+    </div>
+    <div class="avis-card">
+      <div class="avis-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="avis-text">&laquo;&nbsp;Le studio dépasse les photos. La vue est encore plus belle en vrai. Sonia est très réactive et disponible. Check-in autonome ultra pratique. Je recommande&nbsp;!&nbsp;&raquo;</p>
+      <div class="avis-author">
+        <div class="avis-avatar">&#127463;&#127466;</div>
+        <div>
+          <div class="avis-name">Sophie L.</div>
+          <div class="avis-origin">Bruxelles · Juin 2025</div>
+          <div class="avis-platform">Abritel &#10003;</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ═══ 8. TARIFS ═══ -->
