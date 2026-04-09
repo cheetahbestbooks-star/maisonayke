@@ -479,8 +479,106 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 ═══════════════════════════════════ */
 
 /* ═══════════════════════════════════
-   SECTION 3: LE STUDIO (placeholder)
+   SECTION 3: LE STUDIO
 ═══════════════════════════════════ */
+#studio {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--white);
+  padding: 0;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  #studio { grid-template-columns: 3fr 2fr; }
+}
+.studio-images {
+  position: relative;
+  min-height: 380px;
+  background: var(--ink);
+  overflow: hidden;
+}
+.studio-img-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.8s ease;
+}
+.studio-images:hover .studio-img-main { transform: scale(1.03); }
+.studio-img-overlay {
+  position: absolute;
+  bottom: 1.5rem;
+  right: -0.5rem;
+  width: 42%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border: 3px solid var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+.studio-text {
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .studio-images { min-height: 600px; }
+  .studio-text { padding: 4.5rem 4rem; }
+  .studio-img-overlay { right: -1rem; }
+}
+.studio-text h2 {
+  margin-bottom: 1.5rem;
+}
+.studio-text h2 em {
+  font-style: italic;
+  color: var(--wood);
+}
+.studio-prose {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--gray);
+  margin-bottom: 2.5rem;
+}
+.studio-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.8rem;
+  border-left: 2px solid var(--stone);
+  transition: border-color 0.3s ease;
+}
+.feature:hover { border-left-color: var(--coral); }
+.feature-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--coral);
+}
+.feature-icon svg { width: 100%; height: 100%; }
+.feature-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.15rem;
+  letter-spacing: 0.02em;
+}
+.feature-desc {
+  font-size: 0.72rem;
+  color: var(--gray);
+  line-height: 1.5;
+}
+@media (max-width: 500px) {
+  .studio-features { grid-template-columns: 1fr; }
+  .studio-img-overlay { display: none; }
+}
 
 /* ═══════════════════════════════════
    SECTION 4: GALERIE (placeholder)
@@ -575,7 +673,60 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 <!-- ═══ 3. LE STUDIO ═══ -->
 <section id="studio" aria-label="Présentation du studio">
-  <!-- TODO: remplir section studio -->
+  <div class="studio-images">
+    <img class="studio-img-main" src="image2.jpg" alt="Salon lumineux avec vue terrasse mer — Studio Maison Ayke Villeneuve-Loubet" loading="lazy">
+    <img class="studio-img-overlay" src="image17.png" alt="Piscine partagée résidence Maison Ayke" loading="lazy">
+  </div>
+  <div class="studio-text reveal">
+    <p class="section-eyebrow" data-i18n="studio.eyebrow">Le studio</p>
+    <h2 data-i18n="studio.title">26 m² pensés pour <em>l'essentiel</em></h2>
+    <p class="studio-prose" data-i18n="studio.prose">Le matin, un café Nespresso sur la terrasse, face au bleu. Le soir, Netflix sous la clim, les volets grand ouverts sur la Méditerranée. Dernier étage d'une résidence sécurisée à Villeneuve-Loubet, ce studio offre trois atouts rarissimes à ce prix sur la Riviera : terrasse privative vue mer et Alpes, parking privatif inclus, et piscine à deux pas.</p>
+
+    <div class="studio-features">
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20M2 12v4a2 2 0 002 2h16a2 2 0 002-2v-4M6 12V8a2 2 0 012-2h0a2 2 0 012 2v4"/></svg></div>
+        <div>
+          <div class="feature-label" data-i18n="studio.f1.label">Canapé-lit double</div>
+          <div class="feature-desc" data-i18n="studio.f1.desc">Confortable pour 1 à 2 personnes</div>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
+        <div>
+          <div class="feature-label" data-i18n="studio.f2.label">Terrasse sud-est</div>
+          <div class="feature-desc" data-i18n="studio.f2.desc">Vue mer et Alpes, ~5 m² privatifs</div>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V8a4 4 0 018 0v12M12 8a4 4 0 018 0v12"/></svg></div>
+        <div>
+          <div class="feature-label" data-i18n="studio.f3.label">Piscine partagée</div>
+          <div class="feature-desc" data-i18n="studio.f3.desc">Ouverte mai à octobre</div>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <div>
+          <div class="feature-label" data-i18n="studio.f4.label">Parking privatif</div>
+          <div class="feature-desc" data-i18n="studio.f4.desc">Inclus, rare dans le secteur</div>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <div>
+          <div class="feature-label" data-i18n="studio.f5.label">Résidence sécurisée</div>
+          <div class="feature-desc" data-i18n="studio.f5.desc">Accès badge, dernier étage</div>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.78 7.78 5.5 5.5 0 017.78-7.78zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
+        <div>
+          <div class="feature-label" data-i18n="studio.f6.label">Check-in autonome</div>
+          <div class="feature-desc" data-i18n="studio.f6.desc">Boîte à clés sécurisée 24h/24</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ═══ 4. GALERIE ═══ -->
