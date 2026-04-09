@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO META -->
+<title>Maison Ayke — Relax Studio Vue Mer Villeneuve-Loubet | Terrasse, Piscine, Parking</title>
+<meta name="description" content="Studio vue mer dernier étage à Villeneuve-Loubet (Côte d'Azur). Terrasse privée, piscine, parking inclus. Entre Nice (15 min) et Cannes (30 min). Réservation directe jusqu'à 15% moins cher.">
+<meta name="keywords" content="studio vue mer Villeneuve-Loubet, location vacances côte d'azur, terrasse mer Nice Cannes, studio piscine parking Riviera, location courte durée 06270">
+<meta name="author" content="Sonia Catic — Maison Ayke">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://maisonayke.com/">
+<link rel="alternate" hreflang="fr-FR" href="https://maisonayke.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://maisonayke.com/">
+<meta property="og:title" content="Maison Ayke — Relax Studio Vue Mer · Côte d'Azur">
+<meta property="og:description" content="Studio dernier étage, terrasse privée vue mer, piscine, parking. Entre Nice et Cannes. Réservation directe jusqu'à 15% moins cher.">
+<meta property="og:image" content="https://maisonayke.com/image1.png">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Maison Ayke">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maison Ayke — Relax Studio Vue Mer Côte d'Azur">
+<meta name="twitter:description" content="Terrasse privée vue mer, piscine, parking. Villeneuve-Loubet entre Nice & Cannes.">
+<meta name="twitter:image" content="https://maisonayke.com/image1.png">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LodgingBusiness", "Apartment"],
+  "name": "Maison Ayke — Relax Studio",
+  "description": "Studio vue mer au dernier étage avec terrasse privative, piscine partagée et parking privé à Villeneuve-Loubet, entre Nice et Cannes.",
+  "url": "https://maisonayke.com",
+  "telephone": "+41787777978",
+  "email": "contact@maisonayke.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "7 Avenue du Clos",
+    "addressLocality": "Villeneuve-Loubet",
+    "postalCode": "06270",
+    "addressCountry": "FR",
+    "addressRegion": "Provence-Alpes-Côte d'Azur"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "43.6583",
+    "longitude": "7.1167"
+  },
+  "image": ["https://maisonayke.com/image1.png", "https://maisonayke.com/image2.jpg"],
+  "priceRange": "€€",
+  "numberOfRooms": 1,
+  "floorSize": {
+    "@type": "QuantitativeValue",
+    "value": 26,
+    "unitCode": "MTK"
+  },
+  "amenityFeature": [
+    {"@type": "LocationFeatureSpecification", "name": "Piscine", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Parking privé", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Vue mer", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Terrasse privée", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Climatisation", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Wi-Fi fibre", "value": true}
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "47",
+    "bestRating": "5"
+  }
+}
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════
+   CSS CUSTOM PROPERTIES
+═══════════════════════════════════ */
+:root {
+  --coral:      #E8614A;
+  --coral-dark: #C74A35;
+  --off-white:  #FAF8F5;
+  --wood:       #C4956A;
+  --blue:       #2E86AB;
+  --ink:        #1A2B3C;
+  --stone:      #E8E2D8;
+  --white:      #FFFFFF;
+  --gray:       #6B6360;
+
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  --transition:  all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow-sm:   0 2px 8px rgba(26,43,60,0.06);
+  --shadow-md:   0 8px 30px rgba(26,43,60,0.1);
+  --shadow-lg:   0 20px 60px rgba(26,43,60,0.14);
+  --radius:      6px;
+  --radius-lg:   12px;
+}
+
+/* ═══════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--off-white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+ul, ol { list-style: none; }
+
+/* ═══════════════════════════════════
+   TYPOGRAPHY
+═══════════════════════════════════ */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--ink);
+}
+h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+
+/* ═══════════════════════════════════
+   UTILITY
+═══════════════════════════════════ */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+@media (min-width: 768px) {
+  .container { padding: 0 3rem; }
+}
+
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--coral);
+  color: var(--white);
+  padding: 0.9rem 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+.btn-primary:hover {
+  background: var(--coral-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232,97,74,0.3);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--white);
+  padding: 0.9rem 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border: 1.5px solid rgba(255,255,255,0.5);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+.btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════
+   NAVIGATION (placeholder)
+═══════════════════════════════════ */
+
+/* ═══════════════════════════════════
+   SECTION 1: HERO (placeholder)
+═══════════════════════════════════ */
+
+/* ═══════════════════════════════════
+   SECTION 2: REASSURANCE (placeholder)
+═══════════════════════════════════ */
+
+/* ═══════════════════════════════════
+   SECTION 3: LE STUDIO (placeholder)
+═══════════════════════════════════ */
+
+/* ═══════════════════════════════════
+   SECTION 4: GALERIE (placeholder)
+═══════════════════════════════════ */
+
+/* ═══════════════════════════════════
+   SECTION 5: COMPARATIF (placeholder)
+═══════════════════════════════════ */
+
+/* ═══════════════════════════════════
+   SECTION 6: CALENDRIER (placeholder)
+═══════════════════════════════════ */
+
+/* ═══════════════════════════════════
+   SECTION 7: TEMOIGNAGES (placeholder)
+═══════════════════════════════════ */
+
+/* ═══════════════════════════════════
+   SECTION 8: TARIFS (placeholder)
+═══════════════════════════════════ */
+
+/* ═══════════════════════════════════
+   SECTION 9: RESERVATION (placeholder)
+═══════════════════════════════════ */
+
+/* ═══════════════════════════════════
+   SECTION 10: FOOTER (placeholder)
+═══════════════════════════════════ */
+
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav id="navbar" aria-label="Navigation principale">
+  <!-- TODO: remplir section navigation -->
+</nav>
+
+<!-- ═══ 1. HERO ═══ -->
+<section id="hero" aria-label="Accueil">
+  <!-- TODO: remplir section hero -->
+</section>
+
+<!-- ═══ 2. REASSURANCE ═══ -->
+<section id="reassurance" aria-label="Points forts">
+  <!-- TODO: remplir section réassurance -->
+</section>
+
+<!-- ═══ 3. LE STUDIO ═══ -->
+<section id="studio" aria-label="Présentation du studio">
+  <!-- TODO: remplir section studio -->
+</section>
+
+<!-- ═══ 4. GALERIE ═══ -->
+<section id="galerie" aria-label="Photos du studio">
+  <!-- TODO: remplir section galerie -->
+</section>
+
+<!-- ═══ 5. POURQUOI RESERVER EN DIRECT ═══ -->
+<section id="comparatif" aria-label="Avantages réservation directe">
+  <!-- TODO: remplir section comparatif -->
+</section>
+
+<!-- ═══ 6. CALENDRIER ═══ -->
+<section id="disponibilites" aria-label="Calendrier de disponibilités">
+  <!-- TODO: remplir section calendrier -->
+</section>
+
+<!-- ═══ 7. TEMOIGNAGES ═══ -->
+<section id="avis" aria-label="Avis clients">
+  <!-- TODO: remplir section témoignages -->
+</section>
+
+<!-- ═══ 8. TARIFS ═══ -->
+<section id="tarifs" aria-label="Tarifs et saisons">
+  <!-- TODO: remplir section tarifs -->
+</section>
+
+<!-- ═══ 9. RESERVATION + NEWSLETTER ═══ -->
+<section id="reservation" aria-label="Formulaire de réservation">
+  <!-- TODO: remplir section réservation -->
+</section>
+
+<!-- ═══ 10. FOOTER ═══ -->
+<footer id="footer">
+  <!-- TODO: remplir footer -->
+</footer>
+
+<!-- ═══ LIGHTBOX (galerie) ═══ -->
+<div id="lightbox" role="dialog" aria-label="Visionneuse photo" aria-hidden="true">
+  <!-- TODO: remplir lightbox -->
+</div>
+
+<script>
+/* ═══════════════════════════════════
+   JAVASCRIPT — V2 Maison Ayke
+═══════════════════════════════════ */
+
+// TODO v2 : remplacer par sync automatique iCal Airbnb + Booking
+// Format : "YYYY-MM-DD"
+const datesReservees = [
+  "2026-04-15", "2026-04-16", "2026-04-17",
+  "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05",
+  // Ayke éditera cette liste manuellement jusqu'à la v2
+];
+
+/* ══ Scroll reveal (IntersectionObserver) ══ */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ══ Navigation scroll ══ */
+/* TODO: remplir quand nav est construite */
+
+/* ══ Calendrier ══ */
+/* TODO: remplir quand section calendrier est construite */
+
+/* ══ Lightbox galerie ══ */
+/* TODO: remplir quand section galerie est construite */
+
+/* ══ Formulaires ══ */
+/* TODO: remplir quand section réservation est construite */
+</script>
+</body>
+</html>
