@@ -216,12 +216,263 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 /* ═══════════════════════════════════
-   NAVIGATION (placeholder)
+   NAVIGATION
 ═══════════════════════════════════ */
+#navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 2rem;
+  transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+}
+#navbar.scrolled {
+  background: rgba(250,248,245,0.97);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 0.8rem 2rem;
+  box-shadow: var(--shadow-sm);
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.nav-logo {
+  height: 38px;
+  width: 38px;
+  object-fit: contain;
+  transition: opacity 0.4s ease;
+  position: absolute;
+}
+.nav-logo-light { opacity: 1; }
+.nav-logo-dark  { opacity: 0; }
+#navbar.scrolled .nav-logo-light { opacity: 0; }
+#navbar.scrolled .nav-logo-dark  { opacity: 1; }
+.nav-brand-text {
+  margin-left: 46px;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--white);
+  transition: color 0.4s ease;
+}
+#navbar.scrolled .nav-brand-text { color: var(--ink); }
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.85);
+  transition: color 0.3s ease;
+}
+#navbar.scrolled .nav-links a { color: var(--gray); }
+.nav-links a:hover { color: var(--coral); }
+.nav-links .nav-cta {
+  background: var(--coral);
+  color: var(--white);
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+}
+.nav-links .nav-cta:hover {
+  background: var(--coral-dark);
+  color: var(--white);
+}
+#navbar.scrolled .nav-links .nav-cta { color: var(--white); }
+
+/* Burger mobile */
+.nav-burger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  transition: background 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  z-index: 101;
+}
+#navbar.scrolled .nav-burger {
+  background: rgba(26,43,60,0.05);
+  border-color: var(--stone);
+}
+.burger-bar {
+  position: absolute;
+  left: 50%;
+  width: 18px;
+  height: 1.5px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.25s ease, background 0.3s ease;
+}
+#navbar.scrolled .burger-bar { background: var(--ink); }
+.burger-bar:nth-child(1) { transform: translateX(-50%) translateY(-5px); }
+.burger-bar:nth-child(2) { transform: translateX(-50%); }
+.burger-bar:nth-child(3) { transform: translateX(-50%) translateY(5px); }
+.nav-burger.open .burger-bar { background: var(--white); }
+.nav-burger.open .burger-bar:nth-child(1) { transform: translateX(-50%) rotate(45deg); }
+.nav-burger.open .burger-bar:nth-child(2) { opacity: 0; }
+.nav-burger.open .burger-bar:nth-child(3) { transform: translateX(-50%) rotate(-45deg); }
+
+/* Mobile overlay */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26,43,60,0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 99;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.nav-overlay.open {
+  display: flex;
+  animation: fadeIn 0.3s ease both;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.nav-overlay a {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  padding: 0.8rem 0;
+  transition: color 0.2s ease;
+}
+.nav-overlay a:hover { color: var(--white); }
+.nav-overlay .nav-cta-mobile {
+  margin-top: 1.5rem;
+  background: var(--coral);
+  color: var(--white);
+  padding: 0.8rem 2rem;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
 
 /* ═══════════════════════════════════
-   SECTION 1: HERO (placeholder)
+   SECTION 1: HERO
 ═══════════════════════════════════ */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 8vh;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('image1.png');
+  background-size: cover;
+  background-position: center 30%;
+  animation: heroScale 12s ease-out forwards;
+}
+@keyframes heroScale {
+  from { transform: scale(1.06); }
+  to   { transform: scale(1); }
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26,43,60,0.2) 0%,
+    rgba(26,43,60,0.05) 40%,
+    rgba(26,43,60,0.75) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 2rem;
+  max-width: 780px;
+  animation: fadeUp 1s ease-out 0.3s both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(250,248,245,0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--white);
+}
+.hero-badge svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--coral);
+  flex-shrink: 0;
+}
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 6.5vw, 5rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 1.2rem;
+}
+.hero-subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  letter-spacing: 0.02em;
+}
+.hero-subtitle span {
+  display: inline-block;
+  margin: 0 0.4rem;
+  color: rgba(255,255,255,0.4);
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  #navbar { padding: 1rem 1.2rem; }
+  #navbar.scrolled { padding: 0.7rem 1.2rem; }
+  .nav-links { display: none; }
+  .nav-burger { display: flex; }
+  .hero-content { padding: 0 1.2rem; }
+  .hero-title { font-size: clamp(2.2rem, 9vw, 3.2rem); }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-outline { width: 100%; justify-content: center; }
+}
+@media (min-width: 768px) {
+  #navbar { padding: 1.4rem 3rem; }
+  #navbar.scrolled { padding: 0.8rem 3rem; }
+  .hero-content { padding: 0 3rem; }
+}
 
 /* ═══════════════════════════════════
    SECTION 2: REASSURANCE (placeholder)
@@ -265,12 +516,56 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 <!-- ═══ NAVIGATION ═══ -->
 <nav id="navbar" aria-label="Navigation principale">
-  <!-- TODO: remplir section navigation -->
+  <a href="#" class="nav-brand">
+    <img src="logo_clair.png" alt="Maison Ayke" class="nav-logo nav-logo-light">
+    <img src="logo_terracota.png" alt="Maison Ayke" class="nav-logo nav-logo-dark">
+    <span class="nav-brand-text">Maison Ayke</span>
+  </a>
+  <div class="nav-links">
+    <a href="#studio" data-i18n="nav.studio">Le studio</a>
+    <a href="#galerie" data-i18n="nav.galerie">Galerie</a>
+    <a href="#tarifs" data-i18n="nav.tarifs">Tarifs</a>
+    <a href="#avis" data-i18n="nav.avis">Avis</a>
+    <a href="#reservation" class="nav-cta" data-i18n="nav.reserver">Réserver</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+    <span class="burger-bar"></span>
+    <span class="burger-bar"></span>
+    <span class="burger-bar"></span>
+  </button>
 </nav>
+
+<!-- Mobile overlay -->
+<div class="nav-overlay" id="navOverlay">
+  <a href="#studio" data-i18n="nav.studio">Le studio</a>
+  <a href="#galerie" data-i18n="nav.galerie">Galerie</a>
+  <a href="#tarifs" data-i18n="nav.tarifs">Tarifs</a>
+  <a href="#avis" data-i18n="nav.avis">Avis</a>
+  <a href="#reservation" class="nav-cta-mobile" data-i18n="nav.reserver">Réserver</a>
+</div>
 
 <!-- ═══ 1. HERO ═══ -->
 <section id="hero" aria-label="Accueil">
-  <!-- TODO: remplir section hero -->
+  <div class="hero-bg" role="img" aria-label="Vue mer depuis la terrasse du studio Maison Ayke"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+      <span data-i18n="hero.badge">Réservation directe — jusqu'à 15% moins cher qu'Airbnb</span>
+    </div>
+
+    <h1 class="hero-title" data-i18n="hero.title">Relax Studio —<br>Villeneuve-Loubet</h1>
+
+    <p class="hero-subtitle" data-i18n="hero.subtitle">
+      Terrasse vue mer <span>&bull;</span> Piscine <span>&bull;</span> À 5 min de la plage
+    </p>
+
+    <div class="hero-actions">
+      <a href="#disponibilites" class="btn-primary" data-i18n="hero.cta1">Vérifier les disponibilités</a>
+      <a href="https://wa.me/41787777978?text=Bonjour%2C%20je%20souhaite%20des%20infos%20sur%20le%20studio%20Maison%20Ayke." class="btn-outline" target="_blank" rel="noopener" data-i18n="hero.cta2">WhatsApp direct</a>
+    </div>
+  </div>
 </section>
 
 <!-- ═══ 2. REASSURANCE ═══ -->
@@ -348,7 +643,36 @@ const revealObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 /* ══ Navigation scroll ══ */
-/* TODO: remplir quand nav est construite */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+/* ══ Mobile nav ══ */
+const burger = document.getElementById('navBurger');
+const overlay = document.getElementById('navOverlay');
+burger.addEventListener('click', () => {
+  const open = overlay.classList.toggle('open');
+  burger.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+overlay.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    overlay.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  });
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && overlay.classList.contains('open')) {
+    overlay.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+});
 
 /* ══ Calendrier ══ */
 /* TODO: remplir quand section calendrier est construite */
