@@ -1231,6 +1231,37 @@ footer {
 .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
 
 /* ═══════════════════════════════════
+   ESTIMATION TARIF DYNAMIQUE
+═══════════════════════════════════ */
+.tarif-estimate {
+  display: none;
+  background: var(--cream);
+  border-left: 3px solid var(--coral);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  margin-top: 0.5rem;
+}
+.tarif-estimate-label {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--gray);
+  margin-bottom: 0.3rem;
+}
+.tarif-estimate-price {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--coral);
+}
+.tarif-estimate-note {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: var(--gray);
+  font-style: italic;
+  margin-top: 0.3rem;
+}
+
+/* ═══════════════════════════════════
    COMPARATIF "POURQUOI DIRECT"
 ═══════════════════════════════════ */
 #comparatif {
@@ -2249,6 +2280,11 @@ Commenter cette ligne pour désactiver. -->
           <input type="date" id="depart" name="depart" required>
         </div>
       </div>
+      <div class="tarif-estimate" id="tarifEstimate">
+        <div class="tarif-estimate-label" id="tarifEstimateNuits"></div>
+        <div class="tarif-estimate-price" id="tarifEstimatePrice"></div>
+        <div class="tarif-estimate-note">(tarif indicatif, devis final par retour)</div>
+      </div>
       <div class="form-group">
         <label for="voyageurs">Nombre de voyageurs</label>
         <select id="voyageurs" name="voyageurs">
@@ -2267,6 +2303,17 @@ Commenter cette ligne pour désactiver. -->
           <option value="instagram">Instagram</option>
           <option value="bouche">Bouche à oreille</option>
           <option value="autre">Autre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="langue">Langue préférée pour la réponse</label>
+        <select id="langue" name="langue">
+          <option value="francais" selected>Français</option>
+          <option value="english">English</option>
+          <option value="deutsch">Deutsch</option>
+          <option value="espanol">Español</option>
+          <option value="italiano">Italiano</option>
+          <option value="hrvatski">Hrvatski</option>
         </select>
       </div>
       <div class="form-group">
@@ -2433,7 +2480,36 @@ document.getElementById('arrivee').min = today;
 document.getElementById('depart').min = today;
 document.getElementById('arrivee').addEventListener('change', function() {
   document.getElementById('depart').min = this.value;
+  updateTarifEstimate();
 });
+document.getElementById('depart').addEventListener('change', updateTarifEstimate);
+
+function updateTarifEstimate() {
+  const arrivee = document.getElementById('arrivee').value;
+  const depart = document.getElementById('depart').value;
+  const box = document.getElementById('tarifEstimate');
+  if (!arrivee || !depart) { box.style.display = 'none'; return; }
+  const d1 = new Date(arrivee);
+  const d2 = new Date(depart);
+  const nuits = Math.round((d2 - d1) / (1000 * 60 * 60 * 24));
+  if (nuits <= 0) { box.style.display = 'none'; return; }
+
+  /* Tarif par nuit selon le mois d'arrivée (tarif direct −10%) */
+  var total = 0;
+  var current = new Date(d1);
+  for (var i = 0; i < nuits; i++) {
+    var m = current.getMonth();
+    if (m === 6 || m === 7) { total += 121; }
+    else if (m === 4 || m === 5 || m === 8) { total += 94; }
+    else { total += 76; }
+    current.setDate(current.getDate() + 1);
+  }
+  total += 40; /* frais de ménage */
+
+  document.getElementById('tarifEstimateNuits').textContent = nuits + ' nuit' + (nuits > 1 ? 's' : '');
+  document.getElementById('tarifEstimatePrice').textContent = 'À partir de ' + total + ' €';
+  box.style.display = 'block';
+}
 
 /* ══ FAQ accordion ══ */
 function toggleFaq(btn) {
