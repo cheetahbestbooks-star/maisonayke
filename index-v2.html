@@ -1409,8 +1409,106 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 /* ═══════════════════════════════════
-   SECTION 9: RESERVATION (placeholder)
+   SECTION 9: RESERVATION
 ═══════════════════════════════════ */
+#reservation {
+  background: var(--coral);
+  color: var(--white);
+  text-align: center;
+  padding: 7rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  #reservation { padding: 7rem 3rem; }
+}
+#reservation::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 60%;
+  height: 200%;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+#reservation .section-eyebrow { color: var(--wood-light); }
+#reservation h2 { color: var(--white); }
+#reservation h2 em { font-style: italic; color: var(--wood-light); }
+.reservation-subtitle {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.75);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.reservation-options {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 2;
+}
+.resa-card {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.22);
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius);
+  width: 230px;
+  text-align: center;
+  transition: var(--transition);
+  text-decoration: none;
+  color: var(--white);
+  display: block;
+}
+.resa-card:hover {
+  background: rgba(255,255,255,0.22);
+  transform: translateY(-4px);
+}
+.resa-card.direct {
+  border-color: var(--wood-light);
+  background: rgba(212,175,55,0.15);
+}
+.resa-card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+.resa-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+.resa-card-desc {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.resa-card-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius);
+  background: var(--wood);
+  color: var(--white);
+}
+.resa-card.direct .resa-card-badge {
+  background: #D4AF37;
+  color: #1A1614;
+}
+@media (max-width: 767px) {
+  .reservation-options { gap: 1rem; }
+  .resa-card { width: 100%; max-width: 340px; }
+}
 
 /* ═══════════════════════════════════
    SECTION 10: FOOTER (placeholder)
@@ -1823,7 +1921,63 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 <!-- ═══ 9. RESERVATION + NEWSLETTER ═══ -->
 <section id="reservation" aria-label="Formulaire de réservation">
-  <!-- TODO: remplir section réservation -->
+  <div class="container">
+    <span class="section-eyebrow" data-i18n="reservation.eyebrow">Réservation</span>
+    <h2 data-i18n="reservation.title">Réservez <em>votre séjour</em></h2>
+    <p class="reservation-subtitle" data-i18n="reservation.subtitle">Contactez-nous directement pour bénéficier du meilleur tarif garanti, ou réservez via votre plateforme préférée.</p>
+
+    <div class="reservation-options">
+      <!-- Card 1: WhatsApp (Direct) -->
+      <a href="https://wa.me/41787777978?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20le%20studio%20Maison%20Ayke" class="resa-card direct" target="_blank" rel="noopener" aria-label="Réserver par WhatsApp">
+        <span class="resa-card-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </span>
+        <span class="resa-card-title" data-i18n="reservation.whatsapp.title">WhatsApp</span>
+        <p class="resa-card-desc" data-i18n="reservation.whatsapp.desc">Réponse rapide, échangez directement avec nous pour organiser votre séjour.</p>
+        <span class="resa-card-badge" data-i18n="reservation.whatsapp.badge">🏅 Meilleur prix −10 %</span>
+      </a>
+
+      <!-- Card 2: Email (Direct) -->
+      <a href="mailto:maisonayke@gmail.com?subject=Demande%20de%20r%C3%A9servation%20%E2%80%93%20Maison%20Ayke" class="resa-card direct" aria-label="Réserver par email">
+        <span class="resa-card-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </span>
+        <span class="resa-card-title" data-i18n="reservation.email.title">Email</span>
+        <p class="resa-card-desc" data-i18n="reservation.email.desc">Envoyez-nous vos dates et nous vous répondons sous 24 h avec un devis personnalisé.</p>
+        <span class="resa-card-badge" data-i18n="reservation.email.badge">🏅 Direct −10 %</span>
+      </a>
+
+      <!-- Card 3: Airbnb (Partner) -->
+      <a href="https://www.airbnb.fr/rooms/1432073857498842058" class="resa-card" target="_blank" rel="noopener" aria-label="Réserver sur Airbnb">
+        <span class="resa-card-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 6 4 10.5 4 14a8 8 0 0 0 16 0c0-3.5-4-8-8-12z"/></svg>
+        </span>
+        <span class="resa-card-title" data-i18n="reservation.airbnb.title">Airbnb</span>
+        <p class="resa-card-desc" data-i18n="reservation.airbnb.desc">Réservez via la plateforme Airbnb avec paiement sécurisé et avis vérifiés.</p>
+        <span class="resa-card-badge" data-i18n="reservation.airbnb.badge">Disponible</span>
+      </a>
+
+      <!-- Card 4: Booking.com (Partner) -->
+      <a href="https://www.booking.com" class="resa-card" target="_blank" rel="noopener" aria-label="Réserver sur Booking.com">
+        <span class="resa-card-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 7h8M8 12h8M8 17h4"/></svg>
+        </span>
+        <span class="resa-card-title" data-i18n="reservation.booking.title">Booking.com</span>
+        <p class="resa-card-desc" data-i18n="reservation.booking.desc">Retrouvez notre studio sur Booking.com, annulation flexible selon les conditions.</p>
+        <span class="resa-card-badge" data-i18n="reservation.booking.badge">Disponible</span>
+      </a>
+
+      <!-- Card 5: Abritel/Vrbo (Partner) -->
+      <a href="https://www.abritel.fr" class="resa-card" target="_blank" rel="noopener" aria-label="Réserver sur Abritel">
+        <span class="resa-card-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </span>
+        <span class="resa-card-title" data-i18n="reservation.abritel.title">Abritel / Vrbo</span>
+        <p class="resa-card-desc" data-i18n="reservation.abritel.desc">Réservez sur Abritel (Vrbo), idéal pour les séjours en famille ou entre amis.</p>
+        <span class="resa-card-badge" data-i18n="reservation.abritel.badge">Disponible</span>
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- ═══ 10. FOOTER ═══ -->
