@@ -981,8 +981,177 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 /* ═══════════════════════════════════
-   SECTION 6: CALENDRIER (placeholder)
+   SECTION 6: CALENDRIER
 ═══════════════════════════════════ */
+#disponibilites {
+  background: var(--white);
+  padding: 7rem 1.5rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  #disponibilites { padding: 7rem 3rem; }
+}
+#disponibilites h2 { margin-bottom: 1rem; }
+#disponibilites h2 em { font-style: italic; color: var(--wood); }
+.dispo-subtitle {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Nav mois */
+.cal-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 2.5rem auto 0;
+}
+.cal-nav-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--off-white);
+  border: 1px solid var(--stone);
+  font-size: 1.1rem;
+  color: var(--ink);
+  transition: var(--transition);
+}
+.cal-nav-btn:hover {
+  background: var(--coral);
+  color: var(--white);
+  border-color: var(--coral);
+}
+.cal-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.cal-nav-btn:disabled:hover {
+  background: var(--off-white);
+  color: var(--ink);
+  border-color: var(--stone);
+}
+.cal-nav-label {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--gray);
+}
+
+/* Grille mois */
+.cal-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
+@media (min-width: 768px) {
+  .cal-wrap { grid-template-columns: 1fr 1fr; gap: 3rem; }
+}
+.cal-month {
+  background: var(--off-white);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+.cal-month-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.cal-weekday {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+  padding: 0.4rem 0;
+  text-align: center;
+}
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  border-radius: var(--radius);
+  transition: background 0.2s ease, color 0.2s ease;
+  cursor: default;
+  border: 2px solid transparent;
+}
+.cal-day.empty { visibility: hidden; }
+.cal-day.past { color: var(--stone); }
+.cal-day.today { border-color: var(--coral); }
+.cal-day.reserved {
+  background: var(--stone);
+  color: var(--gray);
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+.cal-day.free {
+  background: var(--white);
+  border-color: var(--stone);
+  color: var(--ink);
+  cursor: pointer;
+}
+.cal-day.free:hover {
+  background: var(--coral);
+  color: var(--white);
+  border-color: var(--coral);
+}
+.cal-day.selected {
+  background: var(--coral);
+  color: var(--white);
+  border-color: var(--coral);
+}
+
+/* Légende */
+.cal-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.cal-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--gray);
+}
+.cal-legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+.cal-legend-swatch.swatch-free {
+  background: var(--coral);
+}
+.cal-legend-swatch.swatch-reserved {
+  background: var(--stone);
+}
+.cal-legend-swatch.swatch-today {
+  background: var(--white);
+  border: 2px solid var(--coral);
+}
 
 /* ═══════════════════════════════════
    SECTION 7: TEMOIGNAGES (placeholder)
@@ -1275,7 +1444,22 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 <!-- ═══ 6. CALENDRIER ═══ -->
 <section id="disponibilites" aria-label="Calendrier de disponibilités">
-  <!-- TODO: remplir section calendrier -->
+  <div class="reveal">
+    <p class="section-eyebrow" data-i18n="dispo.eyebrow">Disponibilités</p>
+    <h2 data-i18n="dispo.title">Quand venir <em>nous voir</em></h2>
+    <p class="dispo-subtitle" data-i18n="dispo.subtitle">Les dates en gris foncé sont déjà réservées. Cliquez sur une date libre pour démarrer votre demande de réservation.</p>
+  </div>
+  <div class="cal-nav reveal">
+    <button class="cal-nav-btn" id="calPrev" aria-label="Mois précédent">&#8249;</button>
+    <span class="cal-nav-label" id="calLabel"></span>
+    <button class="cal-nav-btn" id="calNext" aria-label="Mois suivant">&#8250;</button>
+  </div>
+  <div class="cal-wrap reveal" id="calWrap"></div>
+  <div class="cal-legend reveal">
+    <div class="cal-legend-item"><div class="cal-legend-swatch swatch-free"></div> Disponible</div>
+    <div class="cal-legend-item"><div class="cal-legend-swatch swatch-reserved"></div> Réservé</div>
+    <div class="cal-legend-item"><div class="cal-legend-swatch swatch-today"></div> Aujourd'hui</div>
+  </div>
 </section>
 
 <!-- ═══ 7. TEMOIGNAGES ═══ -->
@@ -1316,6 +1500,9 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 const datesReservees = [
   "2026-04-15", "2026-04-16", "2026-04-17",
   "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05",
+  "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14",
+  "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05",
+  "2026-08-06", "2026-08-07"
   // Ayke éditera cette liste manuellement jusqu'à la v2
 ];
 
@@ -1363,7 +1550,108 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* ══ Calendrier ══ */
-/* TODO: remplir quand section calendrier est construite */
+(function() {
+  var wrap = document.getElementById('calWrap');
+  var label = document.getElementById('calLabel');
+  var prevBtn = document.getElementById('calPrev');
+  var nextBtn = document.getElementById('calNext');
+  if (!wrap) return;
+
+  var reservedSet = new Set(datesReservees);
+  var now = new Date();
+  var todayStr = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate());
+  var todayDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var minMonth = new Date(todayDate.getFullYear(), todayDate.getMonth(), 1);
+  var baseMonth = new Date(minMonth);
+
+  var moisNoms = ['Janvier','Février','Mars','Avril','Mai','Juin',
+    'Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+  var jours = ['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  function ds(y, m, d) { return y + '-' + pad(m + 1) + '-' + pad(d); }
+
+  function renderMonth(year, month) {
+    var first = new Date(year, month, 1);
+    var daysIn = new Date(year, month + 1, 0).getDate();
+    var start = first.getDay() - 1;
+    if (start < 0) start = 6;
+
+    var h = '<div class="cal-month"><div class="cal-month-title">' +
+      moisNoms[month] + ' ' + year + '</div><div class="cal-grid">';
+    for (var j = 0; j < jours.length; j++) {
+      h += '<div class="cal-weekday">' + jours[j] + '</div>';
+    }
+    for (var e = 0; e < start; e++) {
+      h += '<div class="cal-day empty"></div>';
+    }
+    for (var d = 1; d <= daysIn; d++) {
+      var s = ds(year, month, d);
+      var dt = new Date(year, month, d);
+      var cls = 'cal-day';
+      if (s === todayStr) cls += ' today';
+      if (dt < todayDate) {
+        cls += ' past';
+      } else if (reservedSet.has(s)) {
+        cls += ' reserved';
+      } else {
+        cls += ' free';
+      }
+      h += '<div class="' + cls + '" data-date="' + s + '">' + d + '</div>';
+    }
+    h += '</div></div>';
+    return h;
+  }
+
+  function render() {
+    var m1 = baseMonth;
+    var m2 = new Date(m1.getFullYear(), m1.getMonth() + 1, 1);
+    wrap.innerHTML = renderMonth(m1.getFullYear(), m1.getMonth()) +
+                     renderMonth(m2.getFullYear(), m2.getMonth());
+    label.textContent = moisNoms[m1.getMonth()] + ' ' + m1.getFullYear() +
+      ' — ' + moisNoms[m2.getMonth()] + ' ' + m2.getFullYear();
+    prevBtn.disabled = (baseMonth.getTime() <= minMonth.getTime());
+
+    wrap.querySelectorAll('.cal-day.free').forEach(function(el) {
+      el.addEventListener('click', function() {
+        var date = this.getAttribute('data-date');
+        /* Highlight */
+        wrap.querySelectorAll('.cal-day.selected').forEach(function(s) {
+          s.classList.remove('selected');
+        });
+        this.classList.add('selected');
+        /* Pre-fill form */
+        var arrInput = document.getElementById('arrivee');
+        var depInput = document.getElementById('depart');
+        if (arrInput) {
+          arrInput.value = date;
+          if (depInput) depInput.min = date;
+        }
+        /* Scroll to reservation */
+        var target = document.getElementById('reservation');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(function() {
+            if (depInput) depInput.focus();
+          }, 600);
+        }
+      });
+    });
+  }
+
+  prevBtn.addEventListener('click', function() {
+    if (baseMonth > minMonth) {
+      baseMonth = new Date(baseMonth.getFullYear(), baseMonth.getMonth() - 1, 1);
+      render();
+    }
+  });
+  nextBtn.addEventListener('click', function() {
+    baseMonth = new Date(baseMonth.getFullYear(), baseMonth.getMonth() + 1, 1);
+    render();
+  });
+
+  render();
+})();
 
 /* ══ Comparatif stagger rows ══ */
 var compGrid = document.getElementById('comparatifGrid');
