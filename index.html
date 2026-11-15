@@ -38,7 +38,7 @@
   --ease:cubic-bezier(.16,.84,.24,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:84px}
 body{font-family:var(--text);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink);background:var(--sand);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img,video{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
@@ -72,6 +72,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;op
 .nav ul a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .4s var(--ease);padding-bottom:2px}
 .nav ul a:hover{background-size:100% 1.5px}
 .nav .btn{padding:.75em 1.4em;font-size:.92rem}
+.nav ul .mcta{display:none}
 .nav.solid{background:rgba(31,58,77,.9);backdrop-filter:blur(14px);padding:12px 0}
 .lang{display:flex;gap:8px;align-items:center}
 .lang a{display:block;width:28px;height:19px;border-radius:4px;overflow:hidden;opacity:.55;outline:1.5px solid transparent;outline-offset:2px;transition:opacity .3s,outline-color .3s}
@@ -244,7 +245,8 @@ input:focus,select:focus,textarea:focus{border-color:var(--sea)}
 .total{margin-top:20px;background:var(--sea);color:var(--sand);border-radius:14px;padding:16px 18px;display:grid;gap:4px}
 .total .r{display:flex;justify-content:space-between;font-size:.95rem}
 .total .r.d{color:#F0A98E}
-.total .r.t{font-family:var(--display);font-size:1.6rem;margin-top:4px}
+.total .r.t{font-family:var(--display);font-size:1.6rem;margin-top:4px;gap:12px;align-items:baseline}
+.total .r span:last-child{white-space:nowrap}
 .total small{color:rgba(251,245,236,.7);font-size:.8rem}
 form.book .btn{width:100%;justify-content:center;margin-top:18px}
 .alt{display:flex;gap:20px;justify-content:center;margin-top:14px;font-size:.92rem}
@@ -309,6 +311,70 @@ footer .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
   .track{overflow-x:auto;scroll-snap-type:x mandatory;padding-right:28px}
   .track figure{scroll-snap-align:center;height:56vh}
 }
+
+/* ===== Mobile polish ===== */
+@media (max-width:1000px){
+  .nav.open{padding:12px 0}
+  .nav.open ul{position:fixed;top:68px;bottom:0;left:0;right:0;justify-content:flex-start;gap:0;padding:18px 28px 28px;overflow-y:auto;font-family:var(--display);font-size:1.75rem}
+  .nav.open ul a:not(.btn){display:block;padding:7px 0;background:none}
+  body.lock .wa{display:none}
+  .nav.open ul li:not(.mcta){border-bottom:1px solid rgba(250,246,240,.12)}
+  .nav.open ul .mcta{display:block;margin-top:auto;padding-top:20px}
+  .nav ul .mcta .btn{background:var(--coral);color:#fff;display:flex;justify-content:center;font-family:var(--text,inherit);font-size:1rem;padding:1em 1.4em}
+  body.lock{overflow:hidden}
+  .lang a{position:relative}
+  .lang a::after{content:"";position:absolute;inset:-12px -5px}
+  .acc article,.acc article.on{height:auto;min-height:0;flex:none;cursor:default}
+  .acc article{aspect-ratio:4/5}
+  .acc article img{transform:none!important}
+  .acc p{opacity:1;transform:none}
+  .acc h3{white-space:normal}
+  .acc button{display:none}
+  .film{height:72vh;min-height:420px}
+  .amen li{padding:16px 0}
+  footer ul a,.alt a{display:inline-block;padding:8px 0}
+  footer ul{gap:2px}
+}
+@media (max-width:560px){
+  section{padding:84px 0}
+  h2{font-size:clamp(2.3rem,10.5vw,3rem)}
+  .hero-grid{padding:118px 0 60px;gap:46px}
+  .hero h1{font-size:clamp(3.4rem,17vw,4.6rem)}
+  .hero .lead{font-size:1.05rem;margin:22px 0 26px}
+  .hero-cta .btn{flex:1 1 100%;justify-content:center}
+  .win-wrap{width:100%}
+  .window{aspect-ratio:4/5}
+  .sticker{width:112px;height:112px;right:-6px;bottom:-26px}
+  .sticker img{width:58px!important}
+  .intro p.big{font-size:1.32rem}
+  .facts{gap:22px 30px}
+  .acc{gap:16px}
+  .acc .tx{left:20px;right:20px;bottom:20px}
+  .gal .count{display:none}
+  .gal .top{margin-bottom:28px}
+  .track{gap:14px}
+  .track figure,.track figure.w,.track figure.t,.track figure.s{height:auto;width:84vw}
+  .track figure.w{aspect-ratio:4/3}.track figure.t{aspect-ratio:3/4;width:64vw}.track figure.s{aspect-ratio:1;width:76vw}
+  .times{font-size:1rem}.times li b{font-size:1.45rem}
+  .avis blockquote p{font-size:1.7rem;line-height:1.18}
+  .avis .ctl{margin-top:30px}
+  .price{flex-wrap:wrap;gap:4px 14px;margin-top:24px}
+  .price b{font-size:4.6rem}
+  .price span{padding-bottom:0;flex:1 1 100%}
+  .deal{border-radius:22px;padding:14px 16px 14px 14px;font-size:.95rem;align-items:center}
+  .deal i{width:56px;height:56px;font-size:1.25rem}
+  form.book h3{font-size:1.9rem}
+  .total small{font-size:.875rem}
+  .total .r.t{font-size:1.35rem}
+  summary{font-size:1.25rem;padding:22px 0}
+  .gcard .im{aspect-ratio:4/3;border-radius:120px 120px 14px 14px}
+  .gcards{gap:40px}
+  footer{padding:80px 0 100px}
+  footer .flogo{width:84px}
+  .wa{width:52px;height:52px;right:16px;bottom:16px}
+  .wa svg{width:26px;height:26px}
+  .phone{width:min(300px,80vw)}
+}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -329,6 +395,7 @@ footer .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
       <li><a href="#avis">Avis</a></li>
       <li><a href="#ete-2027">Tarifs</a></li>
       <li><a href="#faq">Questions</a></li>
+      <li class="mcta"><a href="#ete-2027" class="btn btn-sun mag">Réserver l'été 2027</a></li>
     </ul>
     <a href="#ete-2027" class="btn btn-sun mag">Réserver l'été 2027</a>
     <div class="lang" aria-label="Langue du site">
@@ -511,7 +578,7 @@ footer .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
       <div class="kicker">Saison été 2027 · du 1er juillet au 31 août</div>
       <h2>Votre été sur la Riviera.</h2>
       <div class="price"><b>130 €</b><span>la nuit, en réservation directe</span></div>
-      <div class="deal"><i>−10%</i><span>dès 7 nuits réservées en direct.<br>Une semaine au bord de la mer, pour moins cher.</span></div>
+      <div class="deal"><i>-10%</i><span>dès 7&nbsp;nuits réservées en direct.<br>Une semaine au bord de la mer, pour moins cher.</span></div>
       <ul class="perks">
         <li>Sans commission de plateforme</li>
         <li>Parking privé inclus</li>
@@ -540,7 +607,7 @@ footer .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
     <div><div class="kicker">Questions</div><h2>Bon à savoir.</h2></div>
     <div>
       <details><summary>Quand peut-on réserver ?<i></i></summary><p>Le studio est disponible du 1er juillet au 31 août 2027. Envoyez vos dates par WhatsApp, par email ou avec le formulaire : nous confirmons la disponibilité et votre tarif.</p></details>
-      <details><summary>Comment profiter des −10 % ?<i></i></summary><p>Réservez 7 nuits ou plus en direct, sans passer par une plateforme : la réduction de 10 % s'applique sur le prix des nuits.</p></details>
+      <details><summary>Comment profiter des -10&nbsp;% ?<i></i></summary><p>Réservez 7 nuits ou plus en direct, sans passer par une plateforme : la réduction de 10 % s'applique sur le prix des nuits.</p></details>
       <details><summary>Le parking est-il inclus ?<i></i></summary><p>Oui, une place de parking privée est incluse. Un vrai confort en été sur la Côte d'Azur.</p></details>
       <details><summary>Comment se passe l'arrivée ?<i></i></summary><p>L'arrivée est autonome : vous recevez les instructions et les codes avant votre séjour, et vous arrivez à l'heure qui vous convient.</p></details>
       <details><summary>La piscine est-elle ouverte ?<i></i></summary><p>La piscine de la résidence est ouverte de mai à octobre, donc pendant tout votre séjour d'été.</p></details>
@@ -584,8 +651,8 @@ const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAl
 // Nav
 const nav = $('#nav'), burger = $('.burger');
 addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 60), {passive:true});
-burger.addEventListener('click', () => { const o = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', o); });
-$$('#menu a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); burger.setAttribute('aria-expanded', false); }));
+burger.addEventListener('click', () => { const o = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', o); document.body.classList.toggle('lock', o); });
+$$('#menu a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); burger.setAttribute('aria-expanded', false); document.body.classList.remove('lock'); }));
 
 // Accordéon des raisons
 $$('#acc article').forEach(art => {
@@ -675,7 +742,7 @@ if (window.gsap && !reduce) {
   // Titre du film qui s'élargit
   gsap.fromTo('#filmTitle', {scale:.7, opacity:.2}, {scale:1, opacity:1, ease:'none', scrollTrigger:{trigger:'.film', start:'top bottom', end:'center center', scrub:true}});
   // Grands titres : lettres qui montent une seule fois
-  $$('section h2').forEach(h => { if (h.id==='filmTitle') return; gsap.from(h, {yPercent:30, opacity:0, duration:1.2, ease:'expo.out', scrollTrigger:{trigger:h, start:'top 85%'}}); });
+  if (innerWidth > 1000) $$('section h2').forEach(h => { if (h.id==='filmTitle') return; gsap.from(h, {yPercent:30, opacity:0, duration:1.2, ease:'expo.out', scrollTrigger:{trigger:h, start:'top 85%'}}); });
   // Horaires : les points se tracent
   gsap.from('.times .dots', {scaleX:0, transformOrigin:'left', duration:1.2, ease:'expo.out', stagger:.08, scrollTrigger:{trigger:'.times', start:'top 75%'}});
   // Boutons magnétiques
