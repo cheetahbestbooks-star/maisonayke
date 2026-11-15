@@ -196,6 +196,18 @@ form.book .btn{width:100%;justify-content:center;margin-top:26px}
 .alt{display:flex;gap:18px;justify-content:center;margin-top:16px;font-size:.8rem;color:rgba(250,248,245,.6)}
 .alt a{border-bottom:1px solid rgba(250,248,245,.3)}
 
+
+/* REVIEWS */
+.reviews{background:var(--cream)}
+.rgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:56px}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:4px;padding:34px 34px 28px;position:relative}
+.rcard::before{content:"“";position:absolute;top:-6px;left:26px;font-family:var(--serif);font-size:6rem;line-height:1;color:var(--coral);opacity:.35}
+.rcard p{font-family:var(--serif);font-size:1.32rem;line-height:1.45;color:var(--ink-2);position:relative}
+.rcard footer{all:unset;display:flex;justify-content:space-between;align-items:baseline;margin-top:22px;font-size:.8rem;color:var(--muted);gap:12px;flex-wrap:wrap}
+.rcard footer b{color:var(--ink);font-weight:500;font-size:.92rem}
+.rnote{margin-top:22px;font-size:.78rem;color:var(--muted)}
+@media (max-width:980px){.rgrid{grid-template-columns:1fr}}
+
 /* FAQ */
 .faq .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,90px)}
 details{border-bottom:1px solid var(--line);padding:24px 0}
@@ -260,6 +272,7 @@ footer .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;p
       <li><a href="#studio">Le studio</a></li>
       <li><a href="#galerie">Galerie</a></li>
       <li><a href="#riviera">La Riviera</a></li>
+      <li><a href="#avis">Avis</a></li>
       <li><a href="#ete-2027">Été 2027</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
@@ -398,6 +411,19 @@ footer .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;p
     <div class="mapcard rv d2">
       <img src="assets/img/image4.jpg" alt="Pièce de vie ouverte sur la terrasse vue mer" loading="lazy">
       <div class="tag"><small class="eyebrow">Adresse</small><b>7 avenue du Clos</b>06270 Villeneuve-Loubet · Côte d'Azur</div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="avis">
+  <div class="wrap">
+    <div class="eyebrow rv">Avis de voyageurs</div>
+    <h2 class="rv d1">Ils y ont <em>séjourné</em>.</h2>
+    <div class="rgrid">
+      <blockquote class="rcard rv"><p>Tout était comme indiqué dans l'annonce. Contact très sympathique et agréable. Rien à redire. […] La piscine est également un super atout ! Nous recommandons vivement cette location !</p><footer><span><b>Andreas</b> · Vienne, Autriche</span><span>Airbnb · août 2016 · traduit de l'allemand</span></footer></blockquote>
+      <blockquote class="rcard rv d1"><p>Hôte agréable et arrangeante ! Appartement bien situé et piscine commune superbe. Je recommande !</p><footer><span><b>Marielle</b> · Ivry-sur-Seine</span><span>Airbnb · juillet 2018</span></footer></blockquote>
+      <blockquote class="rcard rv"><p>Nous avons beaucoup apprécié le balcon où nous avons pu prendre le soleil, l'appartement est lumineux et proche de tout.</p><footer><span><b>Mélissa</b> · Saint-Chamond</span><span>Airbnb · mai 2026</span></footer></blockquote>
+      <blockquote class="rcard rv d1"><p>Appartement très bien situé. […] Essentiellement confortable pour deux.</p><footer><span><b>Laura</b> · Bergen, Norvège</span><span>Airbnb · juillet 2018 · traduit de l'anglais</span></footer></blockquote>
     </div>
   </div>
 </section>
