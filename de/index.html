@@ -371,9 +371,17 @@ footer .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
   .gcards{gap:40px}
   footer{padding:80px 0 100px}
   footer .flogo{width:84px}
-  .wa{width:52px;height:52px;right:16px;bottom:16px}
+  .wa{width:52px;height:52px;right:16px;bottom:16px;opacity:0;pointer-events:none;transform:scale(.6);transition:transform .4s var(--ease),opacity .4s}
+  body.past .wa{opacity:1;pointer-events:auto;transform:none}
   .wa svg{width:26px;height:26px}
   .phone{width:min(300px,80vw)}
+}
+
+@media (max-width:400px){
+  .nav .wrap{gap:10px}
+  .brand{font-size:1.14rem;gap:7px;flex-shrink:0}.brand img,.nav.solid .brand img{width:32px}
+  .lang{gap:6px}.lang a{width:22px;height:15px}
+  .burger{width:38px}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
@@ -650,7 +658,8 @@ const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAl
 
 // Nav
 const nav = $('#nav'), burger = $('.burger');
-addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 60), {passive:true});
+const onSc = () => { nav.classList.toggle('solid', scrollY > 60); document.body.classList.toggle('past', scrollY > innerHeight * .75); };
+addEventListener('scroll', onSc, {passive:true}); onSc();
 burger.addEventListener('click', () => { const o = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', o); document.body.classList.toggle('lock', o); });
 $$('#menu a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); burger.setAttribute('aria-expanded', false); document.body.classList.remove('lock'); }));
 
