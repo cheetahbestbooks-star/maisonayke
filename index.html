@@ -4,519 +4,616 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Maison Ayke — Studio vue mer à Villeneuve-Loubet · Été 2027</title>
-<meta name="description" content="Studio vue mer au dernier étage, à Villeneuve-Loubet entre Nice et Cannes : terrasse privée face à la Méditerranée, piscine, parking privé. Réservations ouvertes pour l'été 2027, tarif direct.">
+<meta name="description" content="Studio vue mer au dernier étage à Villeneuve-Loubet, entre Nice et Cannes : terrasse privée, piscine, parking. Été 2027 dès 130 € la nuit, −10 % dès 7 nuits en réservation directe.">
 <link rel="canonical" href="https://maisonayke.com/">
 <meta property="og:title" content="Maison Ayke — Studio vue mer, Côte d'Azur">
-<meta property="og:description" content="Terrasse privée face à la mer, piscine, parking. Réservations été 2027 ouvertes.">
+<meta property="og:description" content="Terrasse privée face à la mer, piscine, parking. Été 2027 : −10 % dès 7 nuits en direct.">
 <meta property="og:image" content="https://maisonayke.com/assets/img/image1.jpg">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#0F3D5E">
 <link rel="icon" href="logo_terracota200x188px.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"VacationRental","name":"Maison Ayke — Studio vue mer","description":"Studio de 26 m² au dernier étage avec terrasse privée vue mer, piscine de résidence et parking privé, à Villeneuve-Loubet.","image":["https://maisonayke.com/assets/img/image1.jpg","https://maisonayke.com/assets/img/image2.jpg"],"address":{"@type":"PostalAddress","streetAddress":"7 avenue du Clos","addressLocality":"Villeneuve-Loubet","postalCode":"06270","addressCountry":"FR"},"containsPlace":{"@type":"Accommodation","occupancy":{"@type":"QuantitativeValue","maxValue":2},"floorSize":{"@type":"QuantitativeValue","value":26,"unitCode":"MTK"}},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Piscine","value":true},{"@type":"LocationFeatureSpecification","name":"Parking privé","value":true},{"@type":"LocationFeatureSpecification","name":"Climatisation","value":true},{"@type":"LocationFeatureSpecification","name":"Wi-Fi","value":true}],"telephone":"+41787777978","email":"contact@maisonayke.com"}
+{"@context":"https://schema.org","@type":"VacationRental","name":"Maison Ayke — Studio vue mer","description":"Studio de 26 m² au dernier étage avec terrasse privée vue mer, piscine de résidence et parking privé, à Villeneuve-Loubet.","image":["https://maisonayke.com/assets/img/image1.jpg","https://maisonayke.com/assets/img/salon-vue-mer.jpg"],"address":{"@type":"PostalAddress","streetAddress":"7 avenue du Clos","addressLocality":"Villeneuve-Loubet","postalCode":"06270","addressCountry":"FR"},"containsPlace":{"@type":"Accommodation","occupancy":{"@type":"QuantitativeValue","maxValue":2},"floorSize":{"@type":"QuantitativeValue","value":26,"unitCode":"MTK"}},"telephone":"+41787777978","email":"contact@maisonayke.com"}
 </script>
 <style>
 :root{
-  --coral:#E8614A; --coral-d:#C9472F; --cream:#FAF8F5; --sand:#F1EAE0; --wood:#C4956A;
-  --sea:#2E86AB; --ink:#1E1B18; --ink-2:#4A443D; --muted:#8A8178; --line:#E6DDD1;
-  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Jost",system-ui,sans-serif;
-  --ease:cubic-bezier(.2,.7,.1,1);
+  --sea:#0F3D5E;      /* bleu Méditerranée profond, dominant */
+  --azur:#2E86AB;     /* bleu de la marque */
+  --coral:#F0573A;    /* corail de la marque, intensifié */
+  --sun:#F6A929;      /* or du soleil du logo */
+  --sand:#FBF5EC;     /* blanc cassé de la marque */
+  --wood:#C4956A;
+  --ink:#14212B;
+  --ink-2:#3E4B55;
+  --line:rgba(20,33,43,.14);
+  --display:"Gloock",Georgia,serif;
+  --text:"Bricolage Grotesque",system-ui,sans-serif;
+  --ease:cubic-bezier(.16,.84,.24,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{display:block;max-width:100%}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--text);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink);background:var(--sand);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-.wrap{width:min(1240px,100% - 48px);margin-inline:auto}
-.eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--coral);font-weight:500}
-h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.02;letter-spacing:-.01em}
-h2{font-size:clamp(2.6rem,5.4vw,4.6rem)}
-h2 em,h1 em{font-style:italic;color:var(--coral)}
-.btn{display:inline-flex;align-items:center;gap:.7em;padding:1.05em 2em;border-radius:100px;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;transition:all .5s var(--ease);cursor:pointer;border:0;font-family:var(--sans)}
-.btn-coral{background:var(--coral);color:#fff;box-shadow:0 14px 40px -12px rgba(232,97,74,.6)}
-.btn-coral:hover{background:var(--coral-d);transform:translateY(-2px)}
-.btn-ghost{border:1px solid rgba(255,255,255,.55);color:#fff;backdrop-filter:blur(8px);background:rgba(255,255,255,.06)}
-.btn-ghost:hover{background:rgba(255,255,255,.18)}
-.btn-line{border:1px solid var(--ink);color:var(--ink);background:transparent}
-.btn-line:hover{background:var(--ink);color:var(--cream)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1280px,100% - 56px);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:.95;letter-spacing:-.01em}
+h2{font-size:clamp(2.8rem,6.4vw,6rem)}
+.kicker{font-family:var(--text);font-weight:600;font-size:.95rem;color:var(--coral);display:flex;align-items:center;gap:.6em;margin-bottom:22px}
+.kicker::before{content:"";width:22px;height:11px;flex:none;border-radius:22px 22px 0 0;background:var(--sun);box-shadow:0 3px 0 -1px var(--coral)}
+.btn{position:relative;display:inline-flex;align-items:center;gap:.6em;padding:1.05em 1.9em;border-radius:999px;font-family:var(--text);font-weight:600;font-size:1rem;border:0;cursor:pointer;transition:transform .4s var(--ease),background .3s,color .3s;will-change:transform}
+.btn-sun{background:var(--sun);color:var(--ink)}
+.btn-sun:hover{background:#FFBC3F}
+.btn-coral{background:var(--coral);color:#fff}
+.btn-coral:hover{background:#D9442A}
+.btn-line{border:1.5px solid currentColor;background:transparent}
+.btn .ar{display:inline-block;width:18px;height:18px;border-radius:50%;background:currentColor;mask:radial-gradient(circle,#000 30%,transparent 32%);-webkit-mask:radial-gradient(circle,#000 30%,transparent 32%)}
+
+/* Grain */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* Progress */
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--coral),var(--sun));z-index:120}
 
 /* NAV */
-.nav{position:fixed;inset:0 0 auto;z-index:50;padding:22px 0;transition:all .5s var(--ease)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between}
-.brand{font-family:var(--serif);font-size:1.6rem;letter-spacing:.08em;color:#fff;transition:color .5s}
-.brand span{font-style:italic;color:var(--coral)}
-.nav ul{display:flex;gap:34px;list-style:none;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.9)}
-.nav ul a{position:relative;padding:4px 0}
-.nav ul a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:currentColor;transition:width .4s var(--ease)}
-.nav ul a:hover::after{width:100%}
-.nav .btn{padding:.8em 1.5em}
-.nav.solid{background:rgba(250,248,245,.86);backdrop-filter:blur(18px);padding:14px 0;box-shadow:0 1px 0 var(--line)}
-.nav.solid .brand,.nav.solid ul{color:var(--ink)}
-.burger{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
-.nav.solid .burger{color:var(--ink)}
+.nav{position:fixed;inset:0 0 auto;z-index:100;padding:58px 0 22px;transition:background .4s,padding .4s,color .4s;color:var(--sand)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:1.6rem}
+.brand svg{width:34px;height:34px}
+.nav ul{display:flex;gap:30px;list-style:none;font-weight:400;font-size:.98rem}
+.nav ul a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .4s var(--ease);padding-bottom:2px}
+.nav ul a:hover{background-size:100% 1.5px}
+.nav .btn{padding:.75em 1.4em;font-size:.92rem}
+.nav.solid{background:rgba(15,61,94,.92);backdrop-filter:blur(14px);padding:12px 0}
+.burger{display:none;background:none;border:0;color:inherit;cursor:pointer;width:44px;height:44px}
+.burger span{display:block;height:2px;background:currentColor;margin:7px 8px;transition:transform .3s}
 
 /* HERO */
-.hero{position:relative;height:100svh;min-height:640px;overflow:hidden;color:#fff;display:flex;align-items:flex-end}
-.hero-media{position:absolute;inset:0}
-.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;object-position:62% 50%;transform:scale(1.12);animation:kb 22s var(--ease) forwards}
-@keyframes kb{to{transform:scale(1)}}
-.hero::before{content:"";position:absolute;inset:0;z-index:1;background:
- linear-gradient(180deg,rgba(20,16,12,.45) 0%,rgba(20,16,12,0) 30%,rgba(20,16,12,.15) 55%,rgba(20,16,12,.78) 100%),
- radial-gradient(120% 70% at 85% 0%,rgba(232,97,74,.38),transparent 60%),
- radial-gradient(90% 60% at 0% 100%,rgba(46,134,171,.35),transparent 60%)}
-.hero .veil{position:absolute;inset:-20%;z-index:1;background:conic-gradient(from 200deg at 70% 30%,transparent,rgba(232,97,74,.18),transparent 40%,rgba(196,149,106,.18),transparent 70%);filter:blur(60px);animation:spin 28s linear infinite;mix-blend-mode:soft-light}
-@keyframes spin{to{transform:rotate(360deg)}}
-.hero-content{position:relative;z-index:2;padding-bottom:9vh}
-.badge{display:inline-flex;align-items:center;gap:.6em;padding:.55em 1.1em;border-radius:100px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:28px}
-.badge i{width:8px;height:8px;border-radius:50%;background:#7CE0A6;box-shadow:0 0 0 0 rgba(124,224,166,.7);animation:pulse 2s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(124,224,166,0)}100%{box-shadow:0 0 0 0 rgba(124,224,166,0)}}
-.hero h1{font-size:clamp(3.6rem,10vw,9.5rem);line-height:.9;max-width:12ch}
-.hero h1 .line{display:block;overflow:hidden}
-.hero h1 .line span{display:block;transform:translateY(110%);animation:up 1.3s var(--ease) forwards}
-.hero h1 .line:nth-child(2) span{animation-delay:.15s}
-.hero h1 .line:nth-child(3) span{animation-delay:.3s}
-@keyframes up{to{transform:none}}
-.hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-top:36px;flex-wrap:wrap;opacity:0;animation:fade 1.2s .8s var(--ease) forwards}
-@keyframes fade{to{opacity:1}}
-.hero-bottom p{max-width:430px;font-size:1.05rem;color:rgba(255,255,255,.88)}
+.hero{position:relative;min-height:100svh;background:var(--sea);color:var(--sand);overflow:hidden;display:grid;align-items:center}
+.awning{position:absolute;inset:0 0 auto;height:42px;z-index:3;background:repeating-linear-gradient(90deg,var(--coral) 0 46px,var(--sand) 46px 92px);-webkit-mask:linear-gradient(#000,#000) top/100% 22px no-repeat,radial-gradient(circle at 23px 0,#000 20px,transparent 21px) 0 22px/46px 20px repeat-x;mask:linear-gradient(#000,#000) top/100% 22px no-repeat,radial-gradient(circle at 23px 0,#000 20px,transparent 21px) 0 22px/46px 20px repeat-x;transform-origin:top}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,80px);align-items:center;padding:140px 0 90px}
+.sun{position:absolute;z-index:1;width:min(64vw,860px);aspect-ratio:1;right:-14vw;bottom:-38%;border-radius:50%;background:radial-gradient(circle,#FFC24D 0%,var(--sun) 38%,var(--coral) 70%,rgba(240,87,58,0) 71%);filter:saturate(1.1)}
+.sun::after{content:"";position:absolute;inset:-18%;border-radius:50%;background:repeating-conic-gradient(rgba(246,169,41,.16) 0 4deg,transparent 4deg 15deg);mask:radial-gradient(circle,transparent 42%,#000 43%,#000 60%,transparent 70%);-webkit-mask:radial-gradient(circle,transparent 42%,#000 43%,#000 60%,transparent 70%);animation:rays 80s linear infinite}
+@keyframes rays{to{transform:rotate(360deg)}}
+.hero h1{font-size:clamp(4rem,11.5vw,11rem);line-height:.86;letter-spacing:-.02em}
+.hero h1 .l{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .l span{display:inline-block}
+.hero h1 .l:nth-child(2){padding-left:.9em}
+.hero h1 .l:nth-child(3){color:var(--sun)}
+.hero .lead{max-width:30em;font-size:1.15rem;margin:30px 0 34px;color:rgba(251,245,236,.86)}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-.scroll-cue{position:absolute;z-index:2;right:28px;bottom:28px;writing-mode:vertical-rl;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:12px}
-.scroll-cue::after{content:"";width:1px;height:60px;background:linear-gradient(rgba(255,255,255,.8),transparent);animation:drip 2.2s infinite}
-@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hero-cta .btn-line{color:var(--sand)}
+.win-wrap{position:relative;justify-self:end;width:min(100%,460px)}
+.window{position:relative;width:100%;aspect-ratio:3/4.3;border-radius:999px 999px 18px 18px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);outline:10px solid rgba(251,245,236,.08);outline-offset:-1px}
+.window video,.window img{width:100%;height:100%;object-fit:cover}
+.window::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,61,94,0) 55%,rgba(15,61,94,.45))}
+.sticker{position:absolute;z-index:4;width:150px;height:150px;left:-60px;bottom:40px;display:grid;place-items:center}
+.sticker svg{position:absolute;inset:0;animation:rays 22s linear infinite}
+.sticker text{font-family:var(--text);font-weight:600;font-size:12.5px;letter-spacing:.12em;fill:var(--ink)}
+.sticker::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--sun)}
+.sticker b{position:relative;font-family:var(--display);font-weight:400;font-size:2.2rem;color:var(--ink);line-height:1}
 
-/* MARQUEE */
-.marquee{background:var(--ink);color:var(--cream);overflow:hidden;padding:18px 0;white-space:nowrap}
-.marquee .track{display:inline-flex;gap:56px;animation:marq 38s linear infinite;font-family:var(--serif);font-size:1.5rem;font-style:italic}
-.marquee .track span::after{content:"✦";font-style:normal;color:var(--coral);margin-left:56px;font-size:.9rem;vertical-align:middle}
-@keyframes marq{to{transform:translateX(-50%)}}
+/* STRIPE MARQUEE */
+.ticker{background:var(--coral);color:var(--sand);overflow:hidden;white-space:nowrap;padding:20px 0;border-block:6px solid var(--sun)}
+.ticker .t{display:inline-flex;gap:46px;font-family:var(--display);font-size:clamp(1.6rem,3vw,2.6rem);will-change:transform}
+.ticker .t span{display:inline-flex;align-items:center;gap:46px}
+.ticker .t span::after{content:"";width:22px;height:22px;border-radius:50%;background:var(--sun)}
 
-section{padding:clamp(90px,12vw,160px) 0;position:relative}
+section{position:relative;padding:clamp(100px,13vw,170px) 0}
 
 /* INTRO */
-.intro .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,7vw,110px);align-items:center}
-.intro p.lead{font-family:var(--serif);font-size:clamp(1.4rem,2.2vw,1.9rem);line-height:1.35;color:var(--ink-2);margin:26px 0 30px}
-.intro .stack{position:relative;aspect-ratio:4/5}
-.intro .stack img{position:absolute;object-fit:cover;border-radius:4px;box-shadow:0 40px 80px -30px rgba(30,27,24,.45)}
-.intro .stack .a{inset:0 18% 14% 0}
-.intro .stack .b{width:52%;aspect-ratio:3/4;right:0;bottom:0;border:8px solid var(--cream)}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:10px}
-.stats div{padding:22px 0 0}
-.stats b{display:block;font-family:var(--serif);font-weight:300;font-size:2.6rem;line-height:1;color:var(--ink)}
-.stats small{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.intro .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);align-items:center}
+.intro p.big{font-family:var(--display);font-size:clamp(1.5rem,2.4vw,2.1rem);line-height:1.25;color:var(--ink-2);margin:28px 0 36px}
+.facts{display:flex;gap:clamp(24px,4vw,56px);flex-wrap:wrap;padding-top:26px;border-top:1.5px solid var(--ink)}
+.facts div b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1;color:var(--sea)}
+.facts div span{font-size:.95rem;color:var(--ink-2)}
+.arch{position:relative;aspect-ratio:4/5;border-radius:999px 999px 14px 14px;overflow:hidden}
+.arch img{width:100%;height:120%;object-fit:cover;will-change:transform}
+.arch-wrap{position:relative}
+.arch-wrap .mini{position:absolute;width:44%;aspect-ratio:1;border-radius:50%;overflow:hidden;right:-6%;bottom:-8%;border:10px solid var(--sand)}
+.arch-wrap .mini img{width:100%;height:100%;object-fit:cover}
 
-/* FEATURE ROWS */
-.feat{background:var(--sand)}
-.feat-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:60px}
-.feat-head p{max-width:420px;color:var(--ink-2)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:3/4;color:#fff;isolation:isolate}
-.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease);z-index:-2}
-.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(20,16,12,.8));z-index:-1}
-.card:hover img{transform:scale(1.07)}
-.card .txt{position:absolute;left:28px;right:28px;bottom:26px}
-.card .num{font-family:var(--serif);font-style:italic;color:var(--wood);font-size:1.1rem}
-.card h3{font-size:2.1rem;margin:4px 0 8px}
-.card p{font-size:.92rem;color:rgba(255,255,255,.85);max-height:0;opacity:0;transition:all .6s var(--ease)}
-.card:hover p{max-height:120px;opacity:1}
+/* REASONS (accordéon horizontal) */
+.reasons{background:var(--sea);color:var(--sand)}
+.reasons h2{max-width:11ch}
+.reasons .head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:56px}
+.reasons .head p{max-width:26em;color:rgba(251,245,236,.78)}
+.acc{display:flex;gap:14px;height:min(72vh,620px)}
+.acc article{position:relative;flex:1;border-radius:18px;overflow:hidden;cursor:pointer;transition:flex .8s var(--ease);isolation:isolate;min-width:0}
+.acc article.on{flex:3.2}
+.acc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.4s var(--ease)}
+.acc article.on img{transform:scale(1.04)}
+.acc article::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,61,94,0) 35%,rgba(15,61,94,.88))}
+.acc .tx{position:absolute;left:28px;right:28px;bottom:28px}
+.acc h3{font-size:clamp(1.8rem,3vw,2.8rem);white-space:nowrap}
+.acc p{max-width:30em;margin-top:10px;opacity:0;transform:translateY(12px);transition:opacity .5s .2s,transform .5s .2s var(--ease);color:rgba(251,245,236,.9)}
+.acc article.on p{opacity:1;transform:none}
+.acc button{all:unset;position:absolute;inset:0}
+.acc button:focus-visible{outline:3px solid var(--sun);outline-offset:-6px;border-radius:18px}
+
+/* GALLERY horizontal */
+.gal{background:var(--sand);padding:0;overflow:hidden}
+.gal .pin{height:100vh;display:flex;flex-direction:column;justify-content:center}
+.gal .top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:40px}
+.gal .count{font-family:var(--display);font-size:1.4rem;color:var(--ink-2)}
+.track{display:flex;gap:22px;padding-left:max(28px,calc((100vw - 1280px)/2));will-change:transform}
+.track figure{flex:none;height:min(58vh,560px);position:relative;border-radius:16px;overflow:hidden;cursor:zoom-in}
+.track figure.w{aspect-ratio:3/2}.track figure.t{aspect-ratio:3/4}.track figure.s{aspect-ratio:1}
+.track img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.track figure:hover img{transform:scale(1.05)}
+.track figcaption{position:absolute;left:16px;bottom:14px;background:var(--sand);color:var(--ink);font-size:.88rem;padding:.35em .9em;border-radius:999px}
+.lb{position:fixed;inset:0;z-index:300;background:rgba(10,30,46,.95);display:none;align-items:center;justify-content:center}
+.lb.on{display:flex}
+.lb img{max-width:92vw;max-height:84vh;border-radius:10px}
+.lb button{position:absolute;background:var(--sand);border:0;width:52px;height:52px;border-radius:50%;cursor:pointer;font-family:var(--display);font-size:1.6rem;color:var(--ink)}
+.lb .x{top:22px;right:22px}.lb .p{left:22px}.lb .n{right:22px}
 
 /* AMENITIES */
-.amen{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.amen div{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 22px;transition:background .4s}
-.amen div:hover{background:#fff}
-.amen svg{width:28px;height:28px;stroke:var(--coral);fill:none;stroke-width:1.4;margin-bottom:18px}
-.amen b{display:block;font-weight:400;font-size:1rem}
-.amen small{color:var(--muted);font-size:.82rem}
+.amen .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,90px)}
+.amen ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.amen li{display:flex;gap:16px;align-items:center;padding:18px 0;border-bottom:1.5px solid var(--line)}
+.amen li svg{width:30px;height:30px;flex:none;stroke:var(--coral);fill:none;stroke-width:1.5}
+.amen li b{display:block;font-weight:600}
+.amen li span{font-size:.92rem;color:var(--ink-2)}
 
-/* GALLERY */
-.gallery{background:var(--ink);color:var(--cream)}
-.gallery h2 em{color:var(--wood)}
-.gal{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:110px;gap:14px;margin-top:60px}
-.gal a{position:relative;overflow:hidden;border-radius:3px;cursor:zoom-in}
-.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),filter .6s}
-.gal a:hover img{transform:scale(1.06)}
-.gal a:nth-child(1){grid-column:span 7;grid-row:span 4}
-.gal a:nth-child(2){grid-column:span 5;grid-row:span 2}
-.gal a:nth-child(3){grid-column:span 5;grid-row:span 2}
-.gal a:nth-child(4){grid-column:span 4;grid-row:span 3}
-.gal a:nth-child(5){grid-column:span 4;grid-row:span 3}
-.gal a:nth-child(6){grid-column:span 4;grid-row:span 3}
-.gal a:nth-child(7){grid-column:span 3;grid-row:span 2}
-.gal a:nth-child(8){grid-column:span 3;grid-row:span 2}
-.gal a:nth-child(9){grid-column:span 3;grid-row:span 2}
-.gal a:nth-child(10){grid-column:span 3;grid-row:span 2}
-.gal a:nth-child(11){grid-column:span 5;grid-row:span 3}
-.gal a:nth-child(12){grid-column:span 3;grid-row:span 3}
-.gal a:nth-child(13){grid-column:span 4;grid-row:span 3}
-.lb{position:fixed;inset:0;z-index:100;background:rgba(14,12,10,.94);display:none;align-items:center;justify-content:center}
-.lb.on{display:flex}
-.lb img{max-width:92vw;max-height:86vh;border-radius:3px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
-.lb button{position:absolute;background:none;border:0;color:#fff;font-size:2.2rem;cursor:pointer;padding:20px;font-family:var(--serif)}
-.lb .x{top:10px;right:16px}.lb .p{left:10px}.lb .n{right:10px}
+/* FILM */
+.film{padding:0;height:110vh;overflow:hidden;color:var(--sand);display:grid;place-items:center;text-align:center;background:var(--sea)}
+.film img{position:absolute;left:0;top:-15%;width:100%;height:130%;object-fit:cover;opacity:.8}
+.film::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(60% 60% at 50% 55%,rgba(240,87,58,.35),rgba(15,61,94,.55))}
+.film h2{position:relative;z-index:2;font-size:clamp(3.4rem,10vw,9.5rem);line-height:.9;max-width:9ch}
 
-/* VIDEO SLOT */
-.film{padding:0;position:relative;height:80vh;min-height:480px;overflow:hidden;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center}
-.film img,.film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.15)}
-.film::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.25),rgba(20,16,12,.55)),radial-gradient(60% 60% at 50% 50%,rgba(232,97,74,.25),transparent);z-index:1}
-.film .in{position:relative;z-index:2}
-.film h2{font-size:clamp(3rem,8vw,7rem)}
+/* RIVIERA : horaires façon affiche de train */
+.riv{background:var(--azur);color:var(--sand)}
+.riv .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,100px);align-items:center}
+.riv .kicker{color:var(--sand)}
+.riv p.sub{margin-top:24px;max-width:28em;color:rgba(251,245,236,.86)}
+.times{list-style:none;font-size:1.1rem}
+.times li{display:flex;align-items:baseline;gap:14px;padding:13px 0}
+.times li .dots{flex:1;border-bottom:2px dotted rgba(251,245,236,.5);transform:translateY(-5px)}
+.times li b{font-family:var(--display);font-weight:400;font-size:1.8rem;color:var(--sun)}
+.riv .addr{margin-top:30px;display:inline-block;background:var(--sea);padding:14px 22px;border-radius:12px}
 
-/* LOCATION */
-.loc .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,100px);align-items:start}
-.dist{list-style:none;margin-top:34px}
-.dist li{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line);font-size:1.02rem}
-.dist li span:last-child{font-family:var(--serif);font-size:1.6rem;color:var(--sea)}
-.mapcard{position:sticky;top:110px;border-radius:4px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 80px -30px rgba(30,27,24,.4)}
-.mapcard img{width:100%;height:100%;object-fit:cover}
-.mapcard .tag{position:absolute;left:20px;bottom:20px;right:20px;background:rgba(250,248,245,.92);backdrop-filter:blur(10px);padding:18px 22px;border-radius:3px}
-.mapcard .tag b{font-family:var(--serif);font-weight:400;font-size:1.4rem;display:block}
+/* AVIS */
+.avis{background:var(--sand);overflow:hidden}
+.avis .quote{position:relative;min-height:330px;margin-top:40px}
+.avis blockquote{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .7s var(--ease),transform .7s var(--ease);transform:translateX(40px)}
+.avis blockquote.on{opacity:1;visibility:visible;transform:none}
+.avis blockquote p{font-family:var(--display);font-size:clamp(1.9rem,3.6vw,3.4rem);line-height:1.12;max-width:22ch;color:var(--sea)}
+.avis blockquote p::before{content:"«\00a0";color:var(--coral)}
+.avis blockquote p::after{content:"\00a0»";color:var(--coral)}
+.avis cite{display:block;margin-top:26px;font-style:normal;color:var(--ink-2)}
+.avis cite b{color:var(--ink);font-weight:600}
+.avis .ctl{display:flex;gap:12px;align-items:center;margin-top:20px}
+.avis .ctl button{width:54px;height:54px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;cursor:pointer;font-family:var(--text);font-size:1.6rem;line-height:1;color:var(--ink);transition:background .3s,color .3s}
+.avis .ctl button:hover{background:var(--ink);color:var(--sand)}
+.avis .ctl .n{margin-left:12px;font-family:var(--display);font-size:1.2rem;color:var(--ink-2)}
 
-/* SEASON / BOOK */
-.season{background:linear-gradient(135deg,#1E1B18 0%,#2A221C 55%,#3A2A20 100%);color:var(--cream);overflow:hidden}
-.season::before{content:"";position:absolute;width:900px;height:900px;border-radius:50%;right:-300px;top:-300px;background:radial-gradient(circle,rgba(232,97,74,.32),transparent 65%);filter:blur(30px)}
-.season .grid{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
-.season h2 em{color:var(--coral)}
-.season p{color:rgba(250,248,245,.75);margin:24px 0}
-.price{display:flex;align-items:baseline;gap:14px;margin:34px 0 10px}
-.price b{font-family:var(--serif);font-weight:300;font-size:5rem;line-height:1}
-.price small{color:rgba(250,248,245,.6);letter-spacing:.12em;text-transform:uppercase;font-size:.75rem}
-.perks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;margin-top:22px;font-size:.92rem;color:rgba(250,248,245,.85)}
-.perks li::before{content:"✦";color:var(--coral);margin-right:10px;font-size:.7rem}
-form.book{background:rgba(250,248,245,.06);border:1px solid rgba(250,248,245,.14);backdrop-filter:blur(14px);border-radius:6px;padding:clamp(26px,3vw,40px)}
-form.book h3{font-size:2rem;margin-bottom:6px}
-form.book .sub{font-size:.85rem;color:rgba(250,248,245,.6);margin-bottom:22px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-label{display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,248,245,.6);margin:14px 0 6px}
-input,select,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(250,248,245,.3);color:var(--cream);font-family:var(--sans);font-size:1rem;padding:8px 0;outline:none;font-weight:300}
-input:focus,select:focus,textarea:focus{border-color:var(--coral)}
-select option{color:var(--ink)}
-input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1);opacity:.6}
-form.book .btn{width:100%;justify-content:center;margin-top:26px}
-.alt{display:flex;gap:18px;justify-content:center;margin-top:16px;font-size:.8rem;color:rgba(250,248,245,.6)}
-.alt a{border-bottom:1px solid rgba(250,248,245,.3)}
-
-
-/* REVIEWS */
-.reviews{background:var(--cream)}
-.rgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:56px}
-.rcard{background:#fff;border:1px solid var(--line);border-radius:4px;padding:34px 34px 28px;position:relative}
-.rcard::before{content:"“";position:absolute;top:-6px;left:26px;font-family:var(--serif);font-size:6rem;line-height:1;color:var(--coral);opacity:.35}
-.rcard p{font-family:var(--serif);font-size:1.32rem;line-height:1.45;color:var(--ink-2);position:relative}
-.rcard footer{all:unset;display:flex;justify-content:space-between;align-items:baseline;margin-top:22px;font-size:.8rem;color:var(--muted);gap:12px;flex-wrap:wrap}
-.rcard footer b{color:var(--ink);font-weight:500;font-size:.92rem}
-.rnote{margin-top:22px;font-size:.78rem;color:var(--muted)}
-@media (max-width:980px){.rgrid{grid-template-columns:1fr}}
+/* SAISON + RÉSERVATION */
+.season{background:linear-gradient(160deg,var(--coral) 0%,#F47A3A 45%,var(--sun) 100%);color:var(--ink);overflow:hidden}
+.season::before{content:"";position:absolute;width:70vw;aspect-ratio:1;right:-25vw;top:-30vw;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.35),transparent 60%)}
+.season .grid{position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,6vw,90px);align-items:start}
+.season .kicker{color:var(--ink)}
+.season .kicker::before{background:var(--sea);box-shadow:0 3px 0 -1px var(--sand)}
+.price{display:flex;align-items:flex-end;gap:16px;margin:30px 0 8px}
+.price b{font-family:var(--display);font-weight:400;font-size:clamp(5rem,10vw,8.5rem);line-height:.8}
+.price span{font-size:1rem;padding-bottom:10px}
+.deal{display:inline-flex;align-items:center;gap:14px;margin-top:22px;background:var(--sea);color:var(--sand);padding:16px 22px 16px 16px;border-radius:999px;font-size:1.02rem}
+.deal i{font-style:normal;font-family:var(--display);font-size:1.6rem;background:var(--sun);color:var(--ink);width:64px;height:64px;border-radius:50%;display:grid;place-items:center;flex:none}
+.perks{list-style:none;margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}
+.perks li{display:flex;gap:10px;align-items:baseline}
+.perks li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--sea);flex:none;transform:translateY(-1px)}
+form.book{background:var(--sand);border-radius:22px;padding:clamp(26px,3vw,42px);box-shadow:0 40px 80px -40px rgba(80,20,0,.55)}
+form.book h3{font-size:2.3rem}
+form.book .sub{color:var(--ink-2);margin:6px 0 18px;font-size:.95rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-weight:600;font-size:.88rem;margin:14px 0 6px}
+input,select,textarea{width:100%;background:#fff;border:1.5px solid var(--line);border-radius:12px;color:var(--ink);font:inherit;font-weight:400;padding:12px 14px;outline:none;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--sea)}
+.total{margin-top:20px;background:var(--sea);color:var(--sand);border-radius:14px;padding:16px 18px;display:grid;gap:4px}
+.total .r{display:flex;justify-content:space-between;font-size:.95rem}
+.total .r.d{color:var(--sun)}
+.total .r.t{font-family:var(--display);font-size:1.6rem;margin-top:4px}
+.total small{color:rgba(251,245,236,.7);font-size:.8rem}
+form.book .btn{width:100%;justify-content:center;margin-top:18px}
+.alt{display:flex;gap:20px;justify-content:center;margin-top:14px;font-size:.92rem}
+.alt a{border-bottom:1.5px solid currentColor}
 
 /* FAQ */
 .faq .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,90px)}
-details{border-bottom:1px solid var(--line);padding:24px 0}
-summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-family:var(--serif);font-size:1.45rem}
+details{border-bottom:1.5px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-family:var(--display);font-size:1.55rem}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-family:var(--sans);font-weight:300;color:var(--coral);transition:transform .4s}
-details[open] summary::after{transform:rotate(45deg)}
-details p{margin-top:14px;color:var(--ink-2);max-width:60ch}
+summary i{width:36px;height:36px;border-radius:50%;background:var(--sea);flex:none;position:relative;transition:transform .4s var(--ease),background .3s}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;background:var(--sand);transform:translate(-50%,-50%)}
+summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+details[open] summary i{transform:rotate(45deg);background:var(--coral)}
+details p{padding-bottom:24px;color:var(--ink-2);max-width:56ch}
 
 /* GUIDES */
-.guides{background:var(--sand)}
+.guides{background:#F3E9DA}
 .gcards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
-.gcard img{aspect-ratio:4/3;object-fit:cover;border-radius:3px;transition:transform 1s var(--ease)}
-.gcard .im{overflow:hidden;border-radius:3px}
-.gcard:hover img{transform:scale(1.05)}
-.gcard small{display:block;margin:18px 0 6px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--coral)}
-.gcard h3{font-size:1.7rem}
+.gcard .im{border-radius:999px 999px 14px 14px;overflow:hidden;aspect-ratio:4/5}
+.gcard img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.gcard:hover img{transform:scale(1.06)}
+.gcard h3{font-size:1.75rem;margin-top:18px;line-height:1.05}
+.gcard span{display:block;margin-top:6px;color:var(--coral);font-weight:600;font-size:.92rem}
 
 /* FOOTER */
-footer{background:var(--ink);color:rgba(250,248,245,.7);padding:90px 0 40px}
-footer .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px;border-bottom:1px solid rgba(250,248,245,.12)}
-footer .big{font-family:var(--serif);font-size:clamp(2.4rem,4vw,3.4rem);color:var(--cream);line-height:1}
-footer .big em{color:var(--coral)}
-footer h4{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--wood);font-weight:500;margin-bottom:18px}
-footer ul{list-style:none;display:grid;gap:10px;font-size:.92rem}
-footer a:hover{color:var(--coral)}
-footer .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:30px;font-size:.78rem}
-.wa{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 14px 34px -8px rgba(37,211,102,.6);transition:transform .4s var(--ease)}
-.wa:hover{transform:scale(1.08)}
-.wa svg{width:28px;height:28px;fill:#fff}
+footer{background:var(--sea);color:rgba(251,245,236,.78);padding:110px 0 40px;overflow:hidden;position:relative}
+footer .huge{font-family:var(--display);font-size:clamp(4rem,15vw,14rem);line-height:.82;color:var(--sand);letter-spacing:-.02em}
+footer .huge span{color:var(--sun)}
+footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:70px;padding-top:40px;border-top:1.5px solid rgba(251,245,236,.18)}
+footer h4{font-family:var(--text);font-weight:600;color:var(--sun);margin-bottom:14px;font-size:1rem}
+footer ul{list-style:none;display:grid;gap:8px}
+footer a:hover{color:var(--sun)}
+footer .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:50px;font-size:.88rem}
+.wa{position:fixed;right:22px;bottom:22px;z-index:110;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 16px 34px -10px rgba(37,211,102,.7);transition:transform .4s var(--ease)}
+.wa:hover{transform:scale(1.08) rotate(-6deg)}
+.wa svg{width:30px;height:30px;fill:#fff}
 
-/* REVEAL */
-.rv{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
-.rv.in{opacity:1;transform:none}
-.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.hero h1 .line span{transform:none}.hero-bottom{opacity:1}}
-
-/* RESPONSIVE */
-@media (max-width:980px){
+/* Responsive */
+@media (max-width:1000px){
   .nav ul,.nav .btn{display:none}.burger{display:block}
-  .nav.open ul{display:flex;position:fixed;inset:64px 0 auto;flex-direction:column;background:var(--cream);color:var(--ink);padding:28px 24px;gap:22px}
-  .intro .grid,.loc .grid,.season .grid,.faq .grid{grid-template-columns:1fr}
-  .cards,.gcards{grid-template-columns:1fr}
-  .card{aspect-ratio:4/3}.card p{max-height:none;opacity:1}
-  .amen{grid-template-columns:repeat(2,1fr)}
-  .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
-  .gal a{grid-column:span 1!important;grid-row:span 1!important}
-  .gal a:nth-child(1){grid-column:span 2!important;grid-row:span 2!important}
-  .mapcard{position:relative;top:0;aspect-ratio:4/3}
-  footer .top{grid-template-columns:1fr 1fr}
-  .scroll-cue{display:none}
+  .nav.open{background:var(--sea)}
+  .nav.open ul{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:20px;padding:26px 28px 34px;background:var(--sea);font-size:1.3rem}
+  .hero-grid,.intro .grid,.riv .grid,.season .grid,.faq .grid,.amen .grid{grid-template-columns:1fr}
+  .win-wrap{justify-self:start;width:min(100%,420px)}
+  .sticker{left:auto;right:-10px;bottom:-30px;width:130px;height:130px}
+  .acc{flex-direction:column;height:auto}
+  .acc article{flex:none;height:120px}
+  .acc article.on{flex:none;height:420px}
+  .gcards{grid-template-columns:1fr}
+  .amen ul{grid-template-columns:1fr}
+  footer .cols{grid-template-columns:1fr}
 }
-@media (max-width:560px){.hero::before{background:linear-gradient(180deg,rgba(20,16,12,.35) 0%,rgba(20,16,12,.25) 35%,rgba(20,16,12,.82) 75%)}.hero-media img{object-position:70% 50%}.wrap{width:calc(100% - 32px)}.row,.perks{grid-template-columns:1fr}.stats b{font-size:2rem}footer .top{grid-template-columns:1fr}}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{width:calc(100% - 32px)}
+  .row,.perks{grid-template-columns:1fr}
+  .hero h1 .l:nth-child(2){padding-left:.5em}
+  .gal .pin{height:auto;padding:90px 0}
+  .track{overflow-x:auto;scroll-snap-type:x mandatory;padding-right:28px}
+  .track figure{scroll-snap-align:center;height:56vh}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+<div class="progress" id="progress"></div>
 
-<nav class="nav" id="nav">
+<nav class="nav" id="nav" aria-label="Navigation principale">
   <div class="wrap">
-    <a href="#" class="brand">Maison <span>Ayke</span></a>
-    <ul>
+    <a href="#" class="brand" aria-label="Maison Ayke, accueil">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="26" r="9" fill="#F6A929"/><g stroke="#F6A929" stroke-width="2" stroke-linecap="round"><path d="M20 8v6M8 14l4 4M32 14l-4 4M3 26h6M31 26h6"/></g><path d="M2 34c6-3 12 3 18 0s12-3 18 0" stroke="#F0573A" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
+      Maison Ayke
+    </a>
+    <ul id="menu">
       <li><a href="#studio">Le studio</a></li>
       <li><a href="#galerie">Galerie</a></li>
       <li><a href="#riviera">La Riviera</a></li>
       <li><a href="#avis">Avis</a></li>
-      <li><a href="#ete-2027">Été 2027</a></li>
-      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#ete-2027">Tarifs</a></li>
+      <li><a href="#faq">Questions</a></li>
     </ul>
-    <a href="#ete-2027" class="btn btn-coral">Réserver</a>
-    <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <a href="#ete-2027" class="btn btn-sun mag">Réserver l'été 2027</a>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="hero-media">
-    <video src="assets/video/hero.mp4" autoplay muted loop playsinline preload="auto" poster="assets/img/image1.jpg" aria-label="Visite de la terrasse vue mer du studio Maison Ayke"></video>
-  </div>
-  <div class="veil"></div>
-  <div class="hero-content wrap">
-    <div class="badge"><i></i>Réservations été 2027 ouvertes</div>
-    <h1><span class="line"><span>La mer,</span></span><span class="line"><span><em>chaque</em></span></span><span class="line"><span>matin.</span></span></h1>
-    <div class="hero-bottom">
-      <p>Un studio au dernier étage, une terrasse face à la Méditerranée, une piscine et le soleil de la Côte d'Azur. Entre Nice et Cannes.</p>
+  <div class="awning" id="awning" aria-hidden="true"></div>
+  <div class="sun" id="sun" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <h1 aria-label="La mer, chaque matin."><span class="l"><span>La mer,</span></span><span class="l"><span>chaque</span></span><span class="l"><span>matin.</span></span></h1>
+      <p class="lead">Un studio au dernier étage, une terrasse face à la Méditerranée, une piscine dans la résidence. À Villeneuve-Loubet, entre Nice et Cannes.</p>
       <div class="hero-cta">
-        <a href="#ete-2027" class="btn btn-coral">Réserver l'été 2027 →</a>
-        <a href="#galerie" class="btn btn-ghost">Découvrir</a>
+        <a href="#ete-2027" class="btn btn-sun mag">Voir les dates de l'été 2027</a>
+        <a href="#galerie" class="btn btn-line">Visiter en photos</a>
+      </div>
+    </div>
+    <div class="win-wrap"><div class="window" id="window">
+      <video src="assets/video/hero.mp4" autoplay muted loop playsinline preload="auto" poster="assets/img/image1.jpg" aria-label="Vidéo de la terrasse vue mer"></video>
+</div>
+      <div class="sticker" aria-hidden="true">
+        <svg viewBox="0 0 150 150"><defs><path id="c" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs><text><textPath href="#c">RÉSERVATIONS OUVERTES · ÉTÉ 2027 · </textPath></text></svg>
+        <b>2027</b>
       </div>
     </div>
   </div>
-  <div class="scroll-cue">Défiler</div>
 </header>
 
-<div class="marquee" aria-hidden="true"><div class="track">
-  <span>Terrasse vue mer</span><span>Piscine</span><span>Parking privé</span><span>Dernier étage</span><span>Climatisation</span><span>Check-in autonome</span><span>Entre Nice &amp; Cannes</span>
-  <span>Terrasse vue mer</span><span>Piscine</span><span>Parking privé</span><span>Dernier étage</span><span>Climatisation</span><span>Check-in autonome</span><span>Entre Nice &amp; Cannes</span>
+<div class="ticker" aria-hidden="true"><div class="t" id="ticker">
+  <span>Terrasse vue mer</span><span>Piscine</span><span>Parking privé</span><span>Climatisation</span><span>Plage à 350 m</span><span>Arrivée autonome</span>
+  <span>Terrasse vue mer</span><span>Piscine</span><span>Parking privé</span><span>Climatisation</span><span>Plage à 350 m</span><span>Arrivée autonome</span>
 </div></div>
 
 <section class="intro" id="studio">
   <div class="wrap grid">
     <div>
-      <div class="eyebrow rv">Le studio</div>
-      <h2 class="rv d1">26 m² de <em>lumière</em>,<br>face à la mer.</h2>
-      <p class="lead rv d2">Au dernier étage d'une résidence sécurisée, le studio s'ouvre sur une terrasse privée avec vue sur la Méditerranée et les Alpes. Un cocon pensé pour deux, à 350 mètres de la plage.</p>
-      <a href="#ete-2027" class="btn btn-line rv d3">Voir les disponibilités</a>
-      <div class="stats rv d3">
-        <div><b>26 m²</b><small>Dernier étage</small></div>
-        <div><b>350 m</b><small>De la plage</small></div>
-        <div><b>7 km</b><small>Aéroport de Nice</small></div>
+      <div class="kicker">Le studio</div>
+      <h2>Vingt-six mètres carrés de soleil.</h2>
+      <p class="big">Au dernier étage d'une résidence sécurisée, le studio s'ouvre en grand sur une terrasse privée, face à la Méditerranée et aux Alpes. Un cocon pensé pour deux, à 350 mètres de la plage.</p>
+      <div class="facts">
+        <div><b>26 m²</b><span>au dernier étage</span></div>
+        <div><b>350 m</b><span>jusqu'à la plage</span></div>
+        <div><b>7 km</b><span>de l'aéroport de Nice</span></div>
       </div>
     </div>
-    <div class="stack rv d2">
-      <img class="a" src="assets/img/image5.jpg" alt="Pièce de vie lumineuse ouverte sur la terrasse" loading="lazy">
-      <img class="b" src="assets/img/image7-s.jpg" alt="Transat sur la terrasse avec vue mer et montagnes" loading="lazy">
+    <div class="arch-wrap">
+      <div class="arch"><img src="assets/img/salon-vue-mer.jpg" alt="Le salon ouvert sur la terrasse, la mer au loin" data-par="-12" loading="lazy"></div>
+      <div class="mini"><img src="assets/img/image7-s.jpg" alt="Le transat de la terrasse face aux Alpes" loading="lazy"></div>
     </div>
   </div>
 </section>
 
-<section class="feat">
+<section class="reasons">
   <div class="wrap">
-    <div class="feat-head">
-      <div><div class="eyebrow rv">L'essentiel, en mieux</div><h2 class="rv d1">Trois raisons<br>de <em>rester</em>.</h2></div>
-      <p class="rv d2">Ce qui est rare sur la Riviera à ce prix : une terrasse privée vue mer, une place de parking incluse et une piscine dans la résidence.</p>
+    <div class="head">
+      <div><div class="kicker" style="color:var(--sun)">Ce qui fait la différence</div><h2>Trois raisons de rester.</h2></div>
+      <p>Une terrasse privée vue mer, une piscine dans la résidence et une place de parking incluse : un trio rare sur la Riviera.</p>
     </div>
-    <div class="cards">
-      <article class="card rv"><img src="assets/img/image6.jpg" alt="Terrasse privée vue mer" loading="lazy"><div class="txt"><span class="num">01</span><h3>La terrasse</h3><p>Orientée sud-est, face à la mer et aux Alpes. Le petit-déjeuner au soleil, l'apéritif au coucher du jour.</p></div></article>
-      <article class="card rv d1"><img src="assets/img/image17.jpg" alt="Piscine de la résidence entourée de palmiers" loading="lazy"><div class="txt"><span class="num">02</span><h3>La piscine</h3><p>Dans la résidence, entourée de palmiers. Ouverte de mai à octobre : tout l'été vous attend.</p></div></article>
-      <article class="card rv d2"><img src="assets/img/image2.jpg" alt="Petit-déjeuner au lit face à la baie vitrée" loading="lazy"><div class="txt"><span class="num">03</span><h3>La sérénité</h3><p>Parking privé, check-in autonome à toute heure, climatisation et linge fourni. Vous n'avez qu'à arriver.</p></div></article>
-    </div>
-  </div>
-</section>
-
-<section class="amenities">
-  <div class="wrap">
-    <div class="eyebrow rv">Équipements</div>
-    <h2 class="rv d1" style="margin-bottom:56px">Tout est <em>prêt</em>.</h2>
-    <div class="amen rv d2">
-      <div><svg viewBox="0 0 24 24"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V7h12v3"/></svg><b>Lit 160 × 200</b><small>Couchage double confortable</small></div>
-      <div><svg viewBox="0 0 24 24"><path d="M3 12h18M7 12V8a5 5 0 0 1 10 0v4M5 12v6h14v-6"/></svg><b>Climatisation</b><small>Fraîcheur assurée l'été</small></div>
-      <div><svg viewBox="0 0 24 24"><path d="M5 12a14 14 0 0 1 14 0M8 15a8 8 0 0 1 8 0M11.5 18.5h1"/></svg><b>Wi-Fi haut débit</b><small>Télétravail possible</small></div>
-      <div><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="1"/><path d="M8 21h8"/></svg><b>TV &amp; Netflix</b><small>Soirées cinéma</small></div>
-      <div><svg viewBox="0 0 24 24"><path d="M6 3h9v6a4.5 4.5 0 0 1-9 0V3zM15 5h2a2 2 0 0 1 0 4h-2M5 21h11"/></svg><b>Nespresso</b><small>Café du matin</small></div>
-      <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg><b>Plaques induction</b><small>Cuisine équipée</small></div>
-      <div><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><circle cx="12" cy="13" r="4"/></svg><b>Lave-linge</b><small>Séjours longs</small></div>
-      <div><svg viewBox="0 0 24 24"><path d="M4 21V9a4 4 0 0 1 8 0M12 9h6v4M10 14l-1 2M14 14l-1 2M18 14l-1 2"/></svg><b>Douche mosaïque</b><small>Salle d'eau rénovée</small></div>
-      <div><svg viewBox="0 0 24 24"><path d="M4 18h16M6 18V8h12v10M9 8V5h6v3"/></svg><b>Linge fourni</b><small>Draps &amp; serviettes</small></div>
-      <div><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V10l7-5 7 5v10M9 20v-5h6v5"/></svg><b>Terrasse privée</b><small>Vue mer &amp; Alpes</small></div>
-      <div><svg viewBox="0 0 24 24"><path d="M5 21V4h8a4 4 0 0 1 0 8H5"/></svg><b>Parking privé</b><small>Une place incluse</small></div>
-      <div><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><b>Arrivée autonome</b><small>24 h / 24</small></div>
+    <div class="acc" id="acc">
+      <article class="on"><img src="assets/img/image1.jpg" alt="Petit-déjeuner sur la terrasse face à la mer" loading="lazy"><button aria-label="La terrasse"></button><div class="tx"><h3>La terrasse</h3><p>Plein sud-est, face à la mer et aux Alpes. Petit-déjeuner au soleil, apéritif quand le jour tombe.</p></div></article>
+      <article><img src="assets/img/image17.jpg" alt="Piscine de la résidence et ses palmiers" loading="lazy"><button aria-label="La piscine"></button><div class="tx"><h3>La piscine</h3><p>Dans la résidence, entourée de palmiers. Ouverte de mai à octobre, donc tout l'été.</p></div></article>
+      <article><img src="assets/img/lit-terrasse.jpg" alt="Lit face à la baie vitrée et à la terrasse" loading="lazy"><button aria-label="La sérénité"></button><div class="tx"><h3>La sérénité</h3><p>Parking privé, arrivée autonome à toute heure, climatisation et linge fourni. Vous n'avez qu'à poser vos valises.</p></div></article>
     </div>
   </div>
 </section>
 
-<section class="gallery" id="galerie">
-  <div class="wrap">
-    <div class="eyebrow rv" style="color:var(--wood)">Galerie</div>
-    <h2 class="rv d1">Voir, c'est déjà <em>y être</em>.</h2>
-    <div class="gal" id="gal">
-      <a href="assets/img/image1.jpg"><img src="assets/img/image1-s.jpg" alt="Terrasse et petit-déjeuner vue mer" loading="lazy"></a>
-      <a href="assets/img/image4.jpg"><img src="assets/img/image4-s.jpg" alt="Salon ouvert sur la terrasse" loading="lazy"></a>
-      <a href="assets/img/image6.jpg"><img src="assets/img/image6-s.jpg" alt="Terrasse et vue dégagée" loading="lazy"></a>
-      <a href="assets/img/image2.jpg"><img src="assets/img/image2-s.jpg" alt="Petit-déjeuner face à la baie vitrée" loading="lazy"></a>
-      <a href="assets/img/lit-terrasse.jpg"><img src="assets/img/lit-terrasse-s.jpg" alt="Lit face à la terrasse" loading="lazy"></a>
-      <a href="assets/img/image17.jpg"><img src="assets/img/image17-s.jpg" alt="Piscine de la résidence" loading="lazy"></a>
-      <a href="assets/img/image3.jpg"><img src="assets/img/image3-s.jpg" alt="Espace TV et rangements" loading="lazy"></a>
-      <a href="assets/img/image11.jpg"><img src="assets/img/image11-s.jpg" alt="Cuisine équipée" loading="lazy"></a>
-      <a href="assets/img/image14.jpg"><img src="assets/img/image14-s.jpg" alt="Salle d'eau avec douche mosaïque" loading="lazy"></a>
-      <a href="assets/img/image7.jpg"><img src="assets/img/image7-s.jpg" alt="Transat sur la terrasse" loading="lazy"></a>
-      <a href="assets/img/sejour-vue.jpg"><img src="assets/img/sejour-vue-s.jpg" alt="Vue d'ensemble du studio depuis la terrasse" loading="lazy"></a>
-      <a href="assets/img/douche.jpg"><img src="assets/img/douche-s.jpg" alt="Douche à l'italienne en mosaïque" loading="lazy"></a>
-      <a href="assets/img/salon-vue-mer.jpg"><img src="assets/img/salon-vue-mer-s.jpg" alt="Le salon ouvert sur la terrasse et la mer" loading="lazy"></a>
+<section class="gal" id="galerie">
+  <div class="pin" id="pin">
+    <div class="wrap top">
+      <div><div class="kicker">Galerie</div><h2>Entrez, c'est ouvert.</h2></div>
+      <div class="count" id="count">13 photos</div>
+    </div>
+    <div class="track" id="track">
+      <figure class="w"><img src="assets/img/image1-s.jpg" data-full="assets/img/image1.jpg" alt="Terrasse et petit-déjeuner vue mer" loading="lazy"><figcaption>La terrasse</figcaption></figure>
+      <figure class="t"><img src="assets/img/salon-vue-mer-s.jpg" data-full="assets/img/salon-vue-mer.jpg" alt="Salon ouvert sur la mer" loading="lazy"><figcaption>Le salon</figcaption></figure>
+      <figure class="w"><img src="assets/img/lit-terrasse-s.jpg" data-full="assets/img/lit-terrasse.jpg" alt="Lit face à la terrasse" loading="lazy"><figcaption>Le coin nuit</figcaption></figure>
+      <figure class="w"><img src="assets/img/image6-s.jpg" data-full="assets/img/image6.jpg" alt="La terrasse à travers le rideau" loading="lazy"><figcaption>Vue sur la mer</figcaption></figure>
+      <figure class="s"><img src="assets/img/image17-s.jpg" data-full="assets/img/image17.jpg" alt="Piscine de la résidence" loading="lazy"><figcaption>La piscine</figcaption></figure>
+      <figure class="w"><img src="assets/img/image2-s.jpg" data-full="assets/img/image2.jpg" alt="Petit-déjeuner face à la baie vitrée" loading="lazy"><figcaption>Le réveil</figcaption></figure>
+      <figure class="w"><img src="assets/img/image4-s.jpg" data-full="assets/img/image4.jpg" alt="Canapé et terrasse" loading="lazy"><figcaption>Le canapé</figcaption></figure>
+      <figure class="w"><img src="assets/img/sejour-vue-s.jpg" data-full="assets/img/sejour-vue.jpg" alt="Vue d'ensemble du studio" loading="lazy"><figcaption>Vue d'ensemble</figcaption></figure>
+      <figure class="w"><img src="assets/img/image3-s.jpg" data-full="assets/img/image3.jpg" alt="Espace TV et rangements" loading="lazy"><figcaption>Les rangements</figcaption></figure>
+      <figure class="w"><img src="assets/img/image11-s.jpg" data-full="assets/img/image11.jpg" alt="Cuisine équipée" loading="lazy"><figcaption>La cuisine</figcaption></figure>
+      <figure class="t"><img src="assets/img/douche-s.jpg" data-full="assets/img/douche.jpg" alt="Douche en mosaïque" loading="lazy"><figcaption>La salle d'eau</figcaption></figure>
+      <figure class="w"><img src="assets/img/image14-s.jpg" data-full="assets/img/image14.jpg" alt="Lavabo et douche" loading="lazy"><figcaption>Le lavabo</figcaption></figure>
+      <figure class="w"><img src="assets/img/image7-s.jpg" data-full="assets/img/image7.jpg" alt="Transat sur la terrasse" loading="lazy"><figcaption>Le transat</figcaption></figure>
     </div>
   </div>
 </section>
-<div class="lb" id="lb"><button class="x" aria-label="Fermer">×</button><button class="p" aria-label="Précédente">‹</button><img alt=""><button class="n" aria-label="Suivante">›</button></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo agrandie"><button class="x" aria-label="Fermer">×</button><button class="p" aria-label="Photo précédente">‹</button><img alt=""><button class="n" aria-label="Photo suivante">›</button></div>
 
-<section class="film">
-  <!-- Remplacer par la vidéo montée : <video src="assets/video/visite.mp4" autoplay muted loop playsinline></video> -->
-  <img src="assets/img/image6.jpg" alt="" data-par loading="lazy">
-  <div class="in">
-    <div class="eyebrow" style="color:#fff;margin-bottom:18px">Côte d'Azur</div>
-    <h2>Le soleil<br><em>se lève ici.</em></h2>
+<section class="amen">
+  <div class="wrap grid">
+    <div><div class="kicker">Équipements</div><h2>Tout est prêt à votre arrivée.</h2></div>
+    <ul>
+      <li><svg viewBox="0 0 24 24"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V7h12v3"/></svg><div><b>Lit 160 × 200</b><span>couchage double confortable</span></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7l14 10M19 7L5 17"/></svg><div><b>Climatisation</b><span>fraîcheur assurée en été</span></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V10l7-5 7 5v10"/></svg><div><b>Terrasse privée</b><span>vue mer et Alpes</span></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 21V4h8a4 4 0 0 1 0 8H5"/></svg><div><b>Parking privé</b><span>une place incluse</span></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12a14 14 0 0 1 14 0M8 15a8 8 0 0 1 8 0M12 18.5h.01"/></svg><div><b>Wi-Fi haut débit</b><span>télétravail possible</span></div></li>
+      <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="1"/><path d="M8 21h8"/></svg><div><b>TV et Netflix</b><span>pour les soirées</span></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M6 3h9v6a4.5 4.5 0 0 1-9 0V3zM15 5h2a2 2 0 0 1 0 4h-2M5 21h11"/></svg><div><b>Machine Nespresso</b><span>café du matin</span></div></li>
+      <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg><div><b>Cuisine équipée</b><span>plaques à induction, micro-ondes</span></div></li>
+      <li><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><circle cx="12" cy="13" r="4"/></svg><div><b>Lave-linge</b><span>et fer à repasser</span></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M4 18h16M6 18V8h12v10M9 8V5h6v3"/></svg><div><b>Linge fourni</b><span>draps et serviettes</span></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M4 21V9a4 4 0 0 1 8 0M12 9h6v4"/></svg><div><b>Douche en mosaïque</b><span>salle d'eau rénovée</span></div></li>
+      <li><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div><b>Arrivée autonome</b><span>24 h sur 24</span></div></li>
+    </ul>
   </div>
 </section>
 
-<section class="loc" id="riviera">
+<section class="film" aria-label="Ambiance">
+  <img src="assets/img/image6.jpg" alt="" data-par="8" loading="lazy">
+  <h2 id="filmTitle">Le soleil se lève ici.</h2>
+</section>
+
+<section class="riv" id="riviera">
   <div class="wrap grid">
     <div>
-      <div class="eyebrow rv">Localisation</div>
-      <h2 class="rv d1">Au cœur de la <em>Riviera</em>.</h2>
-      <p class="rv d2" style="margin-top:24px;color:var(--ink-2);max-width:48ch">À Villeneuve-Loubet, entre Nice et Cannes : la base idéale pour explorer la Côte d'Azur, à pied, en train ou en voiture.</p>
-      <ul class="dist rv d3">
-        <li><span>Plages de Villeneuve-Loubet</span><span>350 m</span></li>
-        <li><span>Marina Baie des Anges</span><span>10 min</span></li>
-        <li><span>Aéroport Nice-Côte d'Azur</span><span>7 km</span></li>
-        <li><span>Antibes</span><span>10 min</span></li>
-        <li><span>Nice</span><span>15 min</span></li>
-        <li><span>Cannes</span><span>30 min</span></li>
-        <li><span>Monaco</span><span>40 min</span></li>
-      </ul>
+      <div class="kicker">Localisation</div>
+      <h2>Toute la Riviera depuis la terrasse.</h2>
+      <p class="sub">Villeneuve-Loubet se trouve entre Nice et Cannes : la plage à pied, les villes de la côte en quelques minutes de train ou de voiture.</p>
+      <div class="addr">7 avenue du Clos, 06270 Villeneuve-Loubet</div>
     </div>
-    <div class="mapcard rv d2">
-      <img src="assets/img/image4.jpg" alt="Pièce de vie ouverte sur la terrasse vue mer" loading="lazy">
-      <div class="tag"><small class="eyebrow">Adresse</small><b>7 avenue du Clos</b>06270 Villeneuve-Loubet · Côte d'Azur</div>
-    </div>
+    <ul class="times">
+      <li><span>Plage</span><span class="dots"></span><b>350 m</b></li>
+      <li><span>Marina Baie des Anges</span><span class="dots"></span><b>10 min</b></li>
+      <li><span>Antibes</span><span class="dots"></span><b>10 min</b></li>
+      <li><span>Aéroport de Nice</span><span class="dots"></span><b>7 km</b></li>
+      <li><span>Nice</span><span class="dots"></span><b>15 min</b></li>
+      <li><span>Cannes</span><span class="dots"></span><b>30 min</b></li>
+      <li><span>Monaco</span><span class="dots"></span><b>40 min</b></li>
+    </ul>
   </div>
 </section>
 
-<section class="reviews" id="avis">
+<section class="avis" id="avis">
   <div class="wrap">
-    <div class="eyebrow rv">Avis de voyageurs</div>
-    <h2 class="rv d1">Ils y ont <em>séjourné</em>.</h2>
-    <div class="rgrid">
-      <blockquote class="rcard rv"><p>Tout était comme indiqué dans l'annonce. Contact très sympathique et agréable. Rien à redire. […] La piscine est également un super atout ! Nous recommandons vivement cette location !</p><footer><span><b>Andreas</b> · Vienne, Autriche</span><span>Airbnb · août 2016 · traduit de l'allemand</span></footer></blockquote>
-      <blockquote class="rcard rv d1"><p>Hôte agréable et arrangeante ! Appartement bien situé et piscine commune superbe. Je recommande !</p><footer><span><b>Marielle</b> · Ivry-sur-Seine</span><span>Airbnb · juillet 2018</span></footer></blockquote>
-      <blockquote class="rcard rv"><p>Nous avons beaucoup apprécié le balcon où nous avons pu prendre le soleil, l'appartement est lumineux et proche de tout.</p><footer><span><b>Mélissa</b> · Saint-Chamond</span><span>Airbnb · mai 2026</span></footer></blockquote>
-      <blockquote class="rcard rv d1"><p>Appartement très bien situé. […] Essentiellement confortable pour deux.</p><footer><span><b>Laura</b> · Bergen, Norvège</span><span>Airbnb · juillet 2018 · traduit de l'anglais</span></footer></blockquote>
+    <div class="kicker">Avis de voyageurs sur Airbnb</div>
+    <div class="quote" id="quotes" aria-live="polite">
+      <blockquote class="on"><p>Tout était comme indiqué dans l'annonce. La piscine est également un super atout ! Nous recommandons vivement cette location !</p><cite><b>Andreas</b>, Vienne (Autriche), août 2016, traduit de l'allemand</cite></blockquote>
+      <blockquote><p>Hôte agréable et arrangeante ! Appartement bien situé et piscine commune superbe. Je recommande !</p><cite><b>Marielle</b>, Ivry-sur-Seine, juillet 2018</cite></blockquote>
+      <blockquote><p>Nous avons beaucoup apprécié le balcon où nous avons pu prendre le soleil, l'appartement est lumineux et proche de tout.</p><cite><b>Mélissa</b>, Saint-Chamond, mai 2026</cite></blockquote>
+      <blockquote><p>Appartement très bien situé. Essentiellement confortable pour deux.</p><cite><b>Laura</b>, Bergen (Norvège), juillet 2018, traduit de l'anglais</cite></blockquote>
     </div>
+    <div class="ctl"><button class="p" aria-label="Avis précédent">‹</button><button class="n" aria-label="Avis suivant">›</button><span class="n" id="qn">1 / 4</span></div>
   </div>
 </section>
 
 <section class="season" id="ete-2027">
   <div class="wrap grid">
     <div>
-      <div class="eyebrow rv">Saison été 2027</div>
-      <h2 class="rv d1">Votre été<br>sur la <em>Riviera</em>.</h2>
-      <p class="rv d2">Le studio vous accueille du 1<sup>er</sup> juillet au 31 août 2027. Les plus belles semaines partent tôt : envoyez vos dates, nous vous répondons rapidement avec votre tarif direct.</p>
-      <div class="price rv d2"><b>121 €</b><small>par nuit en direct<br>juillet – août 2027</small></div>
-      <ul class="perks rv d3">
-        <li>Tarif direct, sans commission</li>
+      <div class="kicker">Saison été 2027 · du 1er juillet au 31 août</div>
+      <h2>Votre été sur la Riviera.</h2>
+      <div class="price"><b>130 €</b><span>la nuit, en réservation directe</span></div>
+      <div class="deal"><i>−10%</i><span>dès 7 nuits réservées en direct.<br>Une semaine au bord de la mer, pour moins cher.</span></div>
+      <ul class="perks">
+        <li>Sans commission de plateforme</li>
         <li>Parking privé inclus</li>
-        <li>Linge &amp; serviettes fournis</li>
+        <li>Linge et serviettes fournis</li>
         <li>Piscine ouverte tout l'été</li>
-        <li>Arrivée autonome 24 h / 24</li>
+        <li>Arrivée autonome à toute heure</li>
         <li>Réponse en 6 langues</li>
       </ul>
     </div>
-    <form class="book rv d2" id="book">
+    <form class="book" id="book">
       <h3>Demande de réservation</h3>
-      <div class="sub">Votre demande s'ouvre dans WhatsApp, prête à envoyer.</div>
-      <div class="row"><div><label for="fn">Prénom</label><input id="fn" required></div><div><label for="ln">Nom</label><input id="ln"></div></div>
-      <div class="row"><div><label for="in">Arrivée</label><input id="in" type="date" min="2027-07-01" max="2027-08-31" value="2027-07-01" required></div><div><label for="out">Départ</label><input id="out" type="date" min="2027-07-02" max="2027-09-01" value="2027-07-08" required></div></div>
-      <div class="row"><div><label for="g">Voyageurs</label><select id="g"><option>2 personnes</option><option>1 personne</option></select></div><div><label for="lang">Langue</label><select id="lang"><option>Français</option><option>English</option><option>Deutsch</option><option>Italiano</option><option>Español</option></select></div></div>
-      <label for="msg">Message</label><textarea id="msg" rows="2" placeholder="Une question, une demande particulière…"></textarea>
-      <button class="btn btn-coral" type="submit">Envoyer ma demande →</button>
-      <div class="alt"><a href="mailto:contact@maisonayke.com?subject=R%C3%A9servation%20%C3%A9t%C3%A9%202027">Par email</a><a href="https://wa.me/41787777978">WhatsApp</a></div>
+      <p class="sub">Votre demande s'ouvre dans WhatsApp, prête à envoyer. Nous confirmons la disponibilité rapidement.</p>
+      <div class="row"><div><label for="fn">Prénom</label><input id="fn" autocomplete="given-name" required></div><div><label for="ln">Nom</label><input id="ln" autocomplete="family-name"></div></div>
+      <div class="row"><div><label for="in">Arrivée</label><input id="in" type="date" min="2027-07-01" max="2027-08-30" value="2027-07-03" required></div><div><label for="out">Départ</label><input id="out" type="date" min="2027-07-02" max="2027-08-31" value="2027-07-10" required></div></div>
+      <div class="row"><div><label for="g">Voyageurs</label><select id="g"><option>2 personnes</option><option>1 personne</option></select></div><div><label for="lang">Langue</label><select id="lang"><option>Français</option><option>English</option><option>Deutsch</option><option>Italiano</option><option>Español</option><option>Hrvatski</option></select></div></div>
+      <div class="total" id="total" aria-live="polite"></div>
+      <label for="msg">Message</label><textarea id="msg" rows="2" placeholder="Une question, une demande particulière"></textarea>
+      <button class="btn btn-coral" type="submit">Envoyer ma demande sur WhatsApp</button>
+      <div class="alt"><a href="mailto:contact@maisonayke.com?subject=R%C3%A9servation%20%C3%A9t%C3%A9%202027">Écrire par email</a></div>
     </form>
   </div>
 </section>
 
 <section class="faq" id="faq">
   <div class="wrap grid">
-    <div><div class="eyebrow rv">Questions</div><h2 class="rv d1">Bon à <em>savoir</em>.</h2></div>
-    <div class="rv d2">
-      <details><summary>Quand peut-on réserver ?</summary><p>Le studio est disponible du 1<sup>er</sup> juillet au 31 août 2027. Envoyez vos dates par WhatsApp, email ou via le formulaire : nous confirmons la disponibilité et votre tarif direct.</p></details>
-      <details><summary>Pourquoi réserver en direct ?</summary><p>Sans commission de plateforme, le tarif direct est plus avantageux. Vous échangez directement avec l'hôte, avant et pendant votre séjour.</p></details>
-      <details><summary>Le parking est-il inclus ?</summary><p>Oui, une place de parking privée est incluse, un vrai avantage en été sur la Côte d'Azur.</p></details>
-      <details><summary>Comment se passe l'arrivée ?</summary><p>L'arrivée est autonome : vous recevez les instructions et les codes d'accès avant votre séjour, et vous pouvez arriver à l'heure qui vous convient.</p></details>
-      <details><summary>La piscine est-elle ouverte ?</summary><p>La piscine de la résidence est ouverte de mai à octobre, donc pendant tout votre séjour d'été.</p></details>
-      <details><summary>Quelles langues parlez-vous ?</summary><p>Français, anglais, allemand, espagnol, italien et croate.</p></details>
+    <div><div class="kicker">Questions</div><h2>Bon à savoir.</h2></div>
+    <div>
+      <details><summary>Quand peut-on réserver ?<i></i></summary><p>Le studio est disponible du 1er juillet au 31 août 2027. Envoyez vos dates par WhatsApp, par email ou avec le formulaire : nous confirmons la disponibilité et votre tarif.</p></details>
+      <details><summary>Comment profiter des −10 % ?<i></i></summary><p>Réservez 7 nuits ou plus en direct, sans passer par une plateforme : la réduction de 10 % s'applique sur le prix des nuits.</p></details>
+      <details><summary>Le parking est-il inclus ?<i></i></summary><p>Oui, une place de parking privée est incluse. Un vrai confort en été sur la Côte d'Azur.</p></details>
+      <details><summary>Comment se passe l'arrivée ?<i></i></summary><p>L'arrivée est autonome : vous recevez les instructions et les codes avant votre séjour, et vous arrivez à l'heure qui vous convient.</p></details>
+      <details><summary>La piscine est-elle ouverte ?<i></i></summary><p>La piscine de la résidence est ouverte de mai à octobre, donc pendant tout votre séjour d'été.</p></details>
+      <details><summary>Quelles langues parlez-vous ?<i></i></summary><p>Français, anglais, allemand, espagnol, italien et croate.</p></details>
     </div>
   </div>
 </section>
 
 <section class="guides">
   <div class="wrap">
-    <div class="eyebrow rv">Guide Côte d'Azur</div>
-    <h2 class="rv d1">Nos <em>adresses</em>.</h2>
+    <div class="kicker">Guide de la Côte d'Azur</div>
+    <h2>Nos adresses autour du studio.</h2>
     <div class="gcards">
-      <a class="gcard rv" href="/blog/plages-villeneuve-loubet.html"><div class="im"><img src="assets/img/article_plages.jpg" alt="Plages de Villeneuve-Loubet" loading="lazy"></div><small>Plages &amp; mer</small><h3>Les plus belles plages autour du studio</h3></a>
-      <a class="gcard rv d1" href="/blog/que-faire-nice-cannes.html"><div class="im"><img src="assets/img/article_quefaire.jpg" alt="Nice, Cannes et Antibes" loading="lazy"></div><small>Visites</small><h3>Nice, Cannes, Antibes : que faire ?</h3></a>
-      <a class="gcard rv d2" href="/blog/restaurants-villeneuve-loubet.html"><div class="im"><img src="assets/img/article_restaurants.jpg" alt="Restaurants à Villeneuve-Loubet" loading="lazy"></div><small>Gastronomie</small><h3>Nos adresses gourmandes</h3></a>
+      <a class="gcard" href="/blog/plages-villeneuve-loubet.html"><div class="im"><img src="assets/img/article_plages.jpg" alt="Plages de la Côte d'Azur" loading="lazy"></div><h3>Les plus belles plages autour du studio</h3><span>Lire le guide</span></a>
+      <a class="gcard" href="/blog/que-faire-nice-cannes.html"><div class="im"><img src="assets/img/article_quefaire.jpg" alt="Monaco et la Riviera" loading="lazy"></div><h3>Nice, Cannes, Antibes : que faire ?</h3><span>Lire le guide</span></a>
+      <a class="gcard" href="/blog/restaurants-villeneuve-loubet.html"><div class="im"><img src="assets/img/article_restaurants.jpg" alt="Assiette de fruits de mer" loading="lazy"></div><h3>Nos adresses gourmandes</h3><span>Lire le guide</span></a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="top">
-      <div><div class="big">Maison <em>Ayke</em></div><p style="margin-top:18px;max-width:30ch">Studio vue mer sur la Côte d'Azur, entre Nice et Cannes.</p></div>
+    <div class="huge">Maison<br><span>Ayke</span></div>
+    <div class="cols">
       <div><h4>Contact</h4><ul><li><a href="https://wa.me/41787777978">WhatsApp +41 78 777 79 78</a></li><li><a href="mailto:contact@maisonayke.com">contact@maisonayke.com</a></li><li><a href="https://instagram.com/maisonayke">Instagram</a></li></ul></div>
-      <div><h4>Le studio</h4><ul><li><a href="#studio">Présentation</a></li><li><a href="#galerie">Galerie</a></li><li><a href="#ete-2027">Été 2027</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Le studio</h4><ul><li><a href="#studio">Présentation</a></li><li><a href="#galerie">Galerie</a></li><li><a href="#ete-2027">Tarifs été 2027</a></li><li><a href="#faq">Questions</a></li></ul></div>
       <div><h4>Adresse</h4><ul><li>7 avenue du Clos</li><li>06270 Villeneuve-Loubet</li><li>Licence n° 0082481464443</li></ul></div>
     </div>
-    <div class="bot"><span>© 2026 Maison Ayke</span><span>Conception &amp; réalisation : Sonia Catic</span></div>
+    <div class="bot"><span>© 2026 Maison Ayke</span><span>Conception et réalisation : Sonia Catic</span></div>
   </div>
 </footer>
 
-<a class="wa" href="https://wa.me/41787777978?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20le%20studio%20Maison%20Ayke%20pour%20l%27%C3%A9t%C3%A9%202027." aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg></a>
+<a class="wa" href="https://wa.me/41787777978?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20le%20studio%20Maison%20Ayke%20pour%20l%27%C3%A9t%C3%A9%202027." aria-label="Écrire sur WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg></a>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
-const nav=document.getElementById('nav');
-addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>60),{passive:true});
-document.querySelectorAll('.nav ul a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-const par=document.querySelector('[data-par]');
-addEventListener('scroll',()=>{if(!par)return;const r=par.parentElement.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){par.style.transform=`scale(1.15) translateY(${(r.top/innerHeight)*-40}px)`}},{passive:true});
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+
+// Nav
+const nav = $('#nav'), burger = $('.burger');
+addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 60), {passive:true});
+burger.addEventListener('click', () => { const o = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', o); });
+$$('#menu a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); burger.setAttribute('aria-expanded', false); }));
+
+// Accordéon des raisons
+$$('#acc article').forEach(art => {
+  const open = () => { $$('#acc article').forEach(a => a.classList.toggle('on', a === art)); };
+  art.addEventListener('mouseenter', () => { if (matchMedia('(hover:hover)').matches) open(); });
+  art.querySelector('button').addEventListener('click', open);
+});
+
+// Avis
+const qs = $$('#quotes blockquote'); let qi = 0;
+function showQ(i){ qi = (i + qs.length) % qs.length; qs.forEach((q,k)=>q.classList.toggle('on', k===qi)); $('#qn').textContent = (qi+1)+' / '+qs.length; }
+$('.avis .ctl .p').onclick = () => showQ(qi-1); $('.avis .ctl button.n').onclick = () => showQ(qi+1);
+let qTimer = setInterval(() => showQ(qi+1), 7000);
+$('#quotes').addEventListener('mouseenter', () => clearInterval(qTimer));
+
 // Lightbox
-const links=[...document.querySelectorAll('#gal a')],lb=document.getElementById('lb'),lbi=lb.querySelector('img');let cur=0;
-function show(i){cur=(i+links.length)%links.length;lbi.src=links[cur].href;lbi.alt=links[cur].querySelector('img').alt;lb.classList.add('on')}
-links.forEach((a,i)=>a.addEventListener('click',e=>{e.preventDefault();show(i)}));
-lb.querySelector('.x').onclick=()=>lb.classList.remove('on');
-lb.querySelector('.p').onclick=()=>show(cur-1);lb.querySelector('.n').onclick=()=>show(cur+1);
-lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('on')});
-addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowRight')show(cur+1);if(e.key==='ArrowLeft')show(cur-1)});
-// Booking -> WhatsApp
-document.getElementById('book').addEventListener('submit',e=>{e.preventDefault();const v=id=>document.getElementById(id).value;
-const t=`Bonjour, je souhaite réserver le studio Maison Ayke.\nNom : ${v('fn')} ${v('ln')}\nArrivée : ${v('in')}\nDépart : ${v('out')}\nVoyageurs : ${v('g')}\nLangue : ${v('lang')}\n${v('msg')}`;
-window.open('https://wa.me/41787777978?text='+encodeURIComponent(t),'_blank')});
+const figs = $$('#track figure img'), lb = $('#lb'), lbi = lb.querySelector('img'); let cur = 0;
+function lbShow(i){ cur = (i + figs.length) % figs.length; lbi.src = figs[cur].dataset.full; lbi.alt = figs[cur].alt; lb.classList.add('on'); lb.querySelector('.x').focus(); }
+figs.forEach((im,i) => { im.parentElement.tabIndex = 0; im.parentElement.addEventListener('click', () => lbShow(i)); im.parentElement.addEventListener('keydown', e => { if (e.key==='Enter') lbShow(i); }); });
+lb.querySelector('.x').onclick = () => lb.classList.remove('on');
+lb.querySelector('.p').onclick = () => lbShow(cur-1); lb.querySelector('.n').onclick = () => lbShow(cur+1);
+lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('on'); });
+addEventListener('keydown', e => { if (!lb.classList.contains('on')) return; if (e.key==='Escape') lb.classList.remove('on'); if (e.key==='ArrowRight') lbShow(cur+1); if (e.key==='ArrowLeft') lbShow(cur-1); });
+
+// Prix en direct
+const NIGHT = 130;
+function calc(){
+  const a = new Date($('#in').value), b = new Date($('#out').value);
+  const n = Math.round((b - a) / 864e5);
+  const box = $('#total');
+  if (!(n > 0)) { box.innerHTML = '<small>Choisissez une date de départ après la date d\'arrivée.</small>'; return null; }
+  const base = n * NIGHT, disc = n >= 7 ? Math.round(base * .10) : 0, tot = base - disc;
+  box.innerHTML = `<div class="r"><span>${n} nuit${n>1?'s':''} × ${NIGHT} €</span><span>${base} €</span></div>` +
+    (disc ? `<div class="r d"><span>Réduction semaine −10 %</span><span>−${disc} €</span></div>` : `<div class="r d"><span>Encore ${7-n} nuit${7-n>1?'s':''} pour obtenir −10 %</span><span></span></div>`) +
+    `<div class="r t"><span>Total estimé</span><span>${tot} €</span></div><small>Estimation hors frais de ménage, confirmée à la réservation.</small>`;
+  return {n, tot};
+}
+['in','out'].forEach(id => $('#'+id).addEventListener('change', calc)); calc();
+$('#book').addEventListener('submit', e => {
+  e.preventDefault(); const v = id => $('#'+id).value, r = calc();
+  const t = `Bonjour, je souhaite réserver le studio Maison Ayke.\nNom : ${v('fn')} ${v('ln')}\nArrivée : ${v('in')}\nDépart : ${v('out')}${r ? ` (${r.n} nuits, estimation ${r.tot} €)` : ''}\nVoyageurs : ${v('g')}\nLangue : ${v('lang')}\n${v('msg')}`;
+  window.open('https://wa.me/41787777978?text=' + encodeURIComponent(t), '_blank');
+});
+
+// Mouvement
+if (window.gsap && !reduce) {
+  gsap.registerPlugin(ScrollTrigger);
+  // Ouverture : le store se déroule, le soleil se lève, le titre monte
+  const tl = gsap.timeline({defaults:{ease:'expo.out'}});
+  tl.from('#awning', {scaleY:0, duration:1.1})
+    .from('#sun', {yPercent:45, scale:.8, duration:2.2}, 0)
+    .from('.hero h1 .l span', {yPercent:110, duration:1.3, stagger:.12}, .25)
+    .from('.hero .lead, .hero-cta', {y:30, opacity:0, duration:1, stagger:.1}, .8)
+    .from('#window', {clipPath:'inset(100% 0 0 0 round 999px 999px 18px 18px)', duration:1.6}, .4)
+    .from('.sticker', {scale:0, rotate:-90, duration:1.2, ease:'back.out(1.6)'}, 1.2);
+  // Le soleil descend quand on fait défiler
+  gsap.to('#sun', {yPercent:30, ease:'none', scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:true}});
+  // Bandeau qui défile, accéléré par le scroll
+  const tk = gsap.to('#ticker', {xPercent:-50, duration:30, ease:'none', repeat:-1});
+  ScrollTrigger.create({onUpdate:self => { gsap.to(tk, {timeScale: 1 + Math.min(Math.abs(self.getVelocity())/400, 5), duration:.2, overwrite:true}); gsap.to(tk, {timeScale:1, duration:1, delay:.2}); }});
+  // Barre de progression
+  gsap.to('#progress', {scaleX:1, ease:'none', scrollTrigger:{start:0, end:'max', scrub:.3}});
+  // Parallaxe des images marquées
+  $$('[data-par]').forEach(el => gsap.fromTo(el, {yPercent:-(+el.dataset.par)}, {yPercent:+el.dataset.par, ease:'none', scrollTrigger:{trigger:el.parentElement, start:'top bottom', end:'bottom top', scrub:true}}));
+  // Galerie horizontale épinglée
+  const mm = gsap.matchMedia();
+  mm.add('(min-width:561px)', () => {
+    const track = $('#track');
+    const dist = () => track.scrollWidth - innerWidth + 60;
+    gsap.to(track, {x:() => -dist(), ease:'none', scrollTrigger:{trigger:'#pin', start:'top top', end:() => '+=' + dist(), pin:true, scrub:.6, invalidateOnRefresh:true,
+      onUpdate:self => { $('#count').textContent = Math.min(13, Math.max(1, Math.round(self.progress*12)+1)) + ' / 13'; }}});
+  });
+  // Titre du film qui s'élargit
+  gsap.fromTo('#filmTitle', {scale:.7, opacity:.2}, {scale:1, opacity:1, ease:'none', scrollTrigger:{trigger:'.film', start:'top bottom', end:'center center', scrub:true}});
+  // Grands titres : lettres qui montent une seule fois
+  $$('section h2').forEach(h => { if (h.id==='filmTitle') return; gsap.from(h, {yPercent:30, opacity:0, duration:1.2, ease:'expo.out', scrollTrigger:{trigger:h, start:'top 85%'}}); });
+  // Horaires : les points se tracent
+  gsap.from('.times .dots', {scaleX:0, transformOrigin:'left', duration:1.2, ease:'expo.out', stagger:.08, scrollTrigger:{trigger:'.times', start:'top 75%'}});
+  // Boutons magnétiques
+  if (matchMedia('(hover:hover)').matches) $$('.mag').forEach(b => {
+    b.addEventListener('mousemove', e => { const r = b.getBoundingClientRect(); gsap.to(b, {x:(e.clientX - r.left - r.width/2)*.25, y:(e.clientY - r.top - r.height/2)*.35, duration:.4}); });
+    b.addEventListener('mouseleave', () => gsap.to(b, {x:0, y:0, duration:.6, ease:'elastic.out(1,.4)'}));
+  });
+} else {
+  document.querySelector('#ticker').style.animation = 'none';
+}
 </script>
 </body>
 </html>
