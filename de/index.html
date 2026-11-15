@@ -205,16 +205,18 @@ section{position:relative;padding:clamp(100px,13vw,170px) 0}
 
 /* AVIS */
 .avis{background:var(--sand);overflow:hidden}
-.avis .quote{position:relative;min-height:330px;margin-top:40px}
-.avis blockquote{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .7s var(--ease),transform .7s var(--ease);transform:translateX(40px)}
+.avis .quote{display:grid;margin-top:40px}
+.avis blockquote{grid-area:1/1;align-self:start;opacity:0;visibility:hidden;transition:opacity .7s var(--ease),transform .7s var(--ease);transform:translateX(40px)}
 .avis blockquote.on{opacity:1;visibility:visible;transform:none}
 .avis blockquote p{font-family:var(--display);font-size:clamp(1.9rem,3.6vw,3.4rem);line-height:1.12;max-width:22ch;color:var(--sea)}
 .avis blockquote p::before{content:"«\00a0";color:var(--coral)}
 .avis blockquote p::after{content:"\00a0»";color:var(--coral)}
+html[lang="de"] .avis blockquote p::before{content:"„"}html[lang="de"] .avis blockquote p::after{content:"“"}
+html[lang="en"] .avis blockquote p::before{content:"“"}html[lang="en"] .avis blockquote p::after{content:"”"}
 .avis cite{display:block;margin-top:26px;font-style:normal;color:var(--ink-2)}
 .avis cite b{color:var(--ink);font-weight:600}
-.avis .ctl{display:flex;gap:12px;align-items:center;margin-top:20px}
-.avis .ctl button{width:54px;height:54px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;cursor:pointer;font-family:var(--text);font-size:1.6rem;line-height:1;color:var(--ink);transition:background .3s,color .3s}
+.avis .ctl{display:flex;gap:12px;align-items:center;margin-top:44px}
+.avis .ctl button{width:54px;height:54px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;cursor:pointer;display:grid;place-items:center;color:var(--ink);transition:background .3s,color .3s}
 .avis .ctl button:hover{background:var(--ink);color:var(--sand)}
 .avis .ctl .n{margin-left:12px;font-family:var(--display);font-size:1.2rem;color:var(--ink-2)}
 
@@ -499,7 +501,7 @@ footer .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
       <blockquote><p>Der Balkon hat uns sehr gefallen, dort konnten wir die Sonne genießen. Die Wohnung ist hell und alles ist gut erreichbar.</p><cite><b>Mélissa</b>, Saint-Chamond (Frankreich), Mai 2026, aus dem Französischen übersetzt</cite></blockquote>
       <blockquote><p>Sehr gut gelegene Wohnung. Am bequemsten für zwei Personen.</p><cite><b>Laura</b>, Bergen (Norwegen), Juli 2018, übersetzt</cite></blockquote>
     </div>
-    <div class="ctl"><button class="p" aria-label="Vorherige Bewertung">‹</button><button class="n" aria-label="Nächste Bewertung">›</button><span class="n" id="qn">1 / 4</span></div>
+    <div class="ctl"><button class="p" aria-label="Vorherige Bewertung"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button class="n" aria-label="Nächste Bewertung"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button><span class="n" id="qn">1 / 4</span></div>
   </div>
 </section>
 
