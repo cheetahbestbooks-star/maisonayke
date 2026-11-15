@@ -160,6 +160,23 @@ section{position:relative;padding:clamp(100px,13vw,170px) 0}
 .amen li b{display:block;font-weight:600}
 .amen li span{font-size:.92rem;color:var(--ink-2)}
 
+
+/* VISITE */
+.visite{background:var(--sea);color:var(--sand);overflow:hidden}
+.visite .grid{display:grid;grid-template-columns:1fr auto;gap:clamp(40px,7vw,110px);align-items:center}
+.visite p.sub{margin:26px 0 30px;max-width:28em;color:rgba(251,245,236,.8)}
+.visite ol{list-style:none;counter-reset:c;display:grid;gap:12px;max-width:26em}
+.visite ol li{counter-increment:c;display:flex;gap:16px;align-items:baseline;padding-bottom:12px;border-bottom:1.5px solid rgba(250,246,240,.14)}
+.visite ol li::before{content:counter(c,decimal-leading-zero);font-family:var(--display);color:#F0A98E;font-size:1.2rem;min-width:2ch}
+.phone{position:relative;width:min(340px,78vw);aspect-ratio:9/16;border-radius:34px;overflow:hidden;background:#000;box-shadow:0 50px 100px -40px rgba(0,0,0,.7);outline:10px solid rgba(250,246,240,.08)}
+.phone video{width:100%;height:100%;object-fit:cover}
+.phone .play{position:absolute;inset:0;display:grid;place-items:center;border:0;cursor:pointer;background:linear-gradient(180deg,rgba(31,58,77,0) 40%,rgba(31,58,77,.55));transition:opacity .4s}
+.phone .play span{width:84px;height:84px;border-radius:50%;background:var(--coral);display:grid;place-items:center;box-shadow:0 0 0 0 rgba(232,97,74,.6);animation:ping 2.4s infinite}
+.phone .play span::before{content:"";margin-left:6px;border-left:24px solid #fff;border-block:15px solid transparent}
+@keyframes ping{70%{box-shadow:0 0 0 22px rgba(232,97,74,0)}100%{box-shadow:0 0 0 0 rgba(232,97,74,0)}}
+.phone.on .play{opacity:0;pointer-events:none}
+@media (max-width:1000px){.visite .grid{grid-template-columns:1fr}.phone{justify-self:center}}
+
 /* FILM */
 .film{padding:0;height:110vh;overflow:hidden;color:var(--sand);display:grid;place-items:center;text-align:center;background:var(--sea)}
 .film img{position:absolute;left:0;top:-15%;width:100%;height:130%;object-fit:cover;opacity:.8}
@@ -295,6 +312,7 @@ footer .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
     <ul id="menu">
       <li><a href="#studio">Le studio</a></li>
       <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#visite">Visite</a></li>
       <li><a href="#riviera">La Riviera</a></li>
       <li><a href="#avis">Avis</a></li>
       <li><a href="#ete-2027">Tarifs</a></li>
@@ -408,6 +426,27 @@ footer .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
       <li><svg viewBox="0 0 24 24"><path d="M4 21V9a4 4 0 0 1 8 0M12 9h6v4"/></svg><div><b>Douche en mosaïque</b><span>salle d'eau rénovée</span></div></li>
       <li><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div><b>Arrivée autonome</b><span>24 h sur 24</span></div></li>
     </ul>
+  </div>
+</section>
+
+<section class="visite" id="visite">
+  <div class="wrap grid">
+    <div>
+      <div class="kicker" style="color:#F0A98E">Visite vidéo</div>
+      <h2>Le studio en 35 secondes.</h2>
+      <p class="sub">Suivez la visite comme si vous y étiez : de l'entrée jusqu'à la terrasse.</p>
+      <ol>
+        <li>Le séjour, lumineux et cosy</li>
+        <li>La terrasse, vue mer et Alpes</li>
+        <li>La salle d'eau en mosaïque italienne</li>
+        <li>La cuisine équipée</li>
+        <li>Le quartier, à 350 m des plages</li>
+      </ol>
+    </div>
+    <div class="phone" id="phone">
+      <video src="assets/video/visite.mp4" poster="assets/img/visite-poster.jpg" playsinline preload="none" aria-label="Visite vidéo du studio Maison Ayke"></video>
+      <button class="play" aria-label="Lancer la visite vidéo"><span></span></button>
+    </div>
   </div>
 </section>
 
@@ -573,6 +612,11 @@ $('#book').addEventListener('submit', e => {
   const t = `Bonjour, je souhaite réserver le studio Maison Ayke.\nNom : ${v('fn')} ${v('ln')}\nArrivée : ${v('in')}\nDépart : ${v('out')}${r ? ` (${r.n} nuits, estimation ${r.tot} €)` : ''}\nVoyageurs : ${v('g')}\nLangue : ${v('lang')}\n${v('msg')}`;
   window.open('https://wa.me/41787777978?text=' + encodeURIComponent(t), '_blank');
 });
+
+// Visite vidéo
+const ph=$('#phone'), pv=ph.querySelector('video');
+ph.querySelector(".play").addEventListener("click",()=>{ph.classList.add("on");pv.controls=true;pv.play();});
+pv.addEventListener('ended',()=>ph.classList.remove('on'));
 
 // Mouvement
 if (window.gsap && !reduce) {
