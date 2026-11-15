@@ -6,6 +6,10 @@
 <title>Maison Ayke — Studio vue mer à Villeneuve-Loubet · Été 2027</title>
 <meta name="description" content="Studio vue mer au dernier étage à Villeneuve-Loubet, entre Nice et Cannes : terrasse privée, piscine, parking. Été 2027 dès 130 € la nuit, −10 % dès 7 nuits en réservation directe.">
 <link rel="canonical" href="https://maisonayke.com/">
+<link rel="alternate" hreflang="fr" href="https://maisonayke.com/">
+<link rel="alternate" hreflang="en" href="https://maisonayke.com/en/">
+<link rel="alternate" hreflang="de" href="https://maisonayke.com/de/">
+<link rel="alternate" hreflang="x-default" href="https://maisonayke.com/">
 <meta property="og:title" content="Maison Ayke — Studio vue mer, Côte d'Azur">
 <meta property="og:description" content="Terrasse privée face à la mer, piscine, parking. Été 2027 : −10 % dès 7 nuits en direct.">
 <meta property="og:image" content="https://maisonayke.com/assets/img/image1.jpg">
@@ -61,7 +65,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;op
 /* NAV */
 .nav{position:fixed;inset:0 0 auto;z-index:100;padding:50px 0 22px;transition:background .4s,padding .4s,color .4s;color:var(--sand)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:1.6rem}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:1.6rem;white-space:nowrap}
 .brand img{width:46px;height:auto;filter:drop-shadow(0 4px 10px rgba(0,0,0,.25))}
 .nav.solid .brand img{width:38px}
 .nav ul{display:flex;gap:30px;list-style:none;font-weight:400;font-size:.98rem}
@@ -69,6 +73,11 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;op
 .nav ul a:hover{background-size:100% 1.5px}
 .nav .btn{padding:.75em 1.4em;font-size:.92rem}
 .nav.solid{background:rgba(31,58,77,.9);backdrop-filter:blur(14px);padding:12px 0}
+.lang{display:flex;gap:8px;align-items:center}
+.lang a{display:block;width:28px;height:19px;border-radius:4px;overflow:hidden;opacity:.55;outline:1.5px solid transparent;outline-offset:2px;transition:opacity .3s,outline-color .3s}
+.lang a:hover,.lang a[aria-current="page"]{opacity:1;outline-color:rgba(250,246,240,.75)}
+.lang svg{display:block;width:100%;height:100%}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .burger{display:none;background:none;border:0;color:inherit;cursor:pointer;width:44px;height:44px}
 .burger span{display:block;height:2px;background:currentColor;margin:7px 8px;transition:transform .3s}
 
@@ -275,7 +284,7 @@ footer .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
 
 /* Responsive */
 @media (max-width:1000px){
-  .nav ul,.nav .btn{display:none}.burger{display:block}
+  .nav ul,.nav .btn{display:none}.burger{display:block}.nav .wrap{gap:14px}.lang{margin-left:auto}
   .nav.open{background:var(--sea)}
   .nav.open ul{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:20px;padding:26px 28px 34px;background:var(--sea);font-size:1.3rem}
   .hero-grid,.intro .grid,.riv .grid,.season .grid,.faq .grid,.amen .grid{grid-template-columns:1fr}
@@ -290,6 +299,7 @@ footer .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
 }
 @media (max-width:560px){
   body{font-size:16px}
+  .brand{font-size:1.3rem}.brand img{width:38px}.lang{gap:6px}.lang a{width:24px;height:16px}
   .wrap{width:calc(100% - 32px)}
   .row,.perks{grid-template-columns:1fr}
   .hero h1 .l:nth-child(2){padding-left:.5em}
@@ -319,6 +329,11 @@ footer .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
       <li><a href="#faq">Questions</a></li>
     </ul>
     <a href="#ete-2027" class="btn btn-sun mag">Réserver l'été 2027</a>
+    <div class="lang" aria-label="Langue du site">
+      <a href="index.html" hreflang="fr" lang="fr" title="Français" aria-current="page"><svg viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#002654"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE1126"/></svg><span class="sr">Français</span></a>
+      <a href="en/index.html" hreflang="en" lang="en" title="English"><svg viewBox="0 0 60 30" aria-hidden="true"><clipPath id="uk"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="ukt"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><g clip-path="url(#uk)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#ukt)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg><span class="sr">English</span></a>
+      <a href="de/index.html" hreflang="de" lang="de" title="Deutsch"><svg viewBox="0 0 5 3" aria-hidden="true"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg><span class="sr">Deutsch</span></a>
+    </div>
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
   </div>
 </nav>
@@ -595,22 +610,31 @@ addEventListener('keydown', e => { if (!lb.classList.contains('on')) return; if 
 
 // Prix en direct
 const NIGHT = 130;
+const T = {
+  nights: n => n + (n > 1 ? ' nuits' : ' nuit'),
+  eur: x => x + ' €',
+  bad: "Choisissez une date de départ après la date d'arrivée.",
+  disc: 'Réduction semaine −10 %',
+  more: k => 'Encore ' + k + (k > 1 ? ' nuits' : ' nuit') + ' pour obtenir −10 %',
+  total: 'Total estimé',
+  note: 'Estimation hors frais de ménage, confirmée à la réservation.',
+  msg: (v, r) => `Bonjour, je souhaite réserver le studio Maison Ayke.\nNom : ${v('fn')} ${v('ln')}\nArrivée : ${v('in')}\nDépart : ${v('out')}${r ? ` (${r.n} nuits, estimation ${r.tot} €)` : ''}\nVoyageurs : ${v('g')}\nLangue : ${v('lang')}\n${v('msg')}`
+};
 function calc(){
   const a = new Date($('#in').value), b = new Date($('#out').value);
   const n = Math.round((b - a) / 864e5);
   const box = $('#total');
-  if (!(n > 0)) { box.innerHTML = '<small>Choisissez une date de départ après la date d\'arrivée.</small>'; return null; }
+  if (!(n > 0)) { box.innerHTML = '<small>' + T.bad + '</small>'; return null; }
   const base = n * NIGHT, disc = n >= 7 ? Math.round(base * .10) : 0, tot = base - disc;
-  box.innerHTML = `<div class="r"><span>${n} nuit${n>1?'s':''} × ${NIGHT} €</span><span>${base} €</span></div>` +
-    (disc ? `<div class="r d"><span>Réduction semaine −10 %</span><span>−${disc} €</span></div>` : `<div class="r d"><span>Encore ${7-n} nuit${7-n>1?'s':''} pour obtenir −10 %</span><span></span></div>`) +
-    `<div class="r t"><span>Total estimé</span><span>${tot} €</span></div><small>Estimation hors frais de ménage, confirmée à la réservation.</small>`;
+  box.innerHTML = `<div class="r"><span>${T.nights(n)} × ${T.eur(NIGHT)}</span><span>${T.eur(base)}</span></div>` +
+    (disc ? `<div class="r d"><span>${T.disc}</span><span>−${T.eur(disc)}</span></div>` : `<div class="r d"><span>${T.more(7-n)}</span><span></span></div>`) +
+    `<div class="r t"><span>${T.total}</span><span>${T.eur(tot)}</span></div><small>${T.note}</small>`;
   return {n, tot};
 }
 ['in','out'].forEach(id => $('#'+id).addEventListener('change', calc)); calc();
 $('#book').addEventListener('submit', e => {
   e.preventDefault(); const v = id => $('#'+id).value, r = calc();
-  const t = `Bonjour, je souhaite réserver le studio Maison Ayke.\nNom : ${v('fn')} ${v('ln')}\nArrivée : ${v('in')}\nDépart : ${v('out')}${r ? ` (${r.n} nuits, estimation ${r.tot} €)` : ''}\nVoyageurs : ${v('g')}\nLangue : ${v('lang')}\n${v('msg')}`;
-  window.open('https://wa.me/41787777978?text=' + encodeURIComponent(t), '_blank');
+  window.open('https://wa.me/41787777978?text=' + encodeURIComponent(T.msg(v, r)), '_blank');
 });
 
 // Visite vidéo
